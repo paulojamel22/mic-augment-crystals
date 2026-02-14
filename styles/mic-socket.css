@@ -1,0 +1,65 @@
+/* Container principal do Slot de Cristal */
+.mic-socket-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px dashed #7a7971;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.05);
+    clear: both;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* O "Buraquinho" do slot */
+.mic-socket-slot {
+    width: 32px;
+    height: 32px;
+    border: 2px inset #444;
+    border-radius: 4px;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    opacity: 0.3;
+}
+
+/* Efeito visual quando algo é arrastado por cima (Drag Over) */
+.mic-socket-slot.dragover {
+    border-color: #ff6400;
+    box-shadow: 0 0 10px #ff6400;
+}
+
+/* Imagem do cristal dentro do slot */
+.mic-socket-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+}
+
+/* Texto de ajuda ao lado do slot */
+.mic-socket-label {
+    font-family: "Modesto Condensed", "Palatino Linotype", serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #4b4a44;
+}
+
+/* Botão de remover o cristal (X vermelho) */
+.mic-socket-remove {
+    margin-left: auto;
+    color: #8a1a1a;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.mic-socket-remove:hover {
+    color: #ff0000;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
