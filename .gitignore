@@ -4,3 +4,4 @@ Thumbs.db
 
 # Ignorar pastas de backup do Foundry (se houver)
 *.bak
+*.zip
