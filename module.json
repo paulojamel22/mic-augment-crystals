@@ -2,10 +2,10 @@
   "id": "mic-augment-crystals",
   "title": "Magic Item Compendium: Augment Crystals",
   "description": "Sistema de soquetes para Cristais de Aperfeiçoamento (D&D 3.5).",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "library": false,
   "manifest": "https://raw.githubusercontent.com/paulojamel22/mic-augment-crystals/main/module.json",
-  "download": "https://github.com/paulojamel22/mic-augment-crystals/releases/download/v1.0.1/mic-augment-crystals.zip",
+  "download": "https://github.com/paulojamel22/mic-augment-crystals/releases/download/v1.0.2/mic-augment-crystals.zip",
   "authors": [
     {
       "name": "Paulo Brancalhão Cunha"
@@ -16,8 +16,14 @@
     "verified": "13"
   },
   "esmodules": [
-    "mic-socket.js"
+    "mic-socket.js",
+    "mic-crystal-data.js"
   ],
+  "dataModels": {
+    "item": {
+      "mic-socket-system.crystal": "MICCrystalData"
+    }
+  },
   "packs": [
     {
       "name": "mic-augment-crystals",
@@ -34,5 +40,8 @@
   "styles": [
     "styles/mic-socket.css"
   ],
-  "url": "https://github.com/paulojamel22/mic-augment-crystals"
+  "url": "https://github.com/paulojamel22/mic-augment-crystals",
+  "scripts": [
+    "mic-crystal-data.js"
+  ]
 }
