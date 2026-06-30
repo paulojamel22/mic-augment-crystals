@@ -19,11 +19,6 @@
     "mic-socket.js",
     "mic-crystal-data.js"
   ],
-  "dataModels": {
-    "item": {
-      "mic-socket-system.crystal": "MICCrystalData"
-    }
-  },
   "packs": [
     {
       "name": "mic-augment-crystals",
@@ -40,8 +35,5 @@
   "styles": [
     "styles/mic-socket.css"
   ],
-  "url": "https://github.com/paulojamel22/mic-augment-crystals",
-  "scripts": [
-    "mic-crystal-data.js"
-  ]
+  "url": "https://github.com/paulojamel22/mic-augment-crystals"
 }
