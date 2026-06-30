@@ -17,7 +17,8 @@
   },
   "esmodules": [
     "mic-socket.js",
-    "mic-crystal-data.js"
+    "mic-crystal-data.js",
+    "mic-loader.js"
   ],
   "packs": [
     {

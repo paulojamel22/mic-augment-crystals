@@ -1,0 +1,40 @@
+{
+  "schema":     "mic-augment-crystal/1.0",
+  "id":         "restful-greater",
+  "name":       "Restful Crystal",
+  "rank":       "greater",
+  "family":     "armor",
+
+  "basePrice":      500,
+  "basePriceUnit":  "gp",
+  "itemLevel":      3,
+  "casterLevel":    5,
+  "aura": {
+    "school": "enchantment",
+    "dc":     17
+  },
+  "activation":     null,
+  "weight":          0,
+
+  "tags":    ["fatigue", "sleep", "endurance"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  ["sleep"],
+    "spell":  null,
+    "other":  null
+  },
+
+  "costToCreate": {
+    "gp":   250,
+    "xp":   20,
+    "days": 1
+  },
+
+  "description": "This silver clasp is decorated with sparkling crystals shaped like stars. A restful crystal is a great boon to any warrior who must stay always at the ready. Sleeping in armor that has this augment crystal attached does not make you fatigued.",
+
+  "icon":  "icons/magic/control/sleeping-temple.webp"
+}
