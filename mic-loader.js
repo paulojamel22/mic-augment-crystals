@@ -290,11 +290,13 @@ class CrystalCatalogLoader {
       this.folderMap.set(key, existing);
       return existing;
     }
-    const created = await pack.createFolder({
+    // v14: pack.folders is read-only; the right way to create a Folder
+    // inside a compendium is 'Folder.create({...}, {pack: pack.collection})'.
+    const created = await CONFIG.Folder.documentClass.create({
       name,
       type: "Item",
       folder: parentId ?? null
-    });
+    }, { pack: pack.collection });
     this.folderMap.set(key, created);
     console.log(`[MIC-LD] created folder '${name}' (${created?.uuid}) in ${pack.collection}`);
     return created;
