@@ -1,0 +1,73 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "crystal-of-arrow-deflection",
+  "name":        "Crystal of Arrow Deflection",
+  "family":      "shield",
+  "shell":       "crystal-shell",
+  "material":    "blue-sapphire-cabochon",
+  "contain":     "flint-arrowhead",
+
+  "ranks": {
+    "least":   { "basePrice":  500,  "itemLevel": 3, "xp":  20, "days": 1, "gp":   250, "acBonusVsRanged":   2 },
+    "lesser":   { "basePrice": 2500,  "itemLevel": 7, "xp": 100, "days": 3, "gp":  1250, "acBonusVsRanged":   5 },
+    "greater":  { "basePrice": 5000,  "itemLevel": 9, "xp": 200, "days": 5, "gp":  2500, "acBonusVsRanged":   2, "deflectArrows": true }
+  },
+
+  "casterLevel": 5,
+  "aura": {
+    "school": "divination",
+    "dc":     17,
+    "strength": "Faint"
+  },
+  "activation": null,
+  "weight":      0,
+
+  "basePriceUnit": "gp",
+
+  "effects": [
+    {
+      "type":      "ac-bonus-vs-ranged",
+      "amount":    2,
+      "rank":      "least"
+    },
+    {
+      "type":      "ac-bonus-vs-ranged",
+      "amount":    5,
+      "rank":      "lesser"
+    },
+    {
+      "type":   "ac-bonus-vs-ranged",
+      "amount": 2,
+      "rank":   "greater"
+    },
+    {
+      "type":      "deflect-arrows",
+      "rank":      "greater",
+      "feats":     ["Deflect Arrows"],
+      "perRound":  1
+    }
+  ],
+
+  "tags":    ["ranged", "defense", "arrow", "ac-bonus", "deflect"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  [],
+    "other":  ["shield (slot)", "host item must be a shield"]
+  },
+
+  "description": "This blue sapphire is cut into a large cabochon. It contains a small flint arrowhead in its center. A crystal of arrow deflection protects you from ranged weapon attacks.",
+  "unidentifiedDesc": "A blue sapphire cabochon with what appears to be a small dark inclusion at its center.",
+
+  "consumption": {
+    "least":   { "uses": null },
+    "lesser":   { "uses": null },
+    "greater":  { "uses": null }
+  },
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}
