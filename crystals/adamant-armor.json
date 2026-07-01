@@ -1,0 +1,28 @@
+{
+  "schema":           "mic-augment-crystal/1.0",
+  "id":               "adamant-armor",
+  "name":             "Crystal of Adamant Armor",
+  "families":         ["armor", "shield"],
+  "ranks": {
+    "least":   { "basePrice":  300, "itemLevel": 2, "castDc": 17, "castCl": 9, "hardnessBonus":  2, "xp":  12, "days": 1, "gp":  150 },
+    "lesser":  { "basePrice": 1400, "itemLevel": 5, "castDc": 17, "castCl": 9, "hardnessBonus":  5, "xp":  56, "days": 2, "gp":  700 },
+    "greater": { "basePrice": 3400, "itemLevel": 8, "castDc": 17, "castCl": 9, "hardnessBonus": 10, "xp": 136, "days": 4, "gp": 1700 }
+  },
+
+  "casterLevel":       9,
+  "aura":              { "school": "transmutation", "dc": 19 },
+  "activation":        null,
+  "weight":            0,
+  "sources":           ["MIC 3.5"],
+  "enhancement":       0,
+  "tags":              ["adamant", "hardness", "defense"],
+  "prerequisites": {
+    "feat":  ["Craft Magic Arms and Armor"],
+    "skill": [],
+    "spell": [],
+    "other": ["diamondsteel (SC 64)"]
+  },
+  "description":      "This clasp holds a small diamond orb with a sphere of steel at its center. A crystal of adamant armor strengthens your armor or shield against damage.",
+  "unidentifiedDesc": "A steel-clad diamond orb; the metal is finer than the clasp around it.",
+  "icon":             "icons/commodities/treasure/token-silver-blue.webp"
+}

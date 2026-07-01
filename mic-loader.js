@@ -19,8 +19,34 @@ class CrystalCatalog {
     if (json?.schema !== SCHEMA_TAG)   return ["schema-mismatch"];
     if (!json.id || typeof json.id !== "string") return ["missing-id"];
     if (!json.name)                    return ["missing-name"];
-    if (!this.VALID_RANKS.includes(json.rank))    return ["bad-rank"];
-    if (!this.VALID_FAMILY.includes(json.family)) return ["bad-family"];
+
+    // ranks is optional: when given as an object keyed by rank, the index
+    // phase expands it into one record per rank. Otherwise `rank` is the
+    // single rank.
+    let ranksToExpand;
+    if (json.ranks != null) {
+      if (typeof json.ranks !== "object" || Array.isArray(json.ranks)) {
+        return ["bad-ranks"];
+      }
+      ranksToExpand = Object.keys(json.ranks);
+      if (!ranksToExpand.length) return ["bad-ranks"];
+      for (const r of ranksToExpand) {
+        if (!this.VALID_RANKS.includes(r)) return ["bad-rank"];
+      }
+    } else {
+      if (!this.VALID_RANKS.includes(json.rank)) return ["bad-rank"];
+      ranksToExpand = [json.rank];
+    }
+
+    // family is either a single string or an array of strings — both
+    // must be recognised.
+    const fams = Array.isArray(json.families) ? json.families
+                  : json.family ? [json.family]
+                  : [];
+    if (!fams.length || !fams.every(f => this.VALID_FAMILY.includes(f))) {
+      return ["bad-family"];
+    }
+
     if (typeof json.basePrice !== "number")       return ["missing-price"];
     if (json.unidentifiedDesc != null
         && typeof json.unidentifiedDesc !== "string") {
@@ -97,10 +123,37 @@ class CrystalCatalogLoader {
         console.warn(`[MIC-LD] ${entry?.id ?? entry?.rel} rejected:`, problems);
         continue;
       }
-      indexed.push(entry);
+
+      const fams = Array.isArray(entry.families) ? entry.families : [entry.family];
+      const ranksObj = entry.ranks ?? null;
+      const ranks = ranksObj ? Object.keys(ranksObj) : [entry.rank];
+
+      for (const rank of ranks) {
+        for (const fam of fams) {
+          const clone = { ...entry, family: fam, rank };
+          if (fams.length > 1 || ranksObj) {
+            // disambiguate id so each (rank,family) is unique
+            clone.id      = `${entry.id}-${rank}-${fam}`;
+            clone._originId = entry.id;
+          }
+          if (ranksObj && ranksObj[rank]) {
+            const rk = ranksObj[rank];
+            if (rk.basePrice != null)       clone.basePrice = rk.basePrice;
+            if (rk.itemLevel != null)      clone.itemLevel = rk.itemLevel;
+            if (rk.hardnessBonus != null)
+              clone.effects = [{ type: "hardness", amount: rk.hardnessBonus }];
+            if (rk.xp != null || rk.days != null || rk.gp != null) {
+              clone.costToCreate = {
+                gp: rk.gp ?? null, xp: rk.xp ?? null, days: rk.days ?? null
+              };
+            }
+          }
+          indexed.push(clone);
+        }
+      }
     }
     this.records = indexed;
-    console.log(`[MIC-LD] index: ${indexed.length}/${fetched.length} valid`);
+    console.log(`[MIC-LD] index: ${indexed.length} valid (from ${fetched.length} source files)`);
   }
 
   static async syncIntoCompendium() {
