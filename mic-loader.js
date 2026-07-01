@@ -83,18 +83,28 @@ class CrystalCatalogLoader {
   }
 
   static async syncIntoCompendium() {
+    console.log(`[MIC-LD] syncIntoCompendium called. records=${this.records.length}`);
     if (!this.records.length) {
       console.warn("[MIC-LD] nothing to sync (catalog empty)");
       return;
     }
     const pack = game.packs.get(PACK_NAME);
+    console.log(`[MIC-LD] pack lookup:`, pack ? `${PACK_NAME} found, size=${pack.index.size}` : `not found`);
     if (!pack) {
       console.warn(`[MIC-LD] pack ${PACK_NAME} not found in game.packs`);
       return;
     }
     console.log(`[MIC-LD] syncing ${this.records.length} catalog entries into ${PACK_NAME}`);
 
-    const docs = await pack.getDocuments();
+    // Force a re-read of the pack contents so we know what's already there.
+    let docs;
+    try {
+      docs = await pack.getDocuments();
+      console.log(`[MIC-LD] pack.getDocuments() returned ${docs.length} docs`);
+    } catch (e) {
+      console.error(`[MIC-LD] pack.getDocuments() failed`, e);
+      return;
+    }
 
     let created = 0, updated = 0, kept = 0, warned = 0;
 
@@ -106,11 +116,14 @@ class CrystalCatalogLoader {
 
       if (!existing) {
         console.log(`[MIC-LD] creating '${json.id}' (${json.name})`);
+        const newDoc = this.docFromJson(json);
+        console.log(`[MIC-LD] new document payload:`, newDoc);
         try {
-          await pack.createDocument(await this.docFromJson(json));
+          const createdDoc = await pack.createDocument(newDoc);
+          console.log(`[MIC-LD] created doc id=${createdDoc?.id}`);
           created++;
         } catch (e) {
-          console.error(`[MIC-LD] create failed for ${json.id}`, e);
+          console.error(`[MIC-LD] create failed for ${json.id}`, e?.stack ?? e);
         }
         continue;
       }
@@ -118,6 +131,8 @@ class CrystalCatalogLoader {
       const existingHash = existing.getFlag(MODULE_ID, "hash");
       const newHash      = await CrystalCatalog.hash(json);
 
+      // If the GM appears to have hand-edited the doc (other flag namespace
+      // present), emit a warning but still update.
       const otherFlags = Object.entries(existing.flags ?? {})
         .filter(([ns]) => ns !== MODULE_ID)
         .map(([ns, f]) => `${ns}.${Object.keys(f || {}).join(",")}`);
@@ -139,6 +154,7 @@ class CrystalCatalogLoader {
       }
     }
 
+    // Clean up entries that no longer have a JSON source.
     for (const d of docs) {
       const catId = d.getFlag(MODULE_ID, "catalogId");
       if (!catId) continue;
@@ -148,6 +164,7 @@ class CrystalCatalogLoader {
       }
     }
 
+    // Re-read once for diagnostics.
     const final = await pack.getDocuments();
     console.log(`[MIC-LD] sync done — created=${created} updated=${updated} kept=${kept} warned=${warned} | pack has ${final.length} doc(s) now`);
   }
@@ -185,7 +202,9 @@ class CrystalCatalogLoader {
 }
 
 export async function initLoader() {
+  console.log("[MIC-LD] initLoader start");
   await CrystalCatalogLoader.index();
+  console.log("[MIC-LD] initLoader done");
 
   const moduleDescriptor = game.modules.get(MODULE_ID);
   moduleDescriptor.api ??= {};
@@ -197,8 +216,13 @@ export async function initLoader() {
 }
 
 export async function readyLoader() {
-  await CrystalCatalogLoader.syncIntoCompendium();
+  console.log("[MIC-LD] readyLoader invoked");
+  try {
+    await CrystalCatalogLoader.syncIntoCompendium();
+  } catch (e) {
+    console.error("[MIC-LD] syncIntoCompendium threw", e?.stack ?? e);
+  }
 }
 
 Hooks.once("init", initLoader);
-Hooks.once("ready", readyLoader);
+Hooks.on("ready", readyLoader);
