@@ -379,7 +379,13 @@ class MICSocketManager {
 
     // Adiciona eventos com verificação de segurança
     try {
-      html.find("#mic-drop-zone").on("drop", (e) => this._onCrystalDrop(e, item));
+      const $zone = html.find("#mic-drop-zone");
+      $zone.on("dragover", (e) => {
+        // v14: drop only fires when dragover preventDefault is called.
+        const oe = e?.originalEvent ?? e;
+        if (oe?.preventDefault) oe.preventDefault();
+      });
+      $zone.on("drop", (e) => this._onCrystalDrop(e, item));
       html.find(".mic-socket-remove").on("click", (e) => {
         e.stopPropagation();
         this._removeCrystal(item);
