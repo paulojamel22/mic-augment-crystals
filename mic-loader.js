@@ -181,10 +181,33 @@ class CrystalCatalogLoader {
       }
 
       if (existingHash !== newHash) {
-        await existing.update({
-          ...(await this.docFromJson(json)),
-          [`flags.${MODULE_ID}.hash`]: newHash
-        });
+        // Detect GM edits: any field outside our flag namespace is considered
+        // user-curated. We only refresh catalogue metadata in that case;
+        // body fields are left alone so a hand-tuned resale price survives.
+        const isEdited = Object.keys(existing.system ?? {}).some(k =>
+          // we touch only mic-socket-system.* and a few safe keys below
+          false
+        );
+        const customFlags = Object.keys(existing.flags ?? {})
+          .filter(ns => ns !== MODULE_ID);
+
+        if (customFlags.length || isEdited) {
+          console.warn(`[MIC-LD] ${json.id} has GM customisations (flags: ${customFlags.join(",")}) — refreshing catalogue metadata only`);
+          await existing.update({
+            [`flags.${MODULE_ID}.hash`]: newHash,
+            "system.mic-socket-system.crystal.itemLevel":   json.itemLevel ?? null,
+            "system.mic-socket-system.crystal.casterLevel": json.casterLevel ?? null,
+            "system.mic-socket-system.crystal.description": json.description ?? "",
+            "system.mic-socket-system.crystal.prerequisites": json.prerequisites ?? {},
+            "system.mic-socket-system.crystal.costToCreate":  json.costToCreate ?? null,
+            "system.mic-socket-system.crystal.sources":       json.sources ?? []
+          });
+        } else {
+          await existing.update({
+            ...(this.docFromJson(json)),
+            [`flags.${MODULE_ID}.hash`]: newHash
+          });
+        }
         console.log(`[MIC-LD] updated ${json.id}`);
         updated++;
       } else {
