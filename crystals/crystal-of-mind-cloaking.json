@@ -1,0 +1,82 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "crystal-of-mind-cloaking",
+  "name":        "Crystal of Mind Cloaking",
+  "family":      "armor",
+
+  "ranks": {
+    "least":   { "basePrice":  500,   "itemLevel":  3, "xp":  20, "days": 1, "gp":   250, "competenceBonus":   1 },
+    "lesser":   { "basePrice": 4000,   "itemLevel":  8, "xp": 160, "days": 4, "gp":  2000, "competenceBonus":   3 },
+    "greater":  { "basePrice": 10000,  "itemLevel": 12, "xp": 400, "days":10, "gp":  5000, "competenceBonus":   5, "rerollOnSave": true }
+  },
+
+  "casterLevel": 5,
+  "aura": {
+    "school": "abjuration",
+    "dc":     17,
+    "strength": "Faint"
+  },
+  "activation": "see-text",
+  "weight":      0,
+
+  "basePriceUnit": "gp",
+
+  "effects": [
+    {
+      "type":     "competence-bonus-on-saves",
+      "bonusType": "competence",
+      "amount":   1,
+      "rank":     "least",
+      "vs":       ["mind-affecting spells", "mind-affecting abilities"],
+      "saveAsset": "Will"
+    },
+    {
+      "type":     "competence-bonus-on-saves",
+      "bonusType": "competence",
+      "amount":   3,
+      "rank":     "lesser",
+      "vs":       ["mind-affecting spells", "mind-affecting abilities"],
+      "saveAsset": "Will"
+    },
+    {
+      "type":     "competence-bonus-on-saves",
+      "bonusType": "competence",
+      "amount":   5,
+      "rank":     "greater",
+      "vs":       ["mind-affecting spells", "mind-affecting abilities"],
+      "saveAsset": "Will"
+    },
+    {
+      "type":       "save-reroll",
+      "rank":       "greater",
+      "trigger":    "failed-save-vs-mind-affecting",
+      "action":     "immediate (mental) action",
+      "usesPerDay": 1,
+      "note":       "If you fail a save against any mind-affecting effect, you can choose to reroll the save once per day."
+    }
+  ],
+
+  "tags":    ["abjuration", "mind-affecting", "mental", "saves", "competence"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  ["resistance"],
+    "other":  null
+  },
+
+  "description":      "This crystal is black as a clouded night sky. A crystal of mind cloaking protects you against mental infiltration. The least grants a +1 competence bonus on saving throws against mind-affecting spells and abilities; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against a mind-affecting effect, once per day.",
+
+  "unidentifiedDesc": "A pure-black crystal, like a fragment of a starless night sky.",
+
+  "consumption": {
+    "least":   { "uses": null },
+    "lesser":   { "uses": null },
+    "greater":  { "usesPerDay": 1, "track": "save-reroll" }
+  },
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

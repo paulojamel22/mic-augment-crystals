@@ -29,10 +29,10 @@ de bônus de melhoria.
 ## 🧪 Versão atual
 
 **1.3.0** — adiciona **Crystal of Adaptation**, **Crystal of Aquatic Action**
-(Armor), **Crystal of Arrow Deflection** (Shield, *Deflect Arrows* no greater),
-**Crystal of Bent Sight** (Shield), **Crystal of Glancing Blows** (Armor, vs
-grapple initiation) e **Crystal of Lifekeeping** (Armor, vs energy drain /
-inflict / death, com reroll no greater).
+(Armor), **Crystal of Arrow Deflection** (Shield), **Crystal of Bent Sight**
+(Shield), **Crystal of Glancing Blows** (Armor), **Crystal of Lifekeeping**
+(Armor) e **Crystal of Mind Cloaking** (Armor, vs mind-affecting, reroll
+no greater).
 
 ## 📦 Instalação
 
@@ -92,6 +92,9 @@ Duas formas suportadas:
 * **Crystal of Lifekeeping** (Armor / Least, Lesser, Greater): competência
   +1 / +3 / +5 em saves contra energy drain, inflict, death spells e death
   effects; greater adiciona 1×/dia *reroll* (immediate mental) em save falho.
+* **Crystal of Mind Cloaking** (Armor / Least, Lesser, Greater): competência
+  +1 / +3 / +5 em saves contra mind-affecting (spells/abilities); greater
+  adiciona 1×/dia *reroll* em save falho (immediate mental).
 
 Cada cristal respeita os pré-requisitos do MIC 3.5.
 
