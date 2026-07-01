@@ -28,10 +28,9 @@ de bônus de melhoria.
 
 ## 🧪 Versão atual
 
-**1.3.0** — adiciona **Crystal of Adaptation** (Armor / Least, Lesser, Greater),
-**Crystal of Aquatic Action** (Armor / Least, Lesser, Greater) e
-**Crystal of Arrow Deflection** (Shield / Least, Lesser, Greater, com AC vs
-ranged e *Deflect Arrows*).
+**1.3.0** — adiciona **Crystal of Adaptation**, **Crystal of Aquatic Action**
+(Armor), **Crystal of Arrow Deflection** (Shield) e **Crystal of Bent Sight**
+(Shield, *avert eyes* sem miss chance contra gaze attacks).
 
 ## 📦 Instalação
 
@@ -83,6 +82,8 @@ Duas formas suportadas:
   lesser; **freedom of movement** + **water breathing** no greater.
 * **Crystal of Arrow Deflection** (Shield / Least, Lesser, Greater): +2 / +5 / +2
   AC contra ranged; greater também concede *Deflect Arrows* (1 ataque/round).
+* **Crystal of Bent Sight** (Shield / Least): permite *avertir os olhos* de gaze
+  attack sem sofrer *miss chance* nos próprios ataques contra a criatura.
 
 Cada cristal respeita os pré-requisitos do MIC 3.5.
 

@@ -1,0 +1,54 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "crystal-of-bent-sight",
+  "name":        "Crystal of Bent Sight",
+  "family":      "shield",
+  "rank":        "least",
+  "shell":       "crystal-shell",
+  "material":    "polished-silver-plate",
+
+  "basePrice":       500,
+  "basePriceUnit":   "gp",
+  "itemLevel":       3,
+
+  "casterLevel": 5,
+  "aura": {
+    "school": "divination",
+    "dc":     17,
+    "strength": "Faint"
+  },
+  "activation": null,
+  "weight":      0,
+
+  "effects": [
+    {
+      "type":   "gaze-protection",
+      "rank":   "least",
+      "covers": ["avert-eyes"],
+      "note":   "Averting eyes from a gaze-attacking creature no longer imposes a miss chance on your own attack rolls against that creature."
+    }
+  ],
+
+  "tags":    ["gaze", "divination", "vision", "perception"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  ["clairaudience/clairvoyance"],
+    "other":  null
+  },
+
+  "costToCreate": {
+    "gp":   250,
+    "xp":    20,
+    "days":   1
+  },
+
+  "description":      "This small crystal is affixed to a plate of polished silver. A crystal of bent sight offers a great boon to any who face creatures that have gaze attacks. When this augment crystal is attached to your shield, you can avert your eyes from a creature that has a gaze attack without suffering a miss chance on your attack rolls against that creature.",
+  "unidentifiedDesc": "A small crystal set in a polished silver plate worn on the shield.",
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}
