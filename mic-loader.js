@@ -47,7 +47,9 @@ class CrystalCatalog {
       return ["bad-family"];
     }
 
-    if (typeof json.basePrice !== "number")       return ["missing-price"];
+    const hasRankMap = json.ranks != null && typeof json.ranks === "object"
+      && !Array.isArray(json.ranks);
+    if (!hasRankMap && typeof json.basePrice !== "number") return ["missing-price"];
     if (json.unidentifiedDesc != null
         && typeof json.unidentifiedDesc !== "string") {
       return ["bad-unidentified-desc"];
