@@ -206,6 +206,15 @@ class CrystalCatalogLoader {
 
 export async function initLoader() {
   await CrystalCatalogLoader.index();
+
+  // Expose for GM debugging.
+  const moduleDescriptor = game.modules.get(MODULE_ID);
+  moduleDescriptor.api ??= {};
+  Object.assign(moduleDescriptor.api, {
+    catalog: () => CrystalCatalogLoader.records,
+    rerun:   () => CrystalCatalogLoader.syncIntoCompendium()
+  });
+  console.log(`[MIC-LD] api ready: catalog(), rerun()`);
 }
 
 export async function readyLoader() {
@@ -214,10 +223,3 @@ export async function readyLoader() {
 
 Hooks.once("init", initLoader);
 Hooks.once("ready", readyLoader);
-
-// Expose for GM debugging.
-game.modules.get(MODULE_ID)?.api ??= {};
-Object.assign(game.modules.get(MODULE_ID).api, {
-  catalog: () => CrystalCatalogLoader.records,
-  rerun:   () => CrystalCatalogLoader.syncIntoCompendium()
-});
