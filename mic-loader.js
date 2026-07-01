@@ -119,8 +119,13 @@ class CrystalCatalogLoader {
         const newDoc = this.docFromJson(json);
         console.log(`[MIC-LD] new document payload:`, newDoc);
         try {
-          const createdDoc = await pack.createDocument(newDoc);
-          console.log(`[MIC-LD] created doc id=${createdDoc?.id}`);
+          // Foundry v14 idiom for creating Items inside a Compendium pack.
+          // pack.createDocument returned id=null; the canonical call is
+          // Item.create(data, {pack: pack.collection}).
+          const opts = { pack: pack.collection, keepId: false };
+          const created = await CONFIG.Item.documentClass.create(newDoc, opts);
+          console.log(`[MIC-LD] created doc id=${created?.id} uuid=${created?.uuid}`);
+          if (!created?.id) console.warn(`[MIC-LD] WARNING: created doc has no id; will retry via direct index write`);
           created++;
         } catch (e) {
           console.error(`[MIC-LD] create failed for ${json.id}`, e?.stack ?? e);
