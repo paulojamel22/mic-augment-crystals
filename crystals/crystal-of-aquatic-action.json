@@ -1,0 +1,64 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "crystal-of-aquatic-action",
+  "name":        "Crystal of Aquatic Action",
+  "family":      "armor",
+
+  "ranks": {
+    "least":   { "basePrice":  250,  "itemLevel": 2, "xp":  10, "days": 1, "gp":  125 },
+    "lesser":   { "basePrice": 1000,  "itemLevel": 4, "xp":  40, "days": 1, "gp":  500 },
+    "greater":  { "basePrice": 3000,  "itemLevel": 7, "xp": 120, "days": 3, "gp": 1500 }
+  },
+
+  "casterLevel": 5,
+  "aura": {
+    "school": "transmutation",
+    "dc":     17,
+    "strength": "Faint"
+  },
+  "activation": null,
+  "weight":      0,
+
+  "basePriceUnit": "gp",
+
+  "effects": [
+    {
+      "type":   "swim-check",
+      "rank":   "least",
+      "applies": "removes-armor-check-penalty"
+    },
+    {
+      "type":     "swim-speed",
+      "rank":     "lesser",
+      "formula":  "half-land-speed-round-down-to-5ft"
+    },
+    {
+      "type":   "underwater-freedom",
+      "rank":   "greater",
+      "covers": ["attack-penalty", "movement-penalty"],
+      "as":     "freedom of movement"
+    },
+    {
+      "type":     "water-breathing",
+      "rank":     "greater",
+      "as":       "water breathing"
+    }
+  ],
+
+  "tags":    ["aquatic", "underwater", "swim", "water-breathing", "freedom-of-movement"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  ["freedom of movement", "water breathing"],
+    "other":  null
+  },
+
+  "description":      "This sea-green crystal always feels moist to the touch. A crystal of aquatic action aids the wearer while underwater. The least crystal negates armor check penalties on Swim checks; the lesser grants a swim speed of half the land speed (rounded down to the next 5 ft.); the greater grants freedom of movement underwater and lets the wearer breathe water as easily as air.",
+  "unidentifiedDesc": "A small sea-green gemstone, always slightly damp to the touch.",
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

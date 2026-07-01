@@ -28,8 +28,9 @@ de bônus de melhoria.
 
 ## 🧪 Versão atual
 
-**1.3.0** — adiciona **Crystal of Adaptation** (Armor / Least, Lesser, Greater),
-com endure elements + protection contra alignment/extraplanar traits.
+**1.3.0** — adiciona **Crystal of Adaptation** (Armor / Least, Lesser, Greater)
+e **Crystal of Aquatic Action** (Armor / Least, Lesser, Greater), com efeitos
+em camadas (endure elements + extraplanar traits; swim / freedom / breather).
 
 ## 📦 Instalação
 
@@ -76,6 +77,9 @@ Duas formas suportadas:
   camadas — `endure elements` no least; + todas as *alignment traits*
   (chaotic/good/etc.) no lesser; + *positive/negative-dominant traits*
   no greater.
+* **Crystal of Aquatic Action** (Armor / Least, Lesser, Greater): sem penalidade
+  de armadura em Swim no least; swim speed = ½ land speed (round down 5ft) no
+  lesser; **freedom of movement** + **water breathing** no greater.
 
 Cada cristal respeita os pré-requisitos do MIC 3.5.
 
