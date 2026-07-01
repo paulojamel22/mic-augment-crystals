@@ -150,17 +150,21 @@ class CrystalCatalogLoader {
       const noCatalogId = !existing.getFlag(MODULE_ID, "catalogId");
       if (wrongType || noCatalogId) {
         console.warn(`[MIC-LD] ${json.id} exists but has wrong type ('${existing.type}') or no catalogId — recreating`);
+        const staleId = existing.id;
         await existing.delete();
-        // Re-issue via the create path. We replace existing in this scope so
-        // the next iteration (the next json) sees the right state.
-        docs = docs.filter(d => d.id !== existing.id);
-        await d?.delete?.();
+        // drop the stale reference from the cached 'docs' array
+        docs = docs.filter(x => x.id !== staleId);
         const newDoc = this.docFromJson(json);
-        const created = await CONFIG.Item.documentClass.create(newDoc, { pack: pack.collection });
-        if (created?.id) {
-          await created.setFlag(MODULE_ID, "hash", await CrystalCatalog.hash(json));
+        try {
+          const created2 = await CONFIG.Item.documentClass.create(newDoc, { pack: pack.collection });
+          if (created2?.id) {
+            await created2.setFlag(MODULE_ID, "hash", await CrystalCatalog.hash(json));
+            console.log(`[MIC-LD] recreated '${json.id}' as loot item`);
+          }
+          created++;
+        } catch (e) {
+          console.error(`[MIC-LD] recreate failed for ${json.id}`, e?.stack ?? e);
         }
-        created++;
         continue;
       }
 
