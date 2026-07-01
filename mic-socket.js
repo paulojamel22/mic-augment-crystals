@@ -2,8 +2,13 @@
  * MICSocketManager - Gerencia o sistema de Augment Crystals (Magic Item Compendium)
  * Compatível com Foundry VTT v13 e sistema D35E.
  */
+// Foundry v14 prefers foundry.applications.ux.TextEditor.implementation; fall
+// back to the deprecated global during the transition.
+const TextEditorImpl =
+  foundry?.applications?.ux?.TextEditor?.implementation
+  ?? globalThis.TextEditor;
+
 class MICSocketManager {
-  
   static init() {
     console.log("MIC Socket | Inicializando sistema de cristais...");
 
@@ -251,32 +256,40 @@ class MICSocketManager {
   static _identifyCrystal(item) {
     // Verificação de segurança contra itens nulos
     if (!item || !item.name) return null;
-    
-    const name = item.name.toLowerCase();
-    // Estrutura: ID_DO_MODULO.NOME_DO_PACK (definidos no module.json)
-    const expectedPack = "mic-augment-crystals.mic-augment-crystals";
-    
-    const isFromCompendium = item.flags?.core?.sourceId?.includes(expectedPack) || 
-                             item.pack === expectedPack;
-    
-    // Verificamos a flag usando o ID oficial do módulo
-    const isCrystal = name.includes("crystal") || 
-                     item.getFlag("mic-augment-crystals", "isCrystal") ||
-                     item.system?.["mic-socket-system.crystal"]?.isCrystal;
 
-    if (!isCrystal || !isFromCompendium) return null;
+    const name = (item.name || "").toLowerCase();
+    const expectedPack = "mic-augment-crystals.crystals";
+    const isFromCompendium = item.flags?.core?.sourceId?.includes(expectedPack)
+                            || item.pack === expectedPack;
 
-    let rank = "least";
-    if (name.includes("lesser")) rank = "lesser";
-    if (name.includes("greater")) rank = "greater";
-    if (name.includes("major")) rank = "major";
-    if (name.includes("superior")) rank = "superior";
+    // A crystal is any item that:
+    //   - has our data-model flag under system, OR
+    //   - has our global flag, OR
+    //   - lives in our compendium (legacy path).
+    const socket = item.system?.["mic-socket-system.crystal"] ?? null;
+    const fromSystem = socket?.isCrystal === true;
+    const fromFlag   = item.getFlag?.("mic-augment-crystals", "isCrystal") === true;
+    const fromName   = name.includes("crystal");
+    if (!(fromSystem || fromFlag || isFromCompendium || fromName)) return null;
 
-    let type = "weapon";
-    const armorKeywords = ["restful", "stamina", "shielding", "warding", "armor", "shield", "shield"];
-    if (armorKeywords.some(key => name.includes(key))) type = "armor";
+    // Prefer the data-model truth over the legacy from-name guess.
+    let rank, family;
+    if (socket?.crystalRank && socket?.crystalFamily) {
+      rank   = socket.crystalRank;
+      family = socket.crystalFamily;
+    } else {
+      rank = "least";
+      if (name.includes("lesser"))   rank = "lesser";
+      if (name.includes("greater"))  rank = "greater";
+      if (name.includes("major"))    rank = "major";
+      if (name.includes("superior")) rank = "superior";
 
-    return { rank, type };
+      family = "weapon";
+      const armorKeywords = ["restful", "stamina", "shielding", "warding", "armor", "shield"];
+      if (armorKeywords.some(k => name.includes(k))) family = "armor";
+    }
+
+    return { rank, type: family };
   }
 
   static _getItemTotalBonus(item) {
@@ -302,7 +315,7 @@ class MICSocketManager {
     const info = this._identifyCrystal(crystal);
     if (!info) return { valid: false, error: "Apenas cristais do Compendium oficial do MIC são aceitos." };
 
-    // Restrição: só pode ser colocado em armas ou armaduras
+    // Only weapons and armor-like items can host a crystal.
     if (!["weapon", "equipment"].includes(targetItem.type)) {
       return { valid: false, error: "Cristais e runas só podem ser colocados em armas ou armaduras." };
     }
@@ -310,21 +323,28 @@ class MICSocketManager {
     const { enhancement, isMasterwork } = this._getItemTotalBonus(targetItem);
     const isValidBase = isMasterwork || enhancement > 0;
 
-    if (info.type === "armor" && targetItem.type !== "equipment") {
-      return { valid: false, error: "Este é um cristal de ARMADURA/ESCUDO." };
-    }
-    if (info.type === "weapon" && targetItem.type !== "weapon") {
+    // Family routing:
+    //   weapon crystal -> target.type must be 'weapon'
+    //   armor or shield crystal -> target.type must be 'equipment'
+    const family = info.type;
+    if (family === "weapon" && targetItem.type !== "weapon") {
       return { valid: false, error: "Este é um cristal de ARMA." };
     }
+    if ((family === "armor" || family === "shield") && targetItem.type !== "equipment") {
+      return { valid: false, error: "Este é um cristal de ARMADURA/ESCUDO." };
+    }
 
-    if (info.rank === "least" && !isValidBase) 
+    if (info.rank === "least" && !isValidBase) {
       return { valid: false, error: "Cristais 'Least' exigem item de Obra-Prima ou Mágico." };
-    
-    if (info.rank === "lesser" && enhancement < 2) 
+    }
+
+    if (info.rank === "lesser" && enhancement < 2) {
       return { valid: false, error: "Cristais 'Lesser' exigem bônus mágico +2." };
-    
-    if (info.rank === "greater" && enhancement < 3) 
+    }
+
+    if (info.rank === "greater" && enhancement < 3) {
       return { valid: false, error: "Cristais 'Greater' exigem bônus mágico +3." };
+    }
 
     return { valid: true };
   }
@@ -410,7 +430,7 @@ class MICSocketManager {
 
     let data;
     try {
-      data = TextEditor.getDragEventData(raw);
+      data = TextEditorImpl.getDragEventData(raw);
     } catch (e) {
       console.warn("MIC Socket | getDragEventData failed", e);
       return;
