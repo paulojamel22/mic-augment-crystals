@@ -24,7 +24,7 @@
     {
       "name": "crystals",
       "label": "MIC - Augment Crystals",
-      "path": "packs/crystals.db",
+      "path": "packs/crystals",
       "type": "Item",
       "system": "D35E",
       "ownership": {

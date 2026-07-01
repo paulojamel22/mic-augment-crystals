@@ -1,7 +1,23 @@
-# Ignorar arquivos de sistema
+# System noise
 Thumbs.db
 .DS_Store
 
-# Ignorar pastas de backup do Foundry (se houver)
+# Foundry backup files
 *.bak
 *.zip
+
+# Editor tmp files
+*.swp
+.vscode/
+.idea/
+
+# Node deps (we keep tests in-package)
+node_modules/
+
+# Foundry side-effects that bundling shouldn't track
+*.lock
+
+# LevelDB runtime files for the `crystals` pack — those are produced by
+# Foundry and are NOT meant to be in version control. The DB itself is
+# recreated from JSON via `mic-loader.js`.
+packs/crystals/

@@ -12,7 +12,7 @@ const CRYSTAL_DIR = "crystals";
 const SCHEMA_TAG = "mic-augment-crystal/1.0";
 
 class CrystalCatalog {
-  static VALID_RANKS   = ["least", "lesser", "greater", "major", "superior"];
+  static VALID_RANKS   = ["least", "lesser", "greater"];
   static VALID_FAMILY  = ["weapon", "armor", "shield"];
 
   static validate(json) {
@@ -22,6 +22,10 @@ class CrystalCatalog {
     if (!this.VALID_RANKS.includes(json.rank))    return ["bad-rank"];
     if (!this.VALID_FAMILY.includes(json.family)) return ["bad-family"];
     if (typeof json.basePrice !== "number")       return ["missing-price"];
+    if (json.unidentifiedDesc != null
+        && typeof json.unidentifiedDesc !== "string") {
+      return ["bad-unidentified-desc"];
+    }
     return [];
   }
 
@@ -198,6 +202,7 @@ class CrystalCatalogLoader {
             "system.mic-socket-system.crystal.itemLevel":   json.itemLevel ?? null,
             "system.mic-socket-system.crystal.casterLevel": json.casterLevel ?? null,
             "system.mic-socket-system.crystal.description": json.description ?? "",
+            "system.mic-socket-system.crystal.unidentifiedDesc": json.unidentifiedDesc ?? "",
             "system.mic-socket-system.crystal.prerequisites": json.prerequisites ?? {},
             "system.mic-socket-system.crystal.costToCreate":  json.costToCreate ?? null,
             "system.mic-socket-system.crystal.sources":       json.sources ?? []
@@ -243,19 +248,20 @@ class CrystalCatalogLoader {
     // The mic-socket-system.crystal.* fields live under system; they are
     // the D35E-recognized source of truth via the registered DataModel.
     const desc = json.description ?? "";
+    const unidentifiedDesc = json.unidentifiedDesc ?? "";
     const itemLevel = json.itemLevel ?? null;
     const casterLevel = json.casterLevel ?? null;
 
     return {
       name: json.name,
       type: "loot",
-      img:  json.icon || "icons/commodities/treasure/gem-rough-blue-white.webp",
+      img:  "icons/commodities/treasure/token-silver-blue.webp",
       system: {
         // Description block — D35E requires both identified and unidentified.
         description: {
           value:        `<p>${desc}</p>`,
           chat:         "",
-          unidentified: `<p>${desc}</p>`
+          unidentified: `<p>${unidentifiedDesc}</p>`
         },
         // Common D35E schema flags populated so the sheet renders cleanly.
         identified:    true,
@@ -283,6 +289,7 @@ class CrystalCatalogLoader {
           crystalRank:      json.rank,
           enhancementBonus: json.enhancement ?? 0,
           description:      desc,
+          unidentifiedDesc: unidentifiedDesc,
           effectType:       (json.tags ?? [])[0] ?? "other",
           itemLevel, casterLevel,
           prerequisites:    json.prerequisites ?? {},

@@ -35,6 +35,7 @@
   },
 
   "description": "This silver clasp is decorated with sparkling crystals shaped like stars. A restful crystal is a great boon to any warrior who must stay always at the ready. Sleeping in armor that has this augment crystal attached does not make you fatigued.",
+  "unidentifiedDesc": "A sparkling silver clasp etched with crystalline motifs. Its actual purpose remains mysterious.",
 
-  "icon":  "icons/magic/control/sleeping-temple.webp"
+  "icon":  "icons/commodities/treasure/token-silver-blue.webp"
 }
