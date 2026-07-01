@@ -28,9 +28,8 @@ de bônus de melhoria.
 
 ## 🧪 Versão atual
 
-**1.2.0** — verificação do Foundry 14, drag&drop do slot, Crystal of Adamant Armor,
-Clasp of Energy Protection (5 elementos × 3 ranks), folders automáticos, suporte
-a multi-família/multi-rank no mesmo arquivo de catálogo.
+**1.3.0** — adiciona **Crystal of Adaptation** (Armor / Least, Lesser, Greater),
+com endure elements + protection contra alignment/extraplanar traits.
 
 ## 📦 Instalação
 
@@ -49,13 +48,13 @@ Duas formas suportadas:
 5. Ative o módulo na sua configuração de mundo.
 6. Reinicie a sessão.
 
-> Para fixar em **v1.2.0** (recomendado), troque a Manifest URL para o
+> Para fixar em **v1.3.0** (recomendado), troque a Manifest URL para o
 > tag Release:
 >
 > ```
-> https://raw.githubusercontent.com/paulojamel22/mic-augment-crystals/v1.2.0/module.json
+> https://raw.githubusercontent.com/paulojamel22/mic-augment-crystals/v1.3.0/module.json
 > ```
-> (sem `/main/`, com `/v1.2.0/`).
+> (sem `/main/`, com `/v1.3.0/`).
 
 ### B) Download manual
 
@@ -68,11 +67,15 @@ Duas formas suportadas:
 
 ## 📋 Cristais incluídos
 
-* **Restful Crystal** (Armor / Lesser+): dormir com armadura não causa Fadiga.
+* **Restful Crystal** (Armor / Least): dormir com armadura não causa Fadiga.
 * **Crystal of Adamant Armor** (Armor & Shield / Least, Lesser, Greater): +
   Hardness à peça (2 / 5 / 10).
 * **Clasp of Energy Protection** (Shield / Least, Lesser, Greater): 5 variantes
   (Fire, Cold, Acid, Electricity, Sonic) — concede Resistance 5/10/15 à peça.
+* **Crystal of Adaptation** (Armor / Least, Lesser, Greater): proteção em
+  camadas — `endure elements` no least; + todas as *alignment traits*
+  (chaotic/good/etc.) no lesser; + *positive/negative-dominant traits*
+  no greater.
 
 Cada cristal respeita os pré-requisitos do MIC 3.5.
 

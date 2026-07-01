@@ -1,0 +1,58 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "crystal-of-adaptation",
+  "name":        "Crystal of Adaptation",
+  "family":      "armor",
+
+  "ranks": {
+    "least":   { "basePrice":  500,  "itemLevel": 3, "xp":  20, "days": 1, "gp":  250 },
+    "lesser":   { "basePrice": 1500,  "itemLevel": 5, "xp":  60, "days": 2, "gp":  750 },
+    "greater":  { "basePrice": 3000,  "itemLevel": 7, "xp": 120, "days": 3, "gp": 1500 }
+  },
+
+  "casterLevel": 7,
+  "aura": {
+    "school": "necromancy",
+    "dc":     18,
+    "strength": "Moderate"
+  },
+  "activation": null,
+  "weight":      0,
+
+  "basePriceUnit": "gp",
+
+  "effects": [
+    {
+      "type":       "spell-like",
+      "spell":      "endure elements",
+      "rank":       "least"
+    },
+    {
+      "type":       "extraplanar-trait-protection",
+      "covers":     ["alignmentTraits"],
+      "rank":       "lesser"
+    },
+    {
+      "type":       "extraplanar-trait-protection",
+      "covers":     ["alignmentTraits", "positive-dominant", "negative-dominant"],
+      "rank":       "greater"
+    }
+  ],
+
+  "tags":    ["endure", "elements", "alignment", "extraplanar", "protection"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  ["death ward", "endure elements", "protection from chaos", "protection from evil", "protection from good", "protection from law"],
+    "other":  null
+  },
+
+  "description":      "This bright green, circular crystal is pleasantly warm to the touch. A crystal of adaptation protects you from hostile environments, both terrestrial and extraplanar. As an augment crystal slotted into armor, it layers spell-like protection whose power grows with the crystal's rank.",
+  "unidentifiedDesc": "A small bright green circular crystal, faintly warm to the touch.",
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}
