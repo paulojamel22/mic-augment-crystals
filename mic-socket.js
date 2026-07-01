@@ -297,17 +297,20 @@ class MICSocketManager {
     if (!item || !item.system) return { enhancement: 0, isMasterwork: false };
 
     const system = item.system ?? {};
-    // D35E stores enhancement in different places depending on the item type:
-    //   - top-level system.enhancement (older saves)
-    //   - system.armor.enhancement  (armor & shields)
-    //   - system.weapon.enhancement (weapons)
-    //   - system.equipment.enhancement (loot/armor with subType)
+    // D35E v3.1 stores the **enhancement bonus** under different keys
+    // depending on the item family. We probe them in order.
+    //
+    //  - legacy:       system.enhancement
+    //  - armor piece:  system.armor.enh  (numeric, e.g. 2 for +2 plate)
+    //  - shield piece: system.shield.enh
+    //  - weapon piece: system.weapon.enh
+    //  - loot:         system.equipment.enhancement
     const enhancement = Number(
       system.enhancement
-      ?? system.armor?.enhancement
-      ?? system.weapon?.enhancement
+      ?? system.armor?.enh
+      ?? system.shield?.enh
+      ?? system.weapon?.enh
       ?? system.equipment?.enhancement
-      ?? system.shield?.enhancement
       ?? 0
     );
 
