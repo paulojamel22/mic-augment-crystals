@@ -1,3 +1,8 @@
 [
-  "restful-greater.json"
+  "restful-greater.json",
+  "clasp-energy-fire-least.json",
+  "clasp-energy-cold-least.json",
+  "clasp-energy-acid-least.json",
+  "clasp-energy-electricity-least.json",
+  "clasp-energy-sonic-least.json"
 ]

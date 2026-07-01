@@ -1,0 +1,43 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "clasp-energy-sonic-least",
+  "name":        "Clasp of Sonic Protection",
+  "rank":        "least",
+  "family":      "shield",
+  "shell":       "clasp-energy",
+
+  "basePrice":       500,
+  "basePriceUnit":   "gp",
+  "itemLevel":       3,
+  "casterLevel":     5,
+  "aura": {
+    "school": "abjuration",
+    "dc":     17
+  },
+  "activation":      null,
+  "weight":           0,
+
+  "elements": ["sonic"],
+  "effects": [
+    { "type": "resistance", "amount": 5, "cap": 25, "capReset": "daily" }
+  ],
+
+  "tags":    ["energy", "protection", "sonic"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":  ["Craft Magic Arms and Armor"],
+    "skill": [],
+    "spell": ["resist energy"],
+    "other": null
+  },
+
+  "costToCreate": { "gp": 250, "xp": 20, "days": 1 },
+
+  "description":      "This deep purple crystal gives off a faint hum, and rings with a sonorous chime when tapped. As a least crystal of energy protection, it grants resistance 5 against sonic. Once the crystal has prevented a total of 25 points of sonic damage, it becomes inert until the following day.",
+  "unidentifiedDesc": "A faintly humming purple stone that occasionally chimes softly.",
+
+  "icon":  "icons/commodities/treasure/token-copper-purple.webp"
+}

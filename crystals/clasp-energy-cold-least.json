@@ -1,0 +1,43 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "clasp-energy-cold-least",
+  "name":        "Clasp of Cold Protection",
+  "rank":        "least",
+  "family":      "shield",
+  "shell":       "clasp-energy",
+
+  "basePrice":       500,
+  "basePriceUnit":   "gp",
+  "itemLevel":       3,
+  "casterLevel":     5,
+  "aura": {
+    "school": "abjuration",
+    "dc":     17
+  },
+  "activation":      null,
+  "weight":           0,
+
+  "elements": ["cold"],
+  "effects": [
+    { "type": "resistance", "amount": 5, "cap": 25, "capReset": "daily" }
+  ],
+
+  "tags":    ["energy", "protection", "cold"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":  ["Craft Magic Arms and Armor"],
+    "skill": [],
+    "spell": ["resist energy"],
+    "other": null
+  },
+
+  "costToCreate": { "gp": 250, "xp": 20, "days": 1 },
+
+  "description":      "This icy clear crystal is covered in a thin layer of frost. As a least crystal of energy protection, it grants resistance 5 against cold. Once the crystal has prevented a total of 25 points of cold damage, it becomes inert until the following day.",
+  "unidentifiedDesc": "A frost-rimmed crystals of clear hue.",
+
+  "icon":  "icons/commodities/treasure/token-silver-white.webp"
+}

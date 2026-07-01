@@ -26,6 +26,23 @@ class CrystalCatalog {
         && typeof json.unidentifiedDesc !== "string") {
       return ["bad-unidentified-desc"];
     }
+    if (json.shell != null && typeof json.shell !== "string") {
+      return ["bad-shell"];
+    }
+    // effects is an optional array of objects
+    if (json.effects != null) {
+      if (!Array.isArray(json.effects)) return ["bad-effects"];
+      for (const e of json.effects) {
+        if (typeof e !== "object" || e === null) return ["bad-effects"];
+      }
+    }
+    // elements is optional array of strings
+    if (json.elements != null) {
+      if (!Array.isArray(json.elements)
+        || !json.elements.every(el => typeof el === "string")) {
+        return ["bad-elements"];
+      }
+    }
     return [];
   }
 
@@ -199,13 +216,16 @@ class CrystalCatalogLoader {
           console.warn(`[MIC-LD] ${json.id} has GM customisations (flags: ${customFlags.join(",")}) — refreshing catalogue metadata only`);
           await existing.update({
             [`flags.${MODULE_ID}.hash`]: newHash,
-            "system.mic-socket-system.crystal.itemLevel":   json.itemLevel ?? null,
-            "system.mic-socket-system.crystal.casterLevel": json.casterLevel ?? null,
-            "system.mic-socket-system.crystal.description": json.description ?? "",
+            "system.mic-socket-system.crystal.itemLevel":        json.itemLevel ?? null,
+            "system.mic-socket-system.crystal.casterLevel":      json.casterLevel ?? null,
+            "system.mic-socket-system.crystal.description":      json.description ?? "",
             "system.mic-socket-system.crystal.unidentifiedDesc": json.unidentifiedDesc ?? "",
-            "system.mic-socket-system.crystal.prerequisites": json.prerequisites ?? {},
-            "system.mic-socket-system.crystal.costToCreate":  json.costToCreate ?? null,
-            "system.mic-socket-system.crystal.sources":       json.sources ?? []
+            "system.mic-socket-system.crystal.shell":            json.shell ?? null,
+            "system.mic-socket-system.crystal.elements":         json.elements ?? [],
+            "system.mic-socket-system.crystal.effects":          json.effects ?? [],
+            "system.mic-socket-system.crystal.prerequisites":    json.prerequisites ?? {},
+            "system.mic-socket-system.crystal.costToCreate":     json.costToCreate ?? null,
+            "system.mic-socket-system.crystal.sources":          json.sources ?? []
           });
         } else {
           await existing.update({
@@ -290,8 +310,11 @@ class CrystalCatalogLoader {
           enhancementBonus: json.enhancement ?? 0,
           description:      desc,
           unidentifiedDesc: unidentifiedDesc,
-          effectType:       (json.tags ?? [])[0] ?? "other",
+          effectType:       Array.isArray(json.tags) ? json.tags[0] : "other",
           itemLevel, casterLevel,
+          shell:            json.shell ?? null,
+          elements:         json.elements ?? [],
+          effects:          json.effects ?? [],
           prerequisites:    json.prerequisites ?? {},
           costToCreate:     json.costToCreate ?? null,
           sources:          json.sources ?? []
