@@ -22,7 +22,7 @@
   ],
   "packs": [
     {
-      "name": "mic-augment-crystals",
+      "name": "crystals",
       "label": "MIC - Augment Crystals",
       "path": "packs/crystals.db",
       "type": "Item",
