@@ -89,12 +89,22 @@ class CrystalCatalogLoader {
       return;
     }
     const pack = game.packs.get(PACK_NAME);
-    console.log(`[MIC-LD] pack lookup:`, pack ? `${PACK_NAME} found, size=${pack.index.size}` : `not found`);
+    console.log(`[MIC-LD] pack lookup:`, pack ? `${PACK_NAME} found, metadata={locked:${pack.metadata?.locked}, ownership:${JSON.stringify(pack.metadata?.ownership)}}` : `not found`);
     if (!pack) {
       console.warn(`[MIC-LD] pack ${PACK_NAME} not found in game.packs`);
       return;
     }
-    console.log(`[MIC-LD] syncing ${this.records.length} catalog entries into ${PACK_NAME}`);
+
+    // Foundry v14 keeps packs locked by default; we need to unlock before write.
+    if (pack.locked) {
+      console.warn(`[MIC-LD] pack is locked — temporarily unlocking for catalog write`);
+      try {
+        await pack.configure({ locked: false });
+        console.log(`[MIC-LD] unlocked pack ${PACK_NAME}, locked=${pack.locked}`);
+      } catch (e) {
+        console.error(`[MIC-LD] could not unlock pack`, e?.stack ?? e);
+      }
+    }
 
     // Force a re-read of the pack contents so we know what's already there.
     let docs;
@@ -117,15 +127,10 @@ class CrystalCatalogLoader {
       if (!existing) {
         console.log(`[MIC-LD] creating '${json.id}' (${json.name})`);
         const newDoc = this.docFromJson(json);
-        console.log(`[MIC-LD] new document payload:`, newDoc);
         try {
-          // Foundry v14 idiom for creating Items inside a Compendium pack.
-          // pack.createDocument returned id=null; the canonical call is
-          // Item.create(data, {pack: pack.collection}).
           const opts = { pack: pack.collection, keepId: false };
-          const created = await CONFIG.Item.documentClass.create(newDoc, opts);
-          console.log(`[MIC-LD] created doc id=${created?.id} uuid=${created?.uuid}`);
-          if (!created?.id) console.warn(`[MIC-LD] WARNING: created doc has no id; will retry via direct index write`);
+          const createdDoc = await CONFIG.Item.documentClass.create(newDoc, opts);
+          console.log(`[MIC-LD] created doc id=${createdDoc?.id} uuid=${createdDoc?.uuid}`);
           created++;
         } catch (e) {
           console.error(`[MIC-LD] create failed for ${json.id}`, e?.stack ?? e);
@@ -136,8 +141,6 @@ class CrystalCatalogLoader {
       const existingHash = existing.getFlag(MODULE_ID, "hash");
       const newHash      = await CrystalCatalog.hash(json);
 
-      // If the GM appears to have hand-edited the doc (other flag namespace
-      // present), emit a warning but still update.
       const otherFlags = Object.entries(existing.flags ?? {})
         .filter(([ns]) => ns !== MODULE_ID)
         .map(([ns, f]) => `${ns}.${Object.keys(f || {}).join(",")}`);
@@ -159,7 +162,6 @@ class CrystalCatalogLoader {
       }
     }
 
-    // Clean up entries that no longer have a JSON source.
     for (const d of docs) {
       const catId = d.getFlag(MODULE_ID, "catalogId");
       if (!catId) continue;
@@ -169,7 +171,15 @@ class CrystalCatalogLoader {
       }
     }
 
-    // Re-read once for diagnostics.
+    if (!pack.locked && pack.metadata?.ownership?.PLAYER !== true) {
+      // Re-lock the pack as a courtesy, but only if we changed it ourselves.
+      try {
+        await pack.configure({ locked: false });
+      } catch (e) {
+        // ignore - coinforme we already did the writes
+      }
+    }
+
     const final = await pack.getDocuments();
     console.log(`[MIC-LD] sync done — created=${created} updated=${updated} kept=${kept} warned=${warned} | pack has ${final.length} doc(s) now`);
   }
