@@ -34,7 +34,33 @@ a multi-família/multi-rank no mesmo arquivo de catálogo.
 
 ## 📦 Instalação
 
-1. Baixe o `.zip` da [release page](https://github.com/paulojamel22/mic-augment-crystals/releases).
+Duas formas suportadas:
+
+### A) Instalação via Foundry (recomendado — usa o instalador interno)
+
+1. No Foundry, abra o painel **Setup → Manage Modules**.
+2. Clique em **Install Module**.
+3. Em **Manifest URL**, cole:
+   ```
+   https://raw.githubusercontent.com/paulojamel22/mic-augment-crystals/main/module.json
+   ```
+4. Clique em **Install**. O Foundry baixa a versão atual direto da branch
+   `main` (que já foi validada contra o Foundry 14).
+5. Ative o módulo na sua configuração de mundo.
+6. Reinicie a sessão.
+
+> Para fixar em **v1.2.0** (recomendado), troque a Manifest URL para o
+> tag Release:
+>
+> ```
+> https://raw.githubusercontent.com/paulojamel22/mic-augment-crystals/v1.2.0/module.json
+> ```
+> (sem `/main/`, com `/v1.2.0/`).
+
+### B) Download manual
+
+1. Baixe o `.zip` da
+   [página de release](https://github.com/paulojamel22/mic-augment-crystals/releases/tag/v1.2.0).
 2. Extraia em `FoundryVTT/Data/modules/mic-augment-crystals/`.
 3. Em **Manage Modules**, ative *Magic Item Compendium: Augment Crystals*.
 4. Reinicie a sessão. O compendium `MIC - Augment Crystals` será populado na
