@@ -131,10 +131,36 @@ class CrystalCatalogLoader {
           const opts = { pack: pack.collection, keepId: false };
           const createdDoc = await CONFIG.Item.documentClass.create(newDoc, opts);
           console.log(`[MIC-LD] created doc id=${createdDoc?.id} uuid=${createdDoc?.uuid}`);
+
+          if (createdDoc?.id) {
+            await createdDoc.setFlag(MODULE_ID, "hash", await CrystalCatalog.hash(json));
+            console.log(`[MIC-LD] hash flag written for ${json.id}`);
+          }
           created++;
         } catch (e) {
           console.error(`[MIC-LD] create failed for ${json.id}`, e?.stack ?? e);
         }
+        continue;
+      }
+
+      // If the existing doc has the wrong Item.type (an older version of
+      // the catalogue that produced 'equipment' + armor subtype), force a
+      // delete-and-recreate so it matches the current schema.
+      const wrongType = existing.type !== "loot";
+      const noCatalogId = !existing.getFlag(MODULE_ID, "catalogId");
+      if (wrongType || noCatalogId) {
+        console.warn(`[MIC-LD] ${json.id} exists but has wrong type ('${existing.type}') or no catalogId — recreating`);
+        await existing.delete();
+        // Re-issue via the create path. We replace existing in this scope so
+        // the next iteration (the next json) sees the right state.
+        docs = docs.filter(d => d.id !== existing.id);
+        await d?.delete?.();
+        const newDoc = this.docFromJson(json);
+        const created = await CONFIG.Item.documentClass.create(newDoc, { pack: pack.collection });
+        if (created?.id) {
+          await created.setFlag(MODULE_ID, "hash", await CrystalCatalog.hash(json));
+        }
+        created++;
         continue;
       }
 
@@ -185,30 +211,46 @@ class CrystalCatalogLoader {
   }
 
   static docFromJson(json) {
+    // D35E treats items of type "loot" as non-equippable treasures.
+    // Crystals must be loot with a flag that says "I am a crystal".
+    // The mic-socket-system.crystal.* fields live under system; they are
+    // the D35E-recognized source of truth via the registered DataModel.
     return {
       name: json.name,
-      type: "equipment",
+      type: "loot",
       img:  json.icon || "icons/svg/gem.svg",
       system: {
-        "mic-socket-system.crystal": {
-          isCrystal:  true,
-          crystalFamily:  json.family,
-          crystalRank:    json.rank,
-          enhancementBonus: json.enhancement ?? 0,
-          description:    json.description ?? "",
-          effectType:     (json.tags ?? [])[0] ?? "other"
+        // D35E loot schema:
+        identified: true,
+        quantity:   1,
+        weight:     json.weight ?? 0,
+        price:      json.basePrice ?? 0,
+        rarity:     "common",
+        aura:       json.aura?.school ?? "",
+        desc:       json.description ?? "",
+        unidentified: {
+          price: 0,
+          name: ""
         },
-        rarity: "common",
-        quantity: 1,
-        price:   json.basePrice ?? 0,
-        weight:  json.weight ?? 0,
-        aura:    json.aura?.school ?? "",
-        desc:    json.description ?? "",
-        identified: true
+        // Our custom data model key:
+        "mic-socket-system.crystal": {
+          isCrystal:        true,
+          crystalFamily:    json.family,
+          crystalRank:      json.rank,
+          enhancementBonus: json.enhancement ?? 0,
+          description:      json.description ?? "",
+          effectType:       (json.tags ?? [])[0] ?? "other",
+          itemLevel:        json.itemLevel ?? null,
+          casterLevel:      json.casterLevel ?? null,
+          prerequisites:    json.prerequisites ?? {},
+          costToCreate:     json.costToCreate ?? null,
+          sources:          json.sources ?? []
+        }
       },
       flags: {
         [MODULE_ID]: {
           catalogId: json.id,
+          hash: null,
           catalog: json
         }
       }
