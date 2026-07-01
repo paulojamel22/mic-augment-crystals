@@ -1,0 +1,65 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "crystal-of-screening",
+  "name":        "Crystal of Screening",
+  "family":      "armor",
+
+  "ranks": {
+    "least":   { "basePrice":  400,  "itemLevel": 2, "xp":  16, "days": 1, "gp":  200, "touchAttackPenalty":   2 },
+    "lesser":   { "basePrice": 1000,  "itemLevel": 4, "xp":  40, "days": 1, "gp":  500, "touchAttackPenalty":   5 },
+    "greater":  { "basePrice": 3000,  "itemLevel": 7, "xp": 120, "days": 3, "gp": 1500, "touchAttackPenalty":  10 }
+  },
+
+  "casterLevel": 5,
+  "aura": {
+    "school": "abjuration",
+    "dc":     17,
+    "strength": "Faint"
+  },
+  "activation": null,
+  "weight":      0,
+
+  "basePriceUnit": "gp",
+
+  "effects": [
+    {
+      "type":     "touch-attack-penalty-vs-incorporeal",
+      "amount":   -2,
+      "rank":     "least",
+      "applies":  "incorporeal-creature-touch-attacks-against-wearer",
+      "note":     "Augment crystal layered onto armor imposes a -2 penalty on touch attacks made against the wearer by incorporeal foes."
+    },
+    {
+      "type":     "touch-attack-penalty-vs-incorporeal",
+      "amount":   -5,
+      "rank":     "lesser",
+      "applies":  "incorporeal-creature-touch-attacks-against-wearer",
+      "note":     "Stronger screening crystal improves the penalty to -5."
+    },
+    {
+      "type":     "touch-attack-penalty-vs-incorporeal",
+      "amount":  -10,
+      "rank":     "greater",
+      "applies":  "incorporeal-creature-touch-attacks-against-wearer",
+      "note":     "Greater crystal brings the penalty to -10."
+    }
+  ],
+
+  "tags":    ["incorporeal", "force", "abjuration", "touch-attack-defense"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  ["mage armor"],
+    "other":  null
+  },
+
+  "description":      "This smooth, deep blue crystal is warm to the touch. A crystal of screening enhances a suit of armor with force, enabling it to protect you against the attacks of incorporeal foes. The least imposes a -2 penalty on touch attacks made against you by incorporeal creatures; lesser imposes -5; greater -10.",
+
+  "unidentifiedDesc": "A smooth, deep blue crystal, faintly warm to the touch.",
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}
