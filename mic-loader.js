@@ -18,7 +18,7 @@
  */
 
 const MODULE_ID = "mic-augment-crystals";
-const PACK_NAME = "mic-augment-crystals.mic-augment-crystals"; // "<id>.<pack name on json>"
+const PACK_NAME = "mic-augment-crystals.crystals"; // "<id>.<pack name on json>"
 const CRYSTAL_DIR = "crystals";
 const SCHEMA_TAG = "mic-augment-crystal/1.0";
 
