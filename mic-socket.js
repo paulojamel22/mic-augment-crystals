@@ -295,13 +295,28 @@ class MICSocketManager {
   static _getItemTotalBonus(item) {
     // Verificação de segurança
     if (!item || !item.system) return { enhancement: 0, isMasterwork: false };
-    
-    const system = item.system;
-    const enhancement = system.enhancement ?? 
-                        system.armor?.enhancement ?? 
-                        system.weapon?.enhancement ?? 0;
-    
-    const isMasterwork = system.masterwork || system.quality === "masterwork";
+
+    const system = item.system ?? {};
+    // D35E stores enhancement in different places depending on the item type:
+    //   - top-level system.enhancement (older saves)
+    //   - system.armor.enhancement  (armor & shields)
+    //   - system.weapon.enhancement (weapons)
+    //   - system.equipment.enhancement (loot/armor with subType)
+    const enhancement = Number(
+      system.enhancement
+      ?? system.armor?.enhancement
+      ?? system.weapon?.enhancement
+      ?? system.equipment?.enhancement
+      ?? system.shield?.enhancement
+      ?? 0
+    );
+
+    const isMasterwork =
+      !!system.masterwork
+      || !!system.armor?.masterwork
+      || !!system.shield?.masterwork
+      || !!system.weapon?.masterwork
+      || system.quality === "masterwork";
 
     return { enhancement, isMasterwork };
   }
