@@ -29,8 +29,9 @@ de bônus de melhoria.
 ## 🧪 Versão atual
 
 **1.3.0** — adiciona **Crystal of Adaptation**, **Crystal of Aquatic Action**
-(Armor), **Crystal of Arrow Deflection** (Shield) e **Crystal of Bent Sight**
-(Shield, *avert eyes* sem miss chance contra gaze attacks).
+(Armor), **Crystal of Arrow Deflection** (Shield, *Deflect Arrows* no greater),
+**Crystal of Bent Sight** (Shield) e **Crystal of Glancing Blows** (Armor,
+competence vs grapple initiation).
 
 ## 📦 Instalação
 
@@ -84,6 +85,9 @@ Duas formas suportadas:
   AC contra ranged; greater também concede *Deflect Arrows* (1 ataque/round).
 * **Crystal of Bent Sight** (Shield / Least): permite *avertir os olhos* de gaze
   attack sem sofrer *miss chance* nos próprios ataques contra a criatura.
+* **Crystal of Glancing Blows** (Armor / Least, Lesser, Greater): competência
+  +2 / +5 / +10 nas opposed grapple checks **somente quando defendendo contra
+  iniciação** (não para iniciar, escapar, ou outros grapple checks).
 
 Cada cristal respeita os pré-requisitos do MIC 3.5.
 

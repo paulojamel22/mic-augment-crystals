@@ -1,0 +1,67 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "crystal-of-glancing-blows",
+  "name":        "Crystal of Glancing Blows",
+  "family":      "armor",
+
+  "ranks": {
+    "least":   { "basePrice":  500,  "itemLevel": 3, "xp":  20, "days": 1, "gp":  250, "competenceBonus":   2 },
+    "lesser":   { "basePrice": 3000,  "itemLevel": 7, "xp": 120, "days": 3, "gp": 1500, "competenceBonus":   5 },
+    "greater":  { "basePrice": 5000,  "itemLevel": 9, "xp": 200, "days": 5, "gp": 2500, "competenceBonus":  10 }
+  },
+
+  "casterLevel": 7,
+  "aura": {
+    "school": "abjuration",
+    "dc":     18,
+    "strength": "Moderate"
+  },
+  "activation": null,
+  "weight":      0,
+
+  "basePriceUnit": "gp",
+
+  "effects": [
+    {
+      "type":     "competence-bonus-on-grapple-prevention",
+      "bonusType": "competence",
+      "amount":   2,
+      "rank":     "least",
+      "applies":  "opposed-grapple-check-only-when-defending",
+      "note":     "Bonus applies only to preventing a grapple from being initiated; not to initiating, escaping, or any other grapple check."
+    },
+    {
+      "type":     "competence-bonus-on-grapple-prevention",
+      "bonusType": "competence",
+      "amount":   5,
+      "rank":     "lesser",
+      "applies":  "opposed-grapple-check-only-when-defending",
+      "note":     "Better (lesser) crystal grants +5 instead of +2."
+    },
+    {
+      "type":     "competence-bonus-on-grapple-prevention",
+      "bonusType": "competence",
+      "amount":  10,
+      "rank":     "greater",
+      "applies":  "opposed-grapple-check-only-when-defending",
+      "note":     "Greater crystal grants +10 instead of +2."
+    }
+  ],
+
+  "tags":    ["grapple", "defense", "competence", "abjuration"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  ["freedom of movement"],
+    "other":  null
+  },
+
+  "description":      "All the hues of the rainbow—and many more—shimmer and dance across the surface of this multifaceted crystal. A crystal of glancing blows causes your armor to turn aside grasping attacks. The least grants a +2 competence bonus on grapple checks to prevent a grapple from being initiated; lesser grants +5; greater grants +10. These bonuses apply only when defending against grapple initiation, not when initiating or escaping a grapple.",
+  "unidentifiedDesc": "A small multifaceted crystal whose surface shimmers with rainbow hues.",
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}
