@@ -272,8 +272,20 @@ class CrystalCatalogLoader {
     const itemLevel = json.itemLevel ?? null;
     const casterLevel = json.casterLevel ?? null;
 
+    // Variant disambiguation: when multiple JSONs share the same display
+    // name (e.g. Clasp of Fire Protection x least/lesser/greater), suffix
+    // the rank so the compendium shows clear entries. Otherwise keep the
+    // name verbatim.
+    const rankCap = json.rank
+      ? json.rank.charAt(0).toUpperCase() + json.rank.slice(1)
+      : "";
+    const sameNameCount = (this.records || []).filter(r => r.name === json.name).length;
+    const displayName = (sameNameCount > 1 && rankCap)
+      ? `${json.name} (${rankCap})`
+      : json.name;
+
     return {
-      name: json.name,
+      name: displayName,
       type: "loot",
       img:  "icons/commodities/treasure/token-silver-blue.webp",
       system: {
