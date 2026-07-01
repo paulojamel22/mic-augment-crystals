@@ -1,0 +1,42 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "clasp-energy-fire-greater",
+  "name":        "Clasp of Fire Protection",
+  "rank":        "greater",
+  "family":      "shield",
+  "shell":       "clasp-energy",
+
+  "basePrice":       3000,
+  "basePriceUnit":   "gp",
+  "itemLevel":       7,
+  "casterLevel":     5,
+  "aura": {
+    "school": "abjuration",
+    "dc":     17
+  },
+  "activation":      null,
+  "weight":           0,
+
+  "elements": ["fire"],
+  "effects": [
+    { "type": "resistance", "amount": 15, "cap": 75, "capReset": "daily" }
+  ],
+
+  "tags":    ["energy", "protection", "fire"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":  ["Craft Magic Arms and Armor"],
+    "skill": [],
+    "spell": ["resist energy"],
+    "other": null
+  },
+
+  "costToCreate": { "gp": 1500, "xp": 120, "days": 3 },
+
+  "description":      "This fiery red crystal is slightly warm to the touch. As a greater crystal of energy protection, it grants resistance 15 against fire. Once the crystal has prevented a total of 75 points of fire damage, it becomes inert until the following day.",
+  "unidentifiedDesc": "A faintly warm red gemstone of unusual color.",
+  "icon":  "icons/commodities/treasure/token-copper-red.webp"
+}

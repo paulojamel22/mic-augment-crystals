@@ -4,5 +4,15 @@
   "clasp-energy-cold-least.json",
   "clasp-energy-acid-least.json",
   "clasp-energy-electricity-least.json",
-  "clasp-energy-sonic-least.json"
+  "clasp-energy-sonic-least.json",
+  "clasp-energy-fire-lesser.json",
+  "clasp-energy-cold-lesser.json",
+  "clasp-energy-acid-lesser.json",
+  "clasp-energy-electricity-lesser.json",
+  "clasp-energy-sonic-lesser.json",
+  "clasp-energy-fire-greater.json",
+  "clasp-energy-cold-greater.json",
+  "clasp-energy-acid-greater.json",
+  "clasp-energy-electricity-greater.json",
+  "clasp-energy-sonic-greater.json"
 ]

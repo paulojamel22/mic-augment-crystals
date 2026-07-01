@@ -1,0 +1,42 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "clasp-energy-acid-greater",
+  "name":        "Clasp of Acid Protection",
+  "rank":        "greater",
+  "family":      "shield",
+  "shell":       "clasp-energy",
+
+  "basePrice":       3000,
+  "basePriceUnit":   "gp",
+  "itemLevel":       7,
+  "casterLevel":     5,
+  "aura": {
+    "school": "abjuration",
+    "dc":     17
+  },
+  "activation":      null,
+  "weight":           0,
+
+  "elements": ["acid"],
+  "effects": [
+    { "type": "resistance", "amount": 15, "cap": 75, "capReset": "daily" }
+  ],
+
+  "tags":    ["energy", "protection", "acid"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":  ["Craft Magic Arms and Armor"],
+    "skill": [],
+    "spell": ["resist energy"],
+    "other": null
+  },
+
+  "costToCreate": { "gp": 1500, "xp": 120, "days": 3 },
+
+  "description":      "This hazy green crystal hisses faintly when exposed to the open air. As a greater crystal of energy protection, it grants resistance 15 against acid. Once the crystal has prevented a total of 75 points of acid damage, it becomes inert until the following day.",
+  "unidentifiedDesc": "A hazy shard of dark green stone.",
+  "icon":  "icons/commodities/treasure/token-copper-green.webp"
+}

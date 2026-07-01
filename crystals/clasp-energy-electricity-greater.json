@@ -1,0 +1,42 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "clasp-energy-electricity-greater",
+  "name":        "Clasp of Electricity Protection",
+  "rank":        "greater",
+  "family":      "shield",
+  "shell":       "clasp-energy",
+
+  "basePrice":       3000,
+  "basePriceUnit":   "gp",
+  "itemLevel":       7,
+  "casterLevel":     5,
+  "aura": {
+    "school": "abjuration",
+    "dc":     17
+  },
+  "activation":      null,
+  "weight":           0,
+
+  "elements": ["electricity"],
+  "effects": [
+    { "type": "resistance", "amount": 15, "cap": 75, "capReset": "daily" }
+  ],
+
+  "tags":    ["energy", "protection", "electricity"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":  ["Craft Magic Arms and Armor"],
+    "skill": [],
+    "spell": ["resist energy"],
+    "other": null
+  },
+
+  "costToCreate": { "gp": 1500, "xp": 120, "days": 3 },
+
+  "description":      "This brilliant blue-white crystal crackles with static discharge when touched. As a greater crystal of energy protection, it grants resistance 15 against electricity. Once the crystal has prevented a total of 75 points of electricity damage, it becomes inert until the following day.",
+  "unidentifiedDesc": "A flashing, brilliant blue-white gem that flickers with pale light.",
+  "icon":  "icons/commodities/treasure/token-silver-blue.webp"
+}
