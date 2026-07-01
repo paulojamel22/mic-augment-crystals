@@ -390,13 +390,26 @@ class MICSocketManager {
   }
 
   static async _onCrystalDrop(event, targetItem) {
-    event.preventDefault();
-    
     // Verificação de segurança
     if (!targetItem) return;
+    event?.preventDefault?.();
 
-    const data = TextEditor.getDragEventData(event);
-    if (data.type !== "Item") return;
+    // jQuery wraps DOM events in a jQuery.Event whose .originalEvent holds the
+    // real DragEvent. Pick it explicitly so getDragEventData sees a DragEvent.
+    const raw = event?.originalEvent instanceof DragEvent ? event.originalEvent : event;
+    if (!(raw instanceof DragEvent)) {
+      console.warn("MIC Socket | drop event was not a DragEvent, aborting");
+      return;
+    }
+
+    let data;
+    try {
+      data = TextEditor.getDragEventData(raw);
+    } catch (e) {
+      console.warn("MIC Socket | getDragEventData failed", e);
+      return;
+    }
+    if (!data || data.type !== "Item") return;
 
     const droppedItem = await fromUuid(data.uuid);
     if (!droppedItem) {
