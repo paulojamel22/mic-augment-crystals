@@ -127,6 +127,10 @@ class CrystalCatalogLoader {
       }
     }
 
+    // Ensure folders exist in this pack so we can place each crystal under
+    // Family > Rank. Only created once thanks to folderMap caching.
+    await this.ensureFolders(pack);
+
     // Force a re-read of the pack contents so we know what's already there.
     let docs;
     try {
@@ -148,10 +152,11 @@ class CrystalCatalogLoader {
       if (!existing) {
         console.log(`[MIC-LD] creating '${json.id}' (${json.name})`);
         const newDoc = this.docFromJson(json);
+        newDoc.folder = await this.folderFor(pack, json.family, json.rank);
         try {
           const opts = { pack: pack.collection, keepId: false };
           const createdDoc = await CONFIG.Item.documentClass.create(newDoc, opts);
-          console.log(`[MIC-LD] created doc id=${createdDoc?.id} uuid=${createdDoc?.uuid}`);
+          console.log(`[MIC-LD] created doc id=${createdDoc?.id} uuid=${createdDoc?.uuid} folder=${newDoc.folder}`);
 
           if (createdDoc?.id) {
             await createdDoc.setFlag(MODULE_ID, "hash", await CrystalCatalog.hash(json));
@@ -176,6 +181,7 @@ class CrystalCatalogLoader {
         // drop the stale reference from the cached 'docs' array
         docs = docs.filter(x => x.id !== staleId);
         const newDoc = this.docFromJson(json);
+        newDoc.folder = await this.folderFor(pack, json.family, json.rank);
         try {
           const created2 = await CONFIG.Item.documentClass.create(newDoc, { pack: pack.collection });
           if (created2?.id) {
@@ -214,8 +220,10 @@ class CrystalCatalogLoader {
 
         if (customFlags.length || isEdited) {
           console.warn(`[MIC-LD] ${json.id} has GM customisations (flags: ${customFlags.join(",")}) — refreshing catalogue metadata only`);
+          const folderId = await this.folderFor(pack, json.family, json.rank);
           const partialUpdate = {
             name: this.docFromJson(json).name,
+            folder: folderId,
             [`flags.${MODULE_ID}.hash`]:                                  newHash,
             "system.mic-socket-system.crystal.itemLevel":        json.itemLevel ?? null,
             "system.mic-socket-system.crystal.casterLevel":      json.casterLevel ?? null,
@@ -230,8 +238,12 @@ class CrystalCatalogLoader {
           };
           await existing.update(partialUpdate);
         } else {
+          // Always place items under their Family/Rank folder.
+          const newFolder = await this.folderFor(pack, json.family, json.rank);
+          const doc = this.docFromJson(json);
+          doc.folder = newFolder;
           await existing.update({
-            ...(this.docFromJson(json)),
+            ...doc,
             [`flags.${MODULE_ID}.hash`]: newHash
           });
         }
@@ -262,6 +274,50 @@ class CrystalCatalogLoader {
 
     const final = await pack.getDocuments();
     console.log(`[MIC-LD] sync done — created=${created} updated=${updated} kept=${kept} warned=${warned} | pack has ${final.length} doc(s) now`);
+  }
+
+  static folderMap = new Map(); // path -> Folder document
+
+  static async ensureFolder(pack, name, parentId = null) {
+    const key = `${parentId ?? ""}/${name}`;
+    if (this.folderMap.has(key)) return this.folderMap.get(key);
+
+    // Look for an existing folder matching the full path.
+    const existing = pack.folders?.find(f =>
+      f.name === name && (f.folder?.id ?? null) === (parentId ?? null)
+    );
+    if (existing) {
+      this.folderMap.set(key, existing);
+      return existing;
+    }
+    const created = await pack.createFolder({
+      name,
+      type: "Item",
+      folder: parentId ?? null
+    });
+    this.folderMap.set(key, created);
+    console.log(`[MIC-LD] created folder '${name}' (${created?.uuid}) in ${pack.collection}`);
+    return created;
+  }
+
+  static async ensureFolders(pack) {
+    // Layout: <family>/<rank>
+    for (const fam of ["weapon", "armor", "shield"]) {
+      const famF = await this.ensureFolder(pack, fam.charAt(0).toUpperCase() + fam.slice(1));
+      for (const rank of ["least", "lesser", "greater"]) {
+        const label = rank.charAt(0).toUpperCase() + rank.slice(1);
+        await this.ensureFolder(pack, label, famF.id);
+      }
+    }
+  }
+
+  static async folderFor(pack, family, rank) {
+    const fam = (family ?? "misc").toLowerCase();
+    const famCapital = fam.charAt(0).toUpperCase() + fam.slice(1);
+    const famFolder = await this.ensureFolder(pack, famCapital);
+    const label = (rank ?? "least").charAt(0).toUpperCase() + (rank ?? "least").slice(1);
+    const rankFolder = await this.ensureFolder(pack, label, famFolder.id);
+    return rankFolder.id ?? null;
   }
 
   static docFromJson(json) {
