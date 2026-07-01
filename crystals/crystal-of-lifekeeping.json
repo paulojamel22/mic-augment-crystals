@@ -1,0 +1,81 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "crystal-of-lifekeeping",
+  "name":        "Crystal of Lifekeeping",
+  "family":      "armor",
+
+  "ranks": {
+    "least":   { "basePrice":  200,  "itemLevel": 2, "xp":   8, "days": 1, "gp":  100, "competenceBonus":   1 },
+    "lesser":   { "basePrice": 1000,  "itemLevel": 4, "xp":  40, "days": 1, "gp":  500, "competenceBonus":   3 },
+    "greater":  { "basePrice": 5000,  "itemLevel": 9, "xp": 200, "days": 5, "gp": 2500, "competenceBonus":   5, "rerollOnSave": true }
+  },
+
+  "casterLevel": 7,
+  "aura": {
+    "school": "necromancy",
+    "dc":     18,
+    "strength": "Moderate"
+  },
+  "activation": "see-text",
+  "weight":      0,
+
+  "basePriceUnit": "gp",
+
+  "effects": [
+    {
+      "type":     "competence-bonus-on-saves",
+      "bonusType": "competence",
+      "amount":   1,
+      "rank":     "least",
+      "vs":       ["energy drain", "inflict spells", "death spells", "death effects"],
+      "saveAsset": "Will-or-Fortitude-or-Reflex"
+    },
+    {
+      "type":     "competence-bonus-on-saves",
+      "bonusType": "competence",
+      "amount":   3,
+      "rank":     "lesser",
+      "vs":       ["energy drain", "inflict spells", "death spells", "death effects"],
+      "saveAsset": "Will-or-Fortitude-or-Reflex"
+    },
+    {
+      "type":     "competence-bonus-on-saves",
+      "bonusType": "competence",
+      "amount":   5,
+      "rank":     "greater",
+      "vs":       ["energy drain", "inflict spells", "death spells", "death effects"],
+      "saveAsset": "Will-or-Fortitude-or-Reflex"
+    },
+    {
+      "type":       "save-reroll",
+      "rank":       "greater",
+      "trigger":    "failed-save-vs-(energy-drain|inflict|death-spell|death-effects)",
+      "action":     "immediate (mental) action",
+      "usesPerDay": 1,
+      "note":       "If you fail a save against any of these effects, you can choose to reroll the save once per day."
+    }
+  ],
+
+  "tags":    ["necromancy", "death-effects", "saves", "competence", "anti-undead"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  ["death ward"],
+    "other":  null
+  },
+
+  "description":      "This bright crystal gleams and sparkles in the light. A crystal of lifekeeping wards you against necromantic and death effects. The least grants a +1 competence bonus on saving throws against energy drain attacks, inflict spells, death spells, and death effects; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against those effects, once per day.",
+  "unidentifiedDesc": "A bright sparkling crystal that seems to hold its own light.",
+
+  "consumption": {
+    "least":   { "uses": null },
+    "lesser":   { "uses": null },
+    "greater":  { "usesPerDay": 1, "track": "save-reroll" }
+  },
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}
