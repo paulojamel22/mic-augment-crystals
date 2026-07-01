@@ -219,33 +219,49 @@ class CrystalCatalogLoader {
     // Crystals must be loot with a flag that says "I am a crystal".
     // The mic-socket-system.crystal.* fields live under system; they are
     // the D35E-recognized source of truth via the registered DataModel.
+    const desc = json.description ?? "";
+    const itemLevel = json.itemLevel ?? null;
+    const casterLevel = json.casterLevel ?? null;
+
     return {
       name: json.name,
       type: "loot",
-      img:  json.icon || "icons/svg/gem.svg",
+      img:  json.icon || "icons/commodities/treasure/gem-rough-blue-white.webp",
       system: {
-        // D35E loot schema:
-        identified: true,
-        quantity:   1,
-        weight:     json.weight ?? 0,
-        price:      json.basePrice ?? 0,
-        rarity:     "common",
-        aura:       json.aura?.school ?? "",
-        desc:       json.description ?? "",
-        unidentified: {
-          price: 0,
-          name: ""
+        // Description block — D35E requires both identified and unidentified.
+        description: {
+          value:        `<p>${desc}</p>`,
+          chat:         "",
+          unidentified: `<p>${desc}</p>`
         },
+        // Common D35E schema flags populated so the sheet renders cleanly.
+        identified:    true,
+        identifiedName: json.name,
+        quantity:      1,
+        weight:        json.weight ?? 0,
+        constantWeight: false,
+        price:         json.basePrice ?? 0,
+        resalePrice:   Math.floor((json.basePrice ?? 0) / 2),
+        brokenResalePrice: Math.floor((json.basePrice ?? 0) / 10),
+        hp:            { max: 10, value: 10 },
+        hardness:      0,
+        carried:       true,
+        unidentified:  { price: 0, name: "" },
+        subType:       "misc",
+        rarity:        "common",
+        aura:          json.aura?.school ?? "",
+        desc:          desc,
+        // D35E expects an `index` block for caches:
+        index: { subType: null, uniqueId: json.id || "" },
         // Our custom data model key:
         "mic-socket-system.crystal": {
           isCrystal:        true,
           crystalFamily:    json.family,
           crystalRank:      json.rank,
           enhancementBonus: json.enhancement ?? 0,
-          description:      json.description ?? "",
+          description:      desc,
           effectType:       (json.tags ?? [])[0] ?? "other",
-          itemLevel:        json.itemLevel ?? null,
-          casterLevel:      json.casterLevel ?? null,
+          itemLevel, casterLevel,
           prerequisites:    json.prerequisites ?? {},
           costToCreate:     json.costToCreate ?? null,
           sources:          json.sources ?? []
