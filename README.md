@@ -30,8 +30,9 @@ de bônus de melhoria.
 
 **1.3.0** — adiciona **Crystal of Adaptation**, **Crystal of Aquatic Action**,
 **Crystal of Arrow Deflection**, **Crystal of Bent Sight**, **Crystal of
-Glancing Blows**, **Crystal of Lifekeeping**, **Crystal of Mind Cloaking** e
-**Crystal of Screening** (Armor / Shield / etc — todos data-driven).
+Glancing Blows**, **Crystal of Lifekeeping**, **Crystal of Mind Cloaking**,
+**Crystal of Screening**, **Crystal of Stamina**, **Iron Ward Diamond** e
+**Rubicund Frenzy** (Armor / Shield / etc — todos data-driven).
 
 ## 📦 Instalação
 
@@ -96,6 +97,15 @@ Duas formas suportadas:
   adiciona 1×/dia *reroll* em save falho (immediate mental).
 * **Crystal of Screening** (Armor / Least, Lesser, Greater): penaliza touch
   attacks contra o portador por criaturas **incorpóreas** em -2 / -5 / -10.
+* **Crystal of Stamina** (Armor / Least, Lesser, Greater): competência +1 / +3 / +5
+  em saves contra disease e poison; greater adiciona 1×/dia *reroll* (immediate
+  mental) em save falho.
+* **Iron Ward Diamond** (Armor / Least, Lesser, Greater): damage reduction
+  1/- (cap 10) / 3/- (cap 30, medium+heavy armor) / 5/- (cap 50, heavy only);
+  daily reset.
+* **Rubicund Frenzy** (Armor / Least, Lesser, Greater): morale +1 / +3 / +5 em
+  damage rolls e saves vs fear, **somente enquanto HP atual ≤ ½ HP cheio**;
+  só funciona para criaturas vivas.
 
 Cada cristal respeita os pré-requisitos do MIC 3.5.
 

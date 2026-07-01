@@ -1,0 +1,82 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "crystal-of-stamina",
+  "name":        "Crystal of Stamina",
+  "family":      "armor",
+
+  "ranks": {
+    "least":   { "basePrice":  300,  "itemLevel": 2, "xp":  12, "days": 1, "gp":  150, "competenceBonus":   1 },
+    "lesser":   { "basePrice":  900,  "itemLevel": 4, "xp":  36, "days": 1, "gp":  450, "competenceBonus":   3 },
+    "greater":  { "basePrice": 2700,  "itemLevel": 7, "xp": 108, "days": 3, "gp": 1350, "competenceBonus":   5, "rerollOnSave": true }
+  },
+
+  "casterLevel": 7,
+  "aura": {
+    "school": "conjuration",
+    "dc":     18,
+    "strength": "Moderate"
+  },
+  "activation": "see-text",
+  "weight":      0,
+
+  "basePriceUnit": "gp",
+
+  "effects": [
+    {
+      "type":     "competence-bonus-on-saves",
+      "bonusType": "competence",
+      "amount":   1,
+      "rank":     "least",
+      "vs":       ["disease", "poison"],
+      "saveAsset": "Fortitude"
+    },
+    {
+      "type":     "competence-bonus-on-saves",
+      "bonusType": "competence",
+      "amount":   3,
+      "rank":     "lesser",
+      "vs":       ["disease", "poison"],
+      "saveAsset": "Fortitude"
+    },
+    {
+      "type":     "competence-bonus-on-saves",
+      "bonusType": "competence",
+      "amount":   5,
+      "rank":     "greater",
+      "vs":       ["disease", "poison"],
+      "saveAsset": "Fortitude"
+    },
+    {
+      "type":       "save-reroll",
+      "rank":       "greater",
+      "trigger":    "failed-save-vs-(disease|poison)",
+      "action":     "immediate (mental) action",
+      "usesPerDay": 1,
+      "note":       "If you fail a save against disease or poison, you can choose to reroll the save once per day."
+    }
+  ],
+
+  "tags":    ["stamina", "fortitude", "disease", "poison", "saves", "competence"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  ["neutralize poison", "remove disease"],
+    "other":  null
+  },
+
+  "description":      "This dull red crystal pulses in time with your heartbeat. A crystal of stamina protects you from assaults against your physical health. The least grants a +1 competence bonus on saving throws against disease and poison; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against disease or poison, once per day.",
+
+  "unidentifiedDesc": "A dull crimson crystal that pulses faintly, as if counting the wearer's heartbeats.",
+
+  "consumption": {
+    "least":   { "uses": null },
+    "lesser":   { "uses": null },
+    "greater":  { "usesPerDay": 1, "track": "save-reroll" }
+  },
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

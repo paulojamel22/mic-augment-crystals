@@ -1,0 +1,73 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "rubicund-frenzy",
+  "name":        "Rubicund Frenzy",
+  "family":      "armor",
+  "shell":       "torus-crystal",
+  "material":    "ruby-beveled-on-top-flat-below",
+
+  "ranks": {
+    "least":   { "basePrice":  500,  "itemLevel":  3, "xp":  20, "days": 1, "gp":  250, "moraleBonus":   1 },
+    "lesser":   { "basePrice": 2000,  "itemLevel":  6, "xp":  80, "days": 2, "gp": 1000, "moraleBonus":   3 },
+    "greater":  { "basePrice": 6000,  "itemLevel": 10, "xp": 240, "days": 6, "gp": 3000, "moraleBonus":   5 }
+  },
+
+  "casterLevel": 11,
+  "aura": {
+    "school": "enchantment",
+    "dc":     20,
+    "strength": "Moderate"
+  },
+  "activation": null,
+  "weight":      0,
+
+  "basePriceUnit": "gp",
+
+  "effects": [
+    {
+      "type":      "morale-bonus",
+      "bonusType": "morale",
+      "amount":    1,
+      "rank":      "least",
+      "applies":   ["weapon-damage-rolls", "saves-vs-fear"],
+      "trigger":   "hp-current-le-or-eq-half-full-normal",
+      "note":      "A rubicund frenzy drinks your blood when you are wounded, whipping you into a savage frenzy. The bonuses only apply while the wearer's current HP total is no greater than half the full normal HP total."
+    },
+    {
+      "type":      "morale-bonus",
+      "bonusType": "morale",
+      "amount":    3,
+      "rank":      "lesser",
+      "applies":   ["weapon-damage-rolls", "saves-vs-fear"],
+      "trigger":   "hp-current-le-or-eq-half-full-normal"
+    },
+    {
+      "type":      "morale-bonus",
+      "bonusType": "morale",
+      "amount":    5,
+      "rank":      "greater",
+      "applies":   ["weapon-damage-rolls", "saves-vs-fear"],
+      "trigger":   "hp-current-le-or-eq-half-full-normal"
+    }
+  ],
+
+  "livingOnly": true,
+
+  "tags":    ["ruby", "frenzy", "blood", "morale", "enchantment", "fear"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  ["heroism"],
+    "other":  null
+  },
+
+  "description":      "This ruby is cut into a torus—beveled on top, flat below. It is meant to be attached to a suit of armor. A rubicund frenzy drinks your blood when you are wounded, whipping you into a savage frenzy. This item functions only for living creatures. The least crystal grants a +1 morale bonus on weapon damage rolls and saves against fear while the wearer's current HP is no greater than half full; lesser grants +3; greater grants +5.",
+
+  "unidentifiedDesc": "A ruby torus (beveled on top, flat below) that feels faintly warm against the skin.",
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}
