@@ -1,0 +1,88 @@
+{
+  "schema":      "mic-augment-crystal/1.0",
+  "id":          "iron-ward-diamond",
+  "name":        "Iron Ward Diamond",
+  "family":      "armor",
+  "shell":       "crystal-diamond",
+  "material":    "dun-and-ecru-diamond",
+
+  "ranks": {
+    "least":   { "basePrice":  500,  "itemLevel":  3, "xp":  20, "days": 1, "gp":  250, "drAmount":   1, "drCap":  10 },
+    "lesser":   { "basePrice": 2000,  "itemLevel":  6, "xp":  80, "days": 2, "gp": 1000, "drAmount":   3, "drCap":  30 },
+    "greater":  { "basePrice": 8000,  "itemLevel": 11, "xp": 320, "days": 8, "gp": 4000, "drAmount":   5, "drCap":  50 }
+  },
+
+  "casterLevel": 7,
+  "aura": {
+    "school": "evocation",
+    "dc":     18,
+    "strength": "Moderate"
+  },
+  "activation": null,
+  "weight":      0,
+
+  "basePriceUnit": "gp",
+
+  "effects": [
+    {
+      "type":      "damage-reduction",
+      "amount":    1,
+      "bypass":    "-",
+      "stacks":    "stacks-with-similar-dr-from-any-source",
+      "rank":      "least",
+      "capTotal":  10,
+      "capReset":  "daily",
+      "note":      "Once the diamond has prevented a total of 10 points of damage, it becomes inert until the following day."
+    },
+    {
+      "type":      "damage-reduction",
+      "amount":    3,
+      "bypass":    "-",
+      "stacks":    "stacks-with-similar-dr-from-any-source",
+      "rank":      "lesser",
+      "capTotal":  30,
+      "capReset":  "daily",
+      "note":      "Lesser iron ward diamond grants DR 3/- until it has prevented 30 total points of damage; functions only when attached to medium or heavy armor."
+    },
+    {
+      "type":      "damage-reduction",
+      "amount":    5,
+      "bypass":    "-",
+      "stacks":    "stacks-with-similar-dr-from-any-source",
+      "rank":      "greater",
+      "capTotal":  50,
+      "capReset":  "daily",
+      "note":      "Greater iron ward diamond grants DR 5/- until it has prevented 50 total points of damage; functions only when attached to heavy armor."
+    }
+  ],
+
+  "usageRestrictions": {
+    "least":   { "allowedArmorProficiency": ["light", "medium", "heavy"] },
+    "lesser":   { "allowedArmorProficiency": ["medium", "heavy"] },
+    "greater":  { "allowedArmorProficiency": ["heavy"] }
+  },
+
+  "tags":    ["diamond", "dr", "damage-reduction", "evocation", "armor"],
+  "sources": ["MIC 3.5"],
+
+  "enhancement": 0,
+
+  "prerequisites": {
+    "feat":   ["Craft Magic Arms and Armor"],
+    "skill":  [],
+    "spell":  ["stoneskin"],
+    "other":  null
+  },
+
+  "description":      "This dun and ecru diamond is incredibly durable. An iron ward diamond lends its toughness to armor, helping it absorb blows in combat. The least grants damage reduction 1/- (stacks with any other DR) until it has prevented 10 total points of damage, then goes inert until the following day; lesser grants DR 3/- (cap 30) and functions only on medium or heavy armor; greater grants DR 5/- (cap 50) and functions only on heavy armor.",
+
+  "unidentifiedDesc": "A bright diamond mottled with dun and ecru tones, almost too durable to be cut.",
+
+  "consumption": {
+    "least":   { "damageBudget": 10, "reset": "daily", "track": "dr-prevented" },
+    "lesser":   { "damageBudget": 30, "reset": "daily", "track": "dr-prevented" },
+    "greater":  { "damageBudget": 50, "reset": "daily", "track": "dr-prevented" }
+  },
+
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}
