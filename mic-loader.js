@@ -214,8 +214,9 @@ class CrystalCatalogLoader {
 
         if (customFlags.length || isEdited) {
           console.warn(`[MIC-LD] ${json.id} has GM customisations (flags: ${customFlags.join(",")}) — refreshing catalogue metadata only`);
-          await existing.update({
-            [`flags.${MODULE_ID}.hash`]: newHash,
+          const partialUpdate = {
+            name: this.docFromJson(json).name,
+            [`flags.${MODULE_ID}.hash`]:                                  newHash,
             "system.mic-socket-system.crystal.itemLevel":        json.itemLevel ?? null,
             "system.mic-socket-system.crystal.casterLevel":      json.casterLevel ?? null,
             "system.mic-socket-system.crystal.description":      json.description ?? "",
@@ -226,7 +227,8 @@ class CrystalCatalogLoader {
             "system.mic-socket-system.crystal.prerequisites":    json.prerequisites ?? {},
             "system.mic-socket-system.crystal.costToCreate":     json.costToCreate ?? null,
             "system.mic-socket-system.crystal.sources":          json.sources ?? []
-          });
+          };
+          await existing.update(partialUpdate);
         } else {
           await existing.update({
             ...(this.docFromJson(json)),
