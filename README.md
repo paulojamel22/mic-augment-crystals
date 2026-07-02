@@ -28,6 +28,9 @@ de bônus de melhoria.
 
 ## 🧪 Versão atual
 
+**1.3.2** — Setting GM-only `crystalLanguageOverride` (auto/en/pt-BR) em
+**Configure Settings → Module Settings** sobrepõe `game.i18n.lang`.
+
 **1.3.1** — Localização multi-idioma (en-US/pt-BR) via `lang/*.json` e helper
 `MICI18n.t(key)`. Adiciona `mic-i18n.js` com fallback chain `locale → en → key`.
 
@@ -58,14 +61,14 @@ Duas formas suportadas:
 > tag Release:
 >
 > ```
-> https://raw.githubusercontent.com/paulojamel22/mic-augment-crystals/v1.3.1/module.json
+> https://raw.githubusercontent.com/paulojamel22/mic-augment-crystals/v1.3.2/module.json
 > ```
 > (sem `/main/`, com `/v1.3.0/`).
 
 ### B) Download manual
 
 1. Baixe o `.zip` da
-   [página de release](https://github.com/paulojamel22/mic-augment-crystals/releases/tag/v1.3.1).
+   [página de release](https://github.com/paulojamel22/mic-augment-crystals/releases/tag/v1.3.2).
 2. Extraia em `FoundryVTT/Data/modules/mic-augment-crystals/`.
 3. Em **Manage Modules**, ative *Magic Item Compendium: Augment Crystals*.
 4. Reinicie a sessão. O compendium `MIC - Augment Crystals` será populado na
@@ -142,6 +145,30 @@ Para contribuir:
 Mantenha **tags** do livro em inglês (`spell.*`, `feat.*`) — elas são chaves
 canônicas referenciadas também em `crystals/*.json`. Valores localados são
 apenas o display no chat.
+
+## ⚙️ Configurações
+
+A partir da v1.3.2 o módulo registra um setting GM-only em
+**Configure Settings → Module Settings**:
+
+| Setting              | Escopo | Tipo | Default | Opções                           |
+|----------------------|--------|------|---------|----------------------------------|
+| `crystalLanguageOverride` | world  | String | `auto` | `auto`, `en`, `pt-BR`            |
+
+### `crystalLanguageOverride`
+
+Força o módulo a renderizar textos em um idioma específico. Útil quando o
+idioma do mundo Foundry não é o que você quer para as mensagens de chat
+do augment crystal (ex.: mundo em inglês, mas você quer PT-BR nos cards
+do Crystal of Lifekeeping).
+
+* **auto** — segue `game.i18n.lang` (world language).
+* **en** — sempre Inglês.
+* **pt-BR** — sempre Português (Brasil).
+
+Mudanças são aplicadas *live* — não exigem reload. Chave i18n não existente
+cai na inglesa automaticamente. Quando a nova versão troca, basta re-disparar
+`api.rerun()` (`game.modules.get("mic-augment-crystals").api.rerun()`).
 
 ## 🛠️ Detalhes Técnicos
 

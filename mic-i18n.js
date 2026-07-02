@@ -24,6 +24,9 @@ const MODULE_ID = "mic-augment-crystals";
 
 const dicts = new Map(); // lang -> { key -> string }
 
+/** Manual language override (set via MICI18n.setLanguageOverride). null = none. */
+let _override = null;
+
 async function loadDict(lang) {
   if (dicts.has(lang)) return dicts.get(lang);
   try {
@@ -51,11 +54,25 @@ function applyVars(template, vars) {
   );
 }
 
-function currentLang() {
+function _nativeLang() {
   const lang = game?.i18n?.lang;
   if (typeof lang === "string" && lang.length) return lang;
   if (typeof navigator !== "undefined" && navigator.language) return navigator.language;
   return FALLBACK_LANG;
+}
+
+/**
+ * Resolve the active language. Order:
+ *   1. manual override set via `MICI18n.setLanguageOverride(lang|null)`
+ *   2. `game.i18n.lang` (Foundry's active world language)
+ *   3. browser locale
+ *   4. "en"
+ * `null` / `"auto"` clears the override.
+ */
+function currentLang() {
+  const o = _override;
+  if (o && typeof o === "string" && o !== "auto") return o;
+  return _nativeLang();
 }
 
 export const MICI18n = {
@@ -105,6 +122,22 @@ export const MICI18n = {
   async reload() {
     dicts.clear();
     await this.init();
+  },
+
+  /** Force a specific language; `"auto"` or `null` clears the override. */
+  setLanguageOverride(lang) {
+    _override = (typeof lang === "string" && lang.length && lang !== "auto") ? lang : null;
+    return this.getLanguageOverride();
+  },
+
+  /** Returns the active override (string) or null. */
+  getLanguageOverride() {
+    return _override;
+  },
+
+  /** Clear any active override. */
+  clearLanguageOverride() {
+    _override = null;
   }
 };
 
