@@ -28,7 +28,10 @@ de bônus de melhoria.
 
 ## 🧪 Versão atual
 
-**1.3.0** — adiciona **Crystal of Adaptation**, **Crystal of Aquatic Action**,
+**1.3.1** — Localização multi-idioma (en-US/pt-BR) via `lang/*.json` e helper
+`MICI18n.t(key)`. Adiciona `mic-i18n.js` com fallback chain `locale → en → key`.
+
+**1.3.0** — adicione **Crystal of Adaptation**, **Crystal of Aquatic Action**,
 **Crystal of Arrow Deflection**, **Crystal of Bent Sight**, **Crystal of
 Glancing Blows**, **Crystal of Lifekeeping**, **Crystal of Mind Cloaking**,
 **Crystal of Screening**, **Crystal of Stamina**, **Iron Ward Diamond** e
@@ -55,14 +58,14 @@ Duas formas suportadas:
 > tag Release:
 >
 > ```
-> https://raw.githubusercontent.com/paulojamel22/mic-augment-crystals/v1.3.0/module.json
+> https://raw.githubusercontent.com/paulojamel22/mic-augment-crystals/v1.3.1/module.json
 > ```
 > (sem `/main/`, com `/v1.3.0/`).
 
 ### B) Download manual
 
 1. Baixe o `.zip` da
-   [página de release](https://github.com/paulojamel22/mic-augment-crystals/releases/tag/v1.2.0).
+   [página de release](https://github.com/paulojamel22/mic-augment-crystals/releases/tag/v1.3.1).
 2. Extraia em `FoundryVTT/Data/modules/mic-augment-crystals/`.
 3. Em **Manage Modules**, ative *Magic Item Compendium: Augment Crystals*.
 4. Reinicie a sessão. O compendium `MIC - Augment Crystals` será populado na
@@ -108,6 +111,37 @@ Duas formas suportadas:
   só funciona para criaturas vivas.
 
 Cada cristal respeita os pré-requisitos do MIC 3.5.
+
+## 🌐 Idiomas
+
+* **English** (padrão) — `lang/en.json`.
+* **Português (Brasil)** — `lang/pt-BR.json`.
+
+A resolução da escolha do idioma é automática: o módulo lê
+`game.i18n.lang` no Foundry e cai de volta em `en` se a chave PT-BR não
+existir. As descrições oficiais do MIC 3.5 ficam em inglês (fonte canônica
+do livro); o helper `MICI18n.t(key)` retorna texto localado em runtime
+quando um cristal dispara (ex.: anúncio do reroll de save no chat).
+
+Uso:
+
+```javascript
+// dentro de macro / hook
+const mod = game.modules.get("mic-augment-crystals");
+mod.api.t("crystal.family.shield");               // "Shield Crystal" ou "Cristal de Escudo"
+mod.api.t("crystal.family.shield", "(fallback)"); // fallback opcional
+```
+
+Para contribuir:
+
+1. Copie `lang/en.json` para `lang/<novo-locale>.json`.
+2. Traduza os valores (mantenha as chaves intactas).
+3. Adicione uma entrada em `languages[]` em `module.json`.
+4. Abra PR com a flag do novo idioma.
+
+Mantenha **tags** do livro em inglês (`spell.*`, `feat.*`) — elas são chaves
+canônicas referenciadas também em `crystals/*.json`. Valores localados são
+apenas o display no chat.
 
 ## 🛠️ Detalhes Técnicos
 
