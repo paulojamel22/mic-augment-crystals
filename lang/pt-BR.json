@@ -1,142 +1,403 @@
 {
-  "language.name": "Português (Brasil)",
-
-  "crystal.label":          "Cristal de Aperfeiçoamento",
-  "crystal.labelPlural":    "Cristais de Aperfeiçoamento",
-  "crystal.emptySlot":      "(soquete de cristal vazio)",
-  "crystal.cannotEquip":    "Este item não pode receber cristais de aperfeiçoamento.",
-  "crystal.cannotEquipRank":"A categoria \"%s\" exige bônus de melhoria mínimo de +%d no item.",
-  "crystal.cannotEquipMissingSpellPrereq": "Pré-requisitos de magias não satisfeitos: %s.",
-  "crystal.cannotEquipMissingFeatPrereq": "Requer o talento: %s.",
-  "crystal.cannotEquipArmorType": "Este cristal só funciona quando acoplado a: %s.",
-
-  "crystal.family.armor":   "Cristal de Armadura",
-  "crystal.family.shield":  "Cristal de Escudo",
-  "crystal.family.weapon":  "Cristal de Arma",
-
-  "crystal.rank.least":     "Mínimo",
-  "crystal.rank.lesser":    "Menor",
-  "crystal.rank.greater":   "Maior",
-
-  "crystal.effect.swim-check": "Remove a penalidade de armadura em testes de Natação.",
-  "crystal.effect.swim-speed": "Concede velocidade de natação igual a metade da velocidade terrestre (arredondada para baixo em incrementos de 1,5 m).",
-  "crystal.effect.underwater-freedom": "Sem penalidades em ataques ou movimento dentro d'água (como se estivesse sob freedom of movement).",
-  "crystal.effect.water-breathing": "Respira água tão facilmente quanto ar.",
-  "crystal.effect.ac-bonus-vs-ranged": "Concede +%{bonus} de CA contra ataques à distância.",
-  "crystal.effect.deflect-arrows": "Desvia um ataque à distância por rodada (como se tivesse o talento Deflect Arrows).",
-  "crystal.effect.damage-reduction": "Concede redução de dano %{amount}/%{bypass}. Limite diário: %{cap} pontos.",
-  "crystal.effect.competence-bonus-on-saves": "Concede bônus de competência +%{bonus} em testes de resistência contra %{vs}.",
-  "crystal.effect.competence-bonus-on-grapple-prevention": "Concede bônus de competência +%{bonus} em testes de agarrar para evitar ser agarrado.",
-  "crystal.effect.save-reroll": "Permite rerolar uma resistência falha contra os efeitos listados, uma vez por dia (ação imediata mental).",
-  "crystal.effect.morale-bonus": "Concede bônus de moral +%{bonus} em dano de arma e em testes de resistência contra medo.",
-  "crystal.effect.gaze-protection": "Permite desviar o olhar de uma criatura com ataque de olhar sem sofrer chance de erro em seus próprios ataques contra ela.",
-  "crystal.effect.spell-like": "Funciona como a magia %{spell}.",
-  "crystal.effect.extraplanar-trait-protection": "Você está protegido das seguintes características planares: %{covers}.",
-  "crystal.effect.touch-attack-penalty-vs-incorporeal": "Impõe penalidade de %{amount} em ataques de toque contra você por criaturas incorpóreas.",
-
-  "crystal.hostRestriction.medium-or-heavy-armor": "armaduras médias ou pesadas",
-  "crystal.hostRestriction.heavy-armor":          "armaduras pesadas",
-  "crystal.hostRestriction.shield-only":          "somente escudos",
-  "crystal.hostRestriction.armor-only":           "somente armaduras",
-
-  "crystal.tag.endure":           "endure elements",
-  "crystal.tag.elements":         "elementos",
-  "crystal.tag.alignment":        "traços de alinhamento",
-  "crystal.tag.extraplanar":      "extraplanar",
-  "crystal.tag.aquatic":          "aquático",
-  "crystal.tag.underwater":       "subaquático",
-  "crystal.tag.swim":             "natação",
-  "crystal.tag.water-breathing":  "respiração aquática",
-  "crystal.tag.freedom-of-movement":"freedom of movement",
-  "crystal.tag.ranged":           "ataques à distância",
-  "crystal.tag.defense":          "defesa",
-  "crystal.tag.arrow":            "flecha",
-  "crystal.tag.ac-bonus":         "bônus de CA",
-  "crystal.tag.deflect":          "desviar",
-  "crystal.tag.gaze":             "olhar",
-  "crystal.tag.divination":      "adivinhação",
-  "crystal.tag.vision":           "visão",
-  "crystal.tag.perception":       "percepção",
-  "crystal.tag.grapple":          "agarrar",
-  "crystal.tag.competence":       "competência",
-  "crystal.tag.necromancy":       "necromancia",
-  "crystal.tag.death-effects":    "efeitos de morte",
-  "crystal.tag.saves":            "testes de resistência",
-  "crystal.tag.mind-affecting":   "que afetam a mente",
-  "crystal.tag.mental":           "mental",
-  "crystal.tag.incorporeal":      "incorpóreo",
-  "crystal.tag.force":            "força",
-  "crystal.tag.touch-attack-defense":"defesa contra ataque de toque",
-  "crystal.tag.stamina":          "resistência",
-  "crystal.tag.fortitude":        "fortitude",
-  "crystal.tag.disease":          "doença",
-  "crystal.tag.poison":           "veneno",
-  "crystal.tag.diamond":          "diamante",
-  "crystal.tag.dr":               "redução de dano",
-  "crystal.tag.armor":            "armadura",
-  "crystal.tag.ruby":             "rubi",
-  "crystal.tag.frenzy":           "frenesim",
-  "crystal.tag.blood":            "sangue",
-  "crystal.tag.morale":           "moral",
-  "crystal.tag.enchantment":      "encantamento",
-  "crystal.tag.fear":             "medo",
-  "crystal.tag.adamant":          "adamante",
-  "crystal.tag.hardness":         "dureza",
-  "crystal.tag.energy":           "energia",
-  "crystal.tag.protection":       "proteção",
-  "crystal.tag.fire":             "fogo",
-  "crystal.tag.cold":             "frio",
-  "crystal.tag.acid":             "ácido",
-  "crystal.tag.electricity":      "eletricidade",
-  "crystal.tag.sonic":            "sônico",
-  "crystal.tag.shield":           "escudo",
-  "crystal.tag.anti-undead":      "anti-morto-vivo",
-  "crystal.tag.abjuration":       "abjuração",
-  "crystal.tag.conjuration":      "conjuração",
-  "crystal.tag.transmutation":    "transmutação",
-  "crystal.tag.evocation":        "evocação",
-
-  "feat.craft-magic-arms-and-armor": "Forjar Armaduras e Armas Mágicas",
-  "feat.shield":                    "Proficiência com Escudo",
-  "feat.deflect-arrows":            "Desviar Flechas",
-
-  "spell.endure-elements":            "endure elements",
-  "spell.freedom-of-movement":         "freedom of movement",
-  "spell.water-breathing":             "water breathing",
-  "spell.death-ward":                  "death ward",
-  "spell.protection-from-chaos":       "protection from chaos",
-  "spell.protection-from-good":        "protection from good",
-  "spell.protection-from-evil":        "protection from evil",
-  "spell.protection-from-law":         "protection from law",
-  "spell.mage-armor":                  "mage armor",
-  "spell.resistance":                  "resistance",
-  "spell.remove-disease":              "remove disease",
-  "spell.neutralize-poison":           "neutralize poison",
-  "spell.stoneskin":                   "stoneskin",
-  "spell.heroism":                     "heroism",
-  "spell.clarity-or-clair":            "clairaudience/clairvoyance",
-  "spell.resist-energy":               "resist energy",
-
-  "ui.crystalButtonLabel":      "Equipar Cristal",
-  "ui.crystalEquipPrompt":      "Arraste um cristal de aperfeiçoamento do compêndio para o soquete.",
-  "ui.crystalIdentifyCommand":  "/mic identificar",
-
-  "chat.crystalEquipped":       "Você encaixa o [[name]] em seu [[hostType]].",
-  "chat.crystalUnequipped":     "Você remove o [[name]] do seu [[hostType]].",
-  "chat.crystalRejection":     "Não é possível equipar [[name]]: [[reason]].",
-  "chat.crystalSaveReroll.prompt":  "Rerolar resistência?",
-  "chat.crystalSaveReroll.granted": "[[name]] permite rerolar uma resistência contra [[effect]] (1×/dia).",
-  "chat.crystalActivation.greaterUsed":"O cristal maior brilha; seu poder diário é ativado.",
-
-  "ocr.placeholder.dunAndEcru":  "um diamante em tons duns e creme",
-  "ocr.placeholder.blueSapphire":"uma safira azul lapidada em cabochão",
-  "ocr.placeholder.seaGreen":    "um cristal verde-marinho",
-  "ocr.placeholder.cloudedNight":"um cristal negro como um céu noturno encoberto",
-  "ocr.placeholder.brightGreen": "um pequeno cristal verde brilhante e circular",
-  "ocr.placeholder.sparkling":   "um cristal brilhante que cintila sob a luz",
-  "ocr.placeholder.rainbow":     "um cristal multifacetado cuja superfície brilha com todas as cores do arco-íris",
-  "ocr.placeholder.pulsingRed":  "um cristal vermelho opaco que pulsa em uníssono com o coração",
-  "ocr.placeholder.rubyTorus":   "um rubi lapidado em forma de toro chanfrado no topo",
-  "ocr.placeholder.moist":       "um cristal verde-marinho sempre úmido ao toque",
-  "ocr.placeholder.silverPlate": "um pequeno cristal fixado a uma placa de prata polida"
+    "language.name":  "Português (Brasil)",
+    "crystal.label":  "Cristal de Aperfeiçoamento",
+    "crystal.labelPlural":  "Cristais de Aperfeiçoamento",
+    "crystal.emptySlot":  "(soquete de cristal vazio)",
+    "crystal.cannotEquip":  "Este item não pode receber cristais de aperfeiçoamento.",
+    "crystal.cannotEquipRank":  "A categoria \"%s\" exige bônus de melhoria mínimo de +%d no item.",
+    "crystal.cannotEquipMissingSpellPrereq":  "Pré-requisitos de magias não satisfeitos: %s.",
+    "crystal.cannotEquipMissingFeatPrereq":  "Requer o talento: %s.",
+    "crystal.cannotEquipArmorType":  "Este cristal só funciona quando acoplado a: %s.",
+    "crystal.family.armor":  "Cristal de Armadura",
+    "crystal.family.shield":  "Cristal de Escudo",
+    "crystal.family.weapon":  "Cristal de Arma",
+    "crystal.rank.least":  "Mínimo",
+    "crystal.rank.lesser":  "Menor",
+    "crystal.rank.greater":  "Maior",
+    "crystal.effect.swim-check":  "Remove a penalidade de armadura em testes de Natação.",
+    "crystal.effect.swim-speed":  "Concede velocidade de natação igual a metade da velocidade terrestre (arredondada para baixo em incrementos de 1,5 m).",
+    "crystal.effect.underwater-freedom":  "Sem penalidades em ataques ou movimento dentro d\u0027água (como se estivesse sob freedom of movement).",
+    "crystal.effect.water-breathing":  "Respira água tão facilmente quanto ar.",
+    "crystal.effect.ac-bonus-vs-ranged":  "Concede +%{bonus} de CA contra ataques à distância.",
+    "crystal.effect.deflect-arrows":  "Desvia um ataque à distância por rodada (como se tivesse o talento Deflect Arrows).",
+    "crystal.effect.damage-reduction":  "Concede redução de dano %{amount}/%{bypass}. Limite diário: %{cap} pontos.",
+    "crystal.effect.competence-bonus-on-saves":  "Concede bônus de competência +%{bonus} em testes de resistência contra %{vs}.",
+    "crystal.effect.competence-bonus-on-grapple-prevention":  "Concede bônus de competência +%{bonus} em testes de agarrar para evitar ser agarrado.",
+    "crystal.effect.save-reroll":  "Permite rerolar uma resistência falha contra os efeitos listados, uma vez por dia (ação imediata mental).",
+    "crystal.effect.morale-bonus":  "Concede bônus de moral +%{bonus} em dano de arma e em testes de resistência contra medo.",
+    "crystal.effect.gaze-protection":  "Permite desviar o olhar de uma criatura com ataque de olhar sem sofrer chance de erro em seus próprios ataques contra ela.",
+    "crystal.effect.spell-like":  "Funciona como a magia %{spell}.",
+    "crystal.effect.extraplanar-trait-protection":  "Você está protegido das seguintes características planares: %{covers}.",
+    "crystal.effect.touch-attack-penalty-vs-incorporeal":  "Impõe penalidade de %{amount} em ataques de toque contra você por criaturas incorpóreas.",
+    "crystal.hostRestriction.medium-or-heavy-armor":  "armaduras médias ou pesadas",
+    "crystal.hostRestriction.heavy-armor":  "armaduras pesadas",
+    "crystal.hostRestriction.shield-only":  "somente escudos",
+    "crystal.hostRestriction.armor-only":  "somente armaduras",
+    "crystal.tag.endure":  "endure elements",
+    "crystal.tag.elements":  "elementos",
+    "crystal.tag.alignment":  "traços de alinhamento",
+    "crystal.tag.extraplanar":  "extraplanar",
+    "crystal.tag.aquatic":  "aquático",
+    "crystal.tag.underwater":  "subaquático",
+    "crystal.tag.swim":  "natação",
+    "crystal.tag.water-breathing":  "respiração aquática",
+    "crystal.tag.freedom-of-movement":  "freedom of movement",
+    "crystal.tag.ranged":  "ataques à distância",
+    "crystal.tag.defense":  "defesa",
+    "crystal.tag.arrow":  "flecha",
+    "crystal.tag.ac-bonus":  "bônus de CA",
+    "crystal.tag.deflect":  "desviar",
+    "crystal.tag.gaze":  "olhar",
+    "crystal.tag.divination":  "adivinhação",
+    "crystal.tag.vision":  "visão",
+    "crystal.tag.perception":  "percepção",
+    "crystal.tag.grapple":  "agarrar",
+    "crystal.tag.competence":  "competência",
+    "crystal.tag.necromancy":  "necromancia",
+    "crystal.tag.death-effects":  "efeitos de morte",
+    "crystal.tag.saves":  "testes de resistência",
+    "crystal.tag.mind-affecting":  "que afetam a mente",
+    "crystal.tag.mental":  "mental",
+    "crystal.tag.incorporeal":  "incorpóreo",
+    "crystal.tag.force":  "força",
+    "crystal.tag.touch-attack-defense":  "defesa contra ataque de toque",
+    "crystal.tag.stamina":  "resistência",
+    "crystal.tag.fortitude":  "fortitude",
+    "crystal.tag.disease":  "doença",
+    "crystal.tag.poison":  "veneno",
+    "crystal.tag.diamond":  "diamante",
+    "crystal.tag.dr":  "redução de dano",
+    "crystal.tag.armor":  "armadura",
+    "crystal.tag.ruby":  "rubi",
+    "crystal.tag.frenzy":  "frenesim",
+    "crystal.tag.blood":  "sangue",
+    "crystal.tag.morale":  "moral",
+    "crystal.tag.enchantment":  "encantamento",
+    "crystal.tag.fear":  "medo",
+    "crystal.tag.adamant":  "adamante",
+    "crystal.tag.hardness":  "dureza",
+    "crystal.tag.energy":  "energia",
+    "crystal.tag.protection":  "proteção",
+    "crystal.tag.fire":  "fogo",
+    "crystal.tag.cold":  "frio",
+    "crystal.tag.acid":  "ácido",
+    "crystal.tag.electricity":  "eletricidade",
+    "crystal.tag.sonic":  "sônico",
+    "crystal.tag.shield":  "escudo",
+    "crystal.tag.anti-undead":  "anti-morto-vivo",
+    "crystal.tag.abjuration":  "abjuração",
+    "crystal.tag.conjuration":  "conjuração",
+    "crystal.tag.transmutation":  "transmutação",
+    "crystal.tag.evocation":  "evocação",
+    "feat.craft-magic-arms-and-armor":  "Forjar Armaduras e Armas Mágicas",
+    "feat.shield":  "Proficiência com Escudo",
+    "feat.deflect-arrows":  "Desviar Flechas",
+    "spell.endure-elements":  "endure elements",
+    "spell.freedom-of-movement":  "freedom of movement",
+    "spell.water-breathing":  "water breathing",
+    "spell.death-ward":  "death ward",
+    "spell.protection-from-chaos":  "protection from chaos",
+    "spell.protection-from-good":  "protection from good",
+    "spell.protection-from-evil":  "protection from evil",
+    "spell.protection-from-law":  "protection from law",
+    "spell.mage-armor":  "mage armor",
+    "spell.resistance":  "resistance",
+    "spell.remove-disease":  "remove disease",
+    "spell.neutralize-poison":  "neutralize poison",
+    "spell.stoneskin":  "stoneskin",
+    "spell.heroism":  "heroism",
+    "spell.clarity-or-clair":  "clairaudience/clairvoyance",
+    "spell.resist-energy":  "resist energy",
+    "ui.crystalButtonLabel":  "Equipar Cristal",
+    "ui.crystalEquipPrompt":  "Arraste um cristal de aperfeiçoamento do compêndio para o soquete.",
+    "ui.crystalIdentifyCommand":  "/mic identificar",
+    "chat.crystalEquipped":  "Você encaixa o [[name]] em seu [[hostType]].",
+    "chat.crystalUnequipped":  "Você remove o [[name]] do seu [[hostType]].",
+    "chat.crystalRejection":  "Não é possível equipar [[name]]: [[reason]].",
+    "chat.crystalSaveReroll.prompt":  "Rerolar resistência?",
+    "chat.crystalSaveReroll.granted":  "[[name]] permite rerolar uma resistência contra [[effect]] (1×/dia).",
+    "chat.crystalActivation.greaterUsed":  "O cristal maior brilha; seu poder diário é ativado.",
+    "ocr.placeholder.dunAndEcru":  "um diamante em tons duns e creme",
+    "ocr.placeholder.blueSapphire":  "uma safira azul lapidada em cabochão",
+    "ocr.placeholder.seaGreen":  "um cristal verde-marinho",
+    "ocr.placeholder.cloudedNight":  "um cristal negro como um céu noturno encoberto",
+    "ocr.placeholder.brightGreen":  "um pequeno cristal verde brilhante e circular",
+    "ocr.placeholder.sparkling":  "um cristal brilhante que cintila sob a luz",
+    "ocr.placeholder.rainbow":  "um cristal multifacetado cuja superfície brilha com todas as cores do arco-íris",
+    "ocr.placeholder.pulsingRed":  "um cristal vermelho opaco que pulsa em uníssono com o coração",
+    "ocr.placeholder.rubyTorus":  "um rubi lapidado em forma de toro chanfrado no topo",
+    "ocr.placeholder.moist":  "um cristal verde-marinho sempre úmido ao toque",
+    "ocr.placeholder.silverPlate":  "um pequeno cristal fixado a uma placa de prata polida",
+    "crystals":  {
+                     "_schema":  "1.0",
+                     "_doc":  "Per-catalog-id display strings. Copy from en.json to translate.",
+                     "_note":  "Empty strings must be filled in by translator.",
+                     "items":  {
+                                   "adamant-armor-least-armor":  {
+                                                                     "name":  "",
+                                                                     "description":  "Concede à armadura ou escudo um bônus à dureza: +2 (least), +5 (lesser) ou +10 (greater). Também reduz o peso do item em 10% (least), 20% (lesser) ou 30% (greater).",
+                                                                     "unidentified":  "O cristal parece feito de diamante preto, frio e exalando um leve brilho metálico ao ser iluminado."
+                                                                 },
+                                   "adamant-armor-least-shield":  {
+                                                                      "name":  "",
+                                                                      "description":  "Concede à armadura ou escudo um bônus à dureza: +2 (least), +5 (lesser) ou +10 (greater). Também reduz o peso do item em 10% (least), 20% (lesser) ou 30% (greater).",
+                                                                      "unidentified":  "O cristal parece feito de diamante preto, frio e exalando um leve brilho metálico ao ser iluminado."
+                                                                  },
+                                   "adamant-armor-lesser-armor":  {
+                                                                      "name":  "",
+                                                                      "description":  "Concede à armadura ou escudo um bônus à dureza: +2 (least), +5 (lesser) ou +10 (greater). Também reduz o peso do item em 10% (least), 20% (lesser) ou 30% (greater).",
+                                                                      "unidentified":  "O cristal parece feito de diamante preto, frio e exalando um leve brilho metálico ao ser iluminado."
+                                                                  },
+                                   "adamant-armor-lesser-shield":  {
+                                                                       "name":  "",
+                                                                       "description":  "Concede à armadura ou escudo um bônus à dureza: +2 (least), +5 (lesser) ou +10 (greater). Também reduz o peso do item em 10% (least), 20% (lesser) ou 30% (greater).",
+                                                                       "unidentified":  "O cristal parece feito de diamante preto, frio e exalando um leve brilho metálico ao ser iluminado."
+                                                                   },
+                                   "adamant-armor-greater-armor":  {
+                                                                       "name":  "",
+                                                                       "description":  "Concede à armadura ou escudo um bônus à dureza: +2 (least), +5 (lesser) ou +10 (greater). Também reduz o peso do item em 10% (least), 20% (lesser) ou 30% (greater).",
+                                                                       "unidentified":  "O cristal parece feito de diamante preto, frio e exalando um leve brilho metálico ao ser iluminado."
+                                                                   },
+                                   "adamant-armor-greater-shield":  {
+                                                                        "name":  "",
+                                                                        "description":  "Concede à armadura ou escudo um bônus à dureza: +2 (least), +5 (lesser) ou +10 (greater). Também reduz o peso do item em 10% (least), 20% (lesser) ou 30% (greater).",
+                                                                        "unidentified":  "O cristal parece feito de diamante preto, frio e exalando um leve brilho metálico ao ser iluminado."
+                                                                    },
+                                   "clasp-energy-acid-greater":  {
+                                                                     "name":  "Clasp Energy, Acid",
+                                                                     "description":  "Concede resist�ncia a energia de acid 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                     "unidentified":  "Este cristal parece vibrar com energia acid interna."
+                                                                 },
+                                   "clasp-energy-acid-least":  {
+                                                                   "name":  "Clasp Energy, Acid",
+                                                                   "description":  "Concede resist�ncia a energia de acid 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                   "unidentified":  "Este cristal parece vibrar com energia acid interna."
+                                                               },
+                                   "clasp-energy-acid-lesser":  {
+                                                                    "name":  "Clasp Energy, Acid",
+                                                                    "description":  "Concede resist�ncia a energia de acid 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                    "unidentified":  "Este cristal parece vibrar com energia acid interna."
+                                                                },
+                                   "clasp-energy-cold-greater":  {
+                                                                     "name":  "Clasp Energy, Cold",
+                                                                     "description":  "Concede resist�ncia a energia de cold 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                     "unidentified":  "Este cristal parece vibrar com energia cold interna."
+                                                                 },
+                                   "clasp-energy-cold-least":  {
+                                                                   "name":  "Clasp Energy, Cold",
+                                                                   "description":  "Concede resist�ncia a energia de cold 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                   "unidentified":  "Este cristal parece vibrar com energia cold interna."
+                                                               },
+                                   "clasp-energy-cold-lesser":  {
+                                                                    "name":  "Clasp Energy, Cold",
+                                                                    "description":  "Concede resist�ncia a energia de cold 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                    "unidentified":  "Este cristal parece vibrar com energia cold interna."
+                                                                },
+                                   "clasp-energy-electricity-greater":  {
+                                                                            "name":  "Clasp Energy, Electricity",
+                                                                            "description":  "Concede resist�ncia a energia de electricity 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                            "unidentified":  "Este cristal parece vibrar com energia electricity interna."
+                                                                        },
+                                   "clasp-energy-electricity-least":  {
+                                                                          "name":  "Clasp Energy, Electricity",
+                                                                          "description":  "Concede resist�ncia a energia de electricity 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                          "unidentified":  "Este cristal parece vibrar com energia electricity interna."
+                                                                      },
+                                   "clasp-energy-electricity-lesser":  {
+                                                                           "name":  "Clasp Energy, Electricity",
+                                                                           "description":  "Concede resist�ncia a energia de electricity 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                           "unidentified":  "Este cristal parece vibrar com energia electricity interna."
+                                                                       },
+                                   "clasp-energy-fire-greater":  {
+                                                                     "name":  "Clasp Energy, Fire",
+                                                                     "description":  "Concede resist�ncia a energia de fire 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                     "unidentified":  "Este cristal parece vibrar com energia fire interna."
+                                                                 },
+                                   "clasp-energy-fire-least":  {
+                                                                   "name":  "Clasp Energy, Fire",
+                                                                   "description":  "Concede resist�ncia a energia de fire 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                   "unidentified":  "Este cristal parece vibrar com energia fire interna."
+                                                               },
+                                   "clasp-energy-fire-lesser":  {
+                                                                    "name":  "Clasp Energy, Fire",
+                                                                    "description":  "Concede resist�ncia a energia de fire 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                    "unidentified":  "Este cristal parece vibrar com energia fire interna."
+                                                                },
+                                   "clasp-energy-sonic-greater":  {
+                                                                      "name":  "Clasp Energy, Sonic",
+                                                                      "description":  "Concede resist�ncia a energia de sonic 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                      "unidentified":  "Este cristal parece vibrar com energia sonic interna."
+                                                                  },
+                                   "clasp-energy-sonic-least":  {
+                                                                    "name":  "Clasp Energy, Sonic",
+                                                                    "description":  "Concede resist�ncia a energia de sonic 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                    "unidentified":  "Este cristal parece vibrar com energia sonic interna."
+                                                                },
+                                   "clasp-energy-sonic-lesser":  {
+                                                                     "name":  "Clasp Energy, Sonic",
+                                                                     "description":  "Concede resist�ncia a energia de sonic 5 (least), 10 (lesser) ou 15 (greater).",
+                                                                     "unidentified":  "Este cristal parece vibrar com energia sonic interna."
+                                                                 },
+                                   "crystal-of-adaptation-least-armor":  {
+                                                                             "name":  "",
+                                                                             "description":  "Concede resistência a energia (ácido, frio, eletricidade, fogo ou som) 5 (least), 10 (lesser) ou 15 (greater). Também permite ao usuário lançar *endure elements* 1 vez por dia.",
+                                                                             "unidentified":  "Esse cristal opalescente muda de cor levemente conforme a temperatura ao redor."
+                                                                         },
+                                   "crystal-of-adaptation-lesser-armor":  {
+                                                                              "name":  "",
+                                                                              "description":  "Concede resistência a energia (ácido, frio, eletricidade, fogo ou som) 5 (least), 10 (lesser) ou 15 (greater). Também permite ao usuário lançar *endure elements* 1 vez por dia.",
+                                                                              "unidentified":  "Esse cristal opalescente muda de cor levemente conforme a temperatura ao redor."
+                                                                          },
+                                   "crystal-of-adaptation-greater-armor":  {
+                                                                               "name":  "",
+                                                                               "description":  "Concede resistência a energia (ácido, frio, eletricidade, fogo ou som) 5 (least), 10 (lesser) ou 15 (greater). Também permite ao usuário lançar *endure elements* 1 vez por dia.",
+                                                                               "unidentified":  "Esse cristal opalescente muda de cor levemente conforme a temperatura ao redor."
+                                                                           },
+                                   "crystal-of-aquatic-action-least-armor":  {
+                                                                                 "name":  "",
+                                                                                 "description":  "Concede liberdade de movimento subaquática (como o efeito de *freedom of movement*), respiração aquática e velocidade de natação igual à metade da velocidade terrestre (arredondada para baixo em incrementos de 1,5 m).",
+                                                                                 "unidentified":  "O cristal possui uma textura escorregadia e um tom azul-esverdeado que lembra água em movimento."
+                                                                             },
+                                   "crystal-of-aquatic-action-lesser-armor":  {
+                                                                                  "name":  "",
+                                                                                  "description":  "Concede liberdade de movimento subaquática (como o efeito de *freedom of movement*), respiração aquática e velocidade de natação igual à metade da velocidade terrestre (arredondada para baixo em incrementos de 1,5 m).",
+                                                                                  "unidentified":  "O cristal possui uma textura escorregadia e um tom azul-esverdeado que lembra água em movimento."
+                                                                              },
+                                   "crystal-of-aquatic-action-greater-armor":  {
+                                                                                   "name":  "",
+                                                                                   "description":  "Concede liberdade de movimento subaquática (como o efeito de *freedom of movement*), respiração aquática e velocidade de natação igual à metade da velocidade terrestre (arredondada para baixo em incrementos de 1,5 m).",
+                                                                                   "unidentified":  "O cristal possui uma textura escorregadia e um tom azul-esverdeado que lembra água em movimento."
+                                                                               },
+                                   "crystal-of-arrow-deflection-least-shield":  {
+                                                                                    "name":  "",
+                                                                                    "description":  "Permite ao usuário desviar um ataque à distância por rodada (como se tivesse o talento Deflect Arrows). Além disso, concede um bônus de contra ataques à distância: +2 (least), +5 (lesser) ou +2 (greater).",
+                                                                                    "unidentified":  "Esse cristal tem uma superfície lisa e reflete a luz como um pequeno espelho."
+                                                                                },
+                                   "crystal-of-arrow-deflection-lesser-shield":  {
+                                                                                     "name":  "",
+                                                                                     "description":  "Permite ao usuário desviar um ataque à distância por rodada (como se tivesse o talento Deflect Arrows). Além disso, concede um bônus de contra ataques à distância: +2 (least), +5 (lesser) ou +2 (greater).",
+                                                                                     "unidentified":  "Esse cristal tem uma superfície lisa e reflete a luz como um pequeno espelho."
+                                                                                 },
+                                   "crystal-of-arrow-deflection-greater-shield":  {
+                                                                                      "name":  "",
+                                                                                      "description":  "Permite ao usuário desviar um ataque à distância por rodada (como se tivesse o talento Deflect Arrows). Além disso, concede um bônus de contra ataques à distância: +2 (least), +5 (lesser) ou +2 (greater).",
+                                                                                      "unidentified":  "Esse cristal tem uma superfície lisa e reflete a luz como um pequeno espelho."
+                                                                                  },
+                                   "crystal-of-bent-sight":  {
+                                                                 "name":  "",
+                                                                 "description":  "Concede ao usuário visão verdadeira (como a magia *true seeing*) em um cone de 3 metros à frente.",
+                                                                 "unidentified":  "O cristal parece uma lente tortuosa, com listras douradas que lembram raios de luz curvados."
+                                                             },
+                                   "crystal-of-glancing-blows-least-armor":  {
+                                                                                 "name":  "",
+                                                                                 "description":  "Concede um bônus de competência em testes para evitar ser agarrado: +2 (least), +5 (lesser) ou +10 (greater).",
+                                                                                 "unidentified":  "O cristal tem uma superfície ligeiramente irregular, como se tivesse sido arranhado por garras."
+                                                                             },
+                                   "crystal-of-glancing-blows-lesser-armor":  {
+                                                                                  "name":  "",
+                                                                                  "description":  "Concede um bônus de competência em testes para evitar ser agarrado: +2 (least), +5 (lesser) ou +10 (greater).",
+                                                                                  "unidentified":  "O cristal tem uma superfície ligeiramente irregular, como se tivesse sido arranhado por garras."
+                                                                              },
+                                   "crystal-of-glancing-blows-greater-armor":  {
+                                                                                   "name":  "",
+                                                                                   "description":  "Concede um bônus de competência em testes para evitar ser agarrado: +2 (least), +5 (lesser) ou +10 (greater).",
+                                                                                   "unidentified":  "O cristal tem uma superfície ligeiramente irregular, como se tivesse sido arranhado por garras."
+                                                                               },
+                                   "crystal-of-lifekeeping-least-armor":  {
+                                                                              "name":  "",
+                                                                              "description":  "Concede bônus de competência +1 (least), +3 (lesser) ou +5 (greater) em testes de resistência contra efeitos que causam morte ou drenagem de nível. Também permite rerollar um teste de resistência falho contra tais efeitos uma vez por dia.",
+                                                                              "unidentified":  "O cristal pulsa com um suave brilho esverdeado, lembrando a luz de uma vela em um ambiente escuro."
+                                                                          },
+                                   "crystal-of-lifekeeping-lesser-armor":  {
+                                                                               "name":  "",
+                                                                               "description":  "Concede bônus de competência +1 (least), +3 (lesser) ou +5 (greater) em testes de resistência contra efeitos que causam morte ou drenagem de nível. Também permite rerollar um teste de resistência falho contra tais efeitos uma vez por dia.",
+                                                                               "unidentified":  "O cristal pulsa com um suave brilho esverdeado, lembrando a luz de uma vela em um ambiente escuro."
+                                                                           },
+                                   "crystal-of-lifekeeping-greater-armor":  {
+                                                                                "name":  "",
+                                                                                "description":  "Concede bônus de competência +1 (least), +3 (lesser) ou +5 (greater) em testes de resistência contra efeitos que causam morte ou drenagem de nível. Também permite rerollar um teste de resistência falho contra tais efeitos uma vez por dia.",
+                                                                                "unidentified":  "O cristal pulsa com um suave brilho esverdeado, lembrando a luz de uma vela em um ambiente escuro."
+                                                                            },
+                                   "crystal-of-mind-cloaking-least-armor":  {
+                                                                                "name":  "",
+                                                                                "description":  "Concede bônus de competência +1 (least), +3 (lesser) ou +5 (greater) em testes de resistência contra efeitos que afetam a mente. Também permite rerollar um teste de resistência falho contra tais efeitos uma vez por dia.",
+                                                                                "unidentified":  "O cristal parece envolver-se em uma névoa prata fraca quando segurado."
+                                                                            },
+                                   "crystal-of-mind-cloaking-lesser-armor":  {
+                                                                                 "name":  "",
+                                                                                 "description":  "Concede bônus de competência +1 (least), +3 (lesser) ou +5 (greater) em testes de resistência contra efeitos que afetam a mente. Também permite rerollar um teste de resistência falho contra tais efeitos uma vez por dia.",
+                                                                                 "unidentified":  "O cristal parece envolver-se em uma névoa prata fraca quando segurado."
+                                                                             },
+                                   "crystal-of-mind-cloaking-greater-armor":  {
+                                                                                  "name":  "",
+                                                                                  "description":  "Concede bônus de competência +1 (least), +3 (lesser) ou +5 (greater) em testes de resistência contra efeitos que afetam a mente. Também permite rerollar um teste de resistência falho contra tais efeitos uma vez por dia.",
+                                                                                  "unidentified":  "O cristal parece envolver-se em uma névoa prata fraca quando segurado."
+                                                                              },
+                                   "crystal-of-screening-least-armor":  {
+                                                                            "name":  "",
+                                                                            "description":  "Impõe uma penalidade de -2 (least), -5 (lesser) ou -10 (greater) em ataques de toque contra o usuário por criaturas incorpóreas.",
+                                                                            "unidentified":  "O cristal parece esverdeado e translúcido, como se estivesse ligeiramente fora de fase."
+                                                                        },
+                                   "crystal-of-screening-lesser-armor":  {
+                                                                             "name":  "",
+                                                                             "description":  "Impõe uma penalidade de -2 (least), -5 (lesser) ou -10 (greater) em ataques de toque contra o usuário por criaturas incorpóreas.",
+                                                                             "unidentified":  "O cristal parece esverdeado e translúcido, como se estivesse ligeiramente fora de fase."
+                                                                         },
+                                   "crystal-of-screening-greater-armor":  {
+                                                                              "name":  "",
+                                                                              "description":  "Impõe uma penalidade de -2 (least), -5 (lesser) ou -10 (greater) em ataques de toque contra o usuário por criaturas incorpóreas.",
+                                                                              "unidentified":  "O cristal parece esverdeado e translúcido, como se estivesse ligeiramente fora de fase."
+                                                                          },
+                                   "crystal-of-stamina-least-armor":  {
+                                                                          "name":  "",
+                                                                          "description":  "Concede bônus de competência +1 (least), +3 (lesser) ou +5 (greater) em testes de resistência contra doenças e venenos. Também permite rerollar um teste de resistência falho contra tais efeitos uma vez por dia.",
+                                                                          "unidentified":  "O cristal tem uma tonalidade avermelhada e parece conter pequenas bolhas internas."
+                                                                      },
+                                   "crystal-of-stamina-lesser-armor":  {
+                                                                           "name":  "",
+                                                                           "description":  "Concede bônus de competência +1 (least), +3 (lesser) ou +5 (greater) em testes de resistência contra doenças e venenos. Também permite rerollar um teste de resistência falho contra tais efeitos uma vez por dia.",
+                                                                           "unidentified":  "O cristal tem uma tonalidade avermelhada e parece conter pequenas bolhas internas."
+                                                                       },
+                                   "crystal-of-stamina-greater-armor":  {
+                                                                            "name":  "",
+                                                                            "description":  "Concede bônus de competência +1 (least), +3 (lesser) ou +5 (greater) em testes de resistência contra doenças e venenos. Também permite rerollar um teste de resistência falho contra tais efeitos uma vez por dia.",
+                                                                            "unidentified":  "O cristal tem uma tonalidade avermelhada e parece conter pequenas bolhas internas."
+                                                                        },
+                                   "iron-ward-diamond-least-armor":  {
+                                                                         "name":  "",
+                                                                         "description":  "Concede redução de dano: 1/- (least), 3/- (lesser) ou 5/- (greater) contra ataques de armas não-mágicas. Em armaduras médias ou pesadas, o bypass aumenta para 10 (lesser) ou 50 (greater).",
+                                                                         "unidentified":  "O cristal é de um dun claro com linhas esverdeadas que lembram veios de metal."
+                                                                     },
+                                   "iron-ward-diamond-lesser-armor":  {
+                                                                          "name":  "",
+                                                                          "description":  "Concede redução de dano: 1/- (least), 3/- (lesser) ou 5/- (greater) contra ataques de armas não-mágicas. Em armaduras médias ou pesadas, o bypass aumenta para 10 (lesser) ou 50 (greater).",
+                                                                          "unidentified":  "O cristal é de um dun claro com linhas esverdeadas que lembram veios de metal."
+                                                                      },
+                                   "iron-ward-diamond-greater-armor":  {
+                                                                           "name":  "",
+                                                                           "description":  "Concede redução de dano: 1/- (least), 3/- (lesser) ou 5/- (greater) contra ataques de armas não-mágicas. Em armaduras médias ou pesadas, o bypass aumenta para 10 (lesser) ou 50 (greater).",
+                                                                           "unidentified":  "O cristal é de um dun claro com linhas esverdeadas que lembram veios de metal."
+                                                                       },
+                                   "restful-least":  {
+                                                         "name":  "",
+                                                         "description":  "Liga-se a uma armadura ou escudo e concede ao usuário a habilidade de lançar *gentle repose* 1 vez por dia.",
+                                                         "unidentified":  "Este cristal esverdeado parece absorver calor ao toque; sua aura fraca é quase imperceptível."
+                                                     },
+                                   "rubicund-frenzy-least-armor":  {
+                                                                       "name":  "",
+                                                                       "description":  "Quando o portador está com metade ou menos de seus pontos de vida totais, ele ganha um bônus de moral +1 (least), +3 (lesser) ou +5 (greater) em dano de arma e em testes de resistência contra medo. Esse efeito só funciona em criaturas vivas.",
+                                                                       "unidentified":  "O cristal possui um brilho rubino intenso que parece pulsar conforme o coração do portador acelera."
+                                                                   },
+                                   "rubicund-frenzy-lesser-armor":  {
+                                                                        "name":  "",
+                                                                        "description":  "Quando o portador está com metade ou menos de seus pontos de vida totais, ele ganha um bônus de moral +1 (least), +3 (lesser) ou +5 (greater) em dano de arma e em testes de resistência contra medo. Esse efeito só funciona em criaturas vivas.",
+                                                                        "unidentified":  "O cristal possui um brilho rubino intenso que parece pulsar conforme o coração do portador acelera."
+                                                                    },
+                                   "rubicund-frenzy-greater-armor":  {
+                                                                         "name":  "",
+                                                                         "description":  "Quando o portador está com metade ou menos de seus pontos de vida totais, ele ganha um bônus de moral +1 (least), +3 (lesser) ou +5 (greater) em dano de arma e em testes de resistência contra medo. Esse efeito só funciona em criaturas vivas.",
+                                                                         "unidentified":  "O cristal possui um brilho rubino intenso que parece pulsar conforme o coração do portador acelera."
+                                                                     }
+                               }
+                 }
 }

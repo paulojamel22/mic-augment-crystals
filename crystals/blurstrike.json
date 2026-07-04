@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "blurstrike",
+  "name": "Blurstrike Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 6,
+  "casterLevel": 6,
+  "aura": { "school": "illusion", "dc": 18 },
+  "activation": "Swift (command)",
+  "weight": 0,
+  "tags": ["blur", "flat-footed"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "blur",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon is semitransparent, almost as though it were glass, but it is obviously of sturdier make. When activated, a blurstrike weapon partially fades from view for 1 round, appearing only as a faint outline (though you, as the wielder, can see it normally). When you attack, an activated blurstrike weapon appears to others as an amorphous blur, preventing a foe from knowing exactly where the blow is aimed. After you activate this property, your opponent is considered flat-footed against the first attack you make with the blurstrike weapon in the round when you activate it. Creatures that don't rely on sight for combat and creatures with uncanny dodge aren't treated as flat-footed against this attack. The blurstrike property functions ten times per day.",
+  "unidentifiedDesc": "A semitransparent glass-like weapon augmentation.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

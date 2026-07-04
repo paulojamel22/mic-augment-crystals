@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "spellstrike",
+  "name": "Spellstrike Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 8,
+  "casterLevel": 8,
+  "aura": { "school": "abjuration", "dc": 19 },
+  "activation": "Free (mental)",
+  "weight": 0,
+  "tags": ["saving-throw", "enhancement", "transfer"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "resistance",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "The image of a great helm ornaments the end of this hefty, unusually solid weapon. A spellstrike weapon allows you to transfer some or all of the weapon's enhancement bonus, using it as a bonus on your saving throws against spells or spell-like abilities. As a free action, you choose how to allocate the weapon's enhancement bonus at the start of your turn before using the weapon, and the effect on saving throws lasts until the start of your next turn.",
+  "unidentifiedDesc": "A helm-adorned weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

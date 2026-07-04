@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "mighty-smiting",
+  "name": "Mighty Smiting Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 8,
+  "casterLevel": 8,
+  "aura": { "school": "evocation", "dc": 19 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["smite", "paladin", "bonus-attacks"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "divine power",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon feels heavier than a normal weapon of its type. Inscribed on its surface is a message affirming its superiority over some category of creature. If you have a smite ability (smite, smite evil, smite shadowlands, or the like), you gain an extra +2 bonus on your smite attack rolls and damage rolls. In addition, you gain one additional use of your smite ability each day while wielding this weapon. If you have more than one smite ability, you must choose which one gains the extra use.",
+  "unidentifiedDesc": "A heavy weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

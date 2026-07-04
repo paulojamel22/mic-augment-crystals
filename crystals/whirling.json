@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "whirling",
+  "name": "Whirling Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 11,
+  "casterLevel": 11,
+  "aura": { "school": "transmutation", "dc": 20 },
+  "activation": "Full-round (mental)",
+  "weight": 0,
+  "tags": ["whirlwind", "multiple-attacks", "sweeping"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "haste",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "The hilt of this weapon is twisted into a cork-screw design, and its blade is dramatically curved. Three times per day, you can use this weapon to make a whirling attack that has a chance of striking all nearby opponents. Instead of making your regular attacks, you instead make one melee attack at your full attack bonus against each opponent within reach of the weapon. This property otherwise functions like the Whirlwind Attack feat.",
+  "unidentifiedDesc": "A cork-screw twisted weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

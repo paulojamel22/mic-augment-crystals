@@ -1,23 +1,19 @@
 {
   "language.name": "English",
-
-  "crystal.label":          "Augment Crystal",
-  "crystal.labelPlural":    "Augment Crystals",
-  "crystal.emptySlot":      "(empty crystal socket)",
-  "crystal.cannotEquip":    "This item cannot accept augment crystals.",
+  "crystal.label": "Augment Crystal",
+  "crystal.labelPlural": "Augment Crystals",
+  "crystal.emptySlot": "(empty crystal socket)",
+  "crystal.cannotEquip": "This item cannot accept augment crystals.",
   "crystal.cannotEquipRank": "Rank \"%s\" requires item enhancement bonus of at least +%d.",
   "crystal.cannotEquipMissingSpellPrereq": "The crafter's spell requirements are not met: %s.",
   "crystal.cannotEquipMissingFeatPrereq": "The required feat is missing: %s.",
   "crystal.cannotEquipArmorType": "This crystal only functions when attached to: %s.",
-
-  "crystal.family.armor":   "Armor Crystal",
-  "crystal.family.shield":  "Shield Crystal",
-  "crystal.family.weapon":  "Weapon Crystal",
-
-  "crystal.rank.least":     "Least",
-  "crystal.rank.lesser":    "Lesser",
-  "crystal.rank.greater":   "Greater",
-
+  "crystal.family.armor": "Armor Crystal",
+  "crystal.family.shield": "Shield Crystal",
+  "crystal.family.weapon": "Weapon Crystal",
+  "crystal.rank.least": "Least",
+  "crystal.rank.lesser": "Lesser",
+  "crystal.rank.greater": "Greater",
   "crystal.effect.swim-check": "Removes armor check penalty on Swim checks.",
   "crystal.effect.swim-speed": "Grants a swim speed equal to half land speed (rounded down to next 5 ft.).",
   "crystal.effect.underwater-freedom": "No penalties on attacks or movement while underwater (as if under freedom of movement).",
@@ -33,110 +29,374 @@
   "crystal.effect.spell-like": "Functions as the spell %{spell}.",
   "crystal.effect.extraplanar-trait-protection": "You are protected from the listed extraplanar traits: %{covers}.",
   "crystal.effect.touch-attack-penalty-vs-incorporeal": "Imposes a %{amount} penalty on touch attacks against you by incorporeal creatures.",
-
   "crystal.hostRestriction.medium-or-heavy-armor": "medium or heavy armor",
-  "crystal.hostRestriction.heavy-armor":          "heavy armor",
-  "crystal.hostRestriction.shield-only":          "shields only",
-  "crystal.hostRestriction.armor-only":           "armor only",
-
-  "crystal.tag.endure":           "endure elements",
-  "crystal.tag.elements":         "elements",
-  "crystal.tag.alignment":        "alignment traits",
-  "crystal.tag.extraplanar":      "extraplanar",
-  "crystal.tag.aquatic":          "aquatic",
-  "crystal.tag.underwater":       "underwater",
-  "crystal.tag.swim":             "swim",
-  "crystal.tag.water-breathing":  "water breathing",
-  "crystal.tag.freedom-of-movement":"freedom of movement",
-  "crystal.tag.ranged":           "ranged attacks",
-  "crystal.tag.defense":          "defense",
-  "crystal.tag.arrow":            "arrow",
-  "crystal.tag.ac-bonus":         "AC bonus",
-  "crystal.tag.deflect":          "deflect",
-  "crystal.tag.gaze":             "gaze",
-  "crystal.tag.divination":      "divination",
-  "crystal.tag.vision":           "vision",
-  "crystal.tag.grapple":          "grapple",
-  "crystal.tag.competence":       "competence",
-  "crystal.tag.necromancy":       "necromancy",
-  "crystal.tag.death-effects":    "death effects",
-  "crystal.tag.saves":            "saves",
-  "crystal.tag.mind-affecting":   "mind-affecting",
-  "crystal.tag.mental":           "mental",
-  "crystal.tag.incorporeal":      "incorporeal",
-  "crystal.tag.force":            "force",
-  "crystal.tag.touch-attack-defense":"touch attack defense",
-  "crystal.tag.stamina":          "stamina",
-  "crystal.tag.fortitude":        "fortitude",
-  "crystal.tag.disease":          "disease",
-  "crystal.tag.poison":           "poison",
-  "crystal.tag.diamond":          "diamond",
-  "crystal.tag.dr":               "damage reduction",
-  "crystal.tag.armor":            "armor",
-  "crystal.tag.ruby":             "ruby",
-  "crystal.tag.frenzy":           "frenzy",
-  "crystal.tag.blood":            "blood",
-  "crystal.tag.morale":           "morale",
-  "crystal.tag.enchantment":      "enchantment",
-  "crystal.tag.fear":             "fear",
-  "crystal.tag.adamant":          "adamant",
-  "crystal.tag.hardness":         "hardness",
-  "crystal.tag.energy":           "energy",
-  "crystal.tag.protection":       "protection",
-  "crystal.tag.fire":             "fire",
-  "crystal.tag.cold":             "cold",
-  "crystal.tag.acid":             "acid",
-  "crystal.tag.electricity":      "electricity",
-  "crystal.tag.sonic":            "sonic",
-  "crystal.tag.shield":           "shield",
-  "crystal.tag.anti-undead":      "anti-undead",
-  "crystal.tag.abjuration":       "abjuration",
-  "crystal.tag.conjuration":      "conjuration",
-  "crystal.tag.transmutation":    "transmutation",
-  "crystal.tag.evocation":        "evocation",
-  "crystal.tag.perception":       "perception",
-
+  "crystal.hostRestriction.heavy-armor": "heavy armor",
+  "crystal.hostRestriction.shield-only": "shields only",
+  "crystal.hostRestriction.armor-only": "armor only",
+  "crystal.tag.endure": "endure elements",
+  "crystal.tag.elements": "elements",
+  "crystal.tag.alignment": "alignment traits",
+  "crystal.tag.extraplanar": "extraplanar",
+  "crystal.tag.aquatic": "aquatic",
+  "crystal.tag.underwater": "underwater",
+  "crystal.tag.swim": "swim",
+  "crystal.tag.water-breathing": "water breathing",
+  "crystal.tag.freedom-of-movement": "freedom of movement",
+  "crystal.tag.ranged": "ranged attacks",
+  "crystal.tag.defense": "defense",
+  "crystal.tag.arrow": "arrow",
+  "crystal.tag.ac-bonus": "AC bonus",
+  "crystal.tag.deflect": "deflect",
+  "crystal.tag.gaze": "gaze",
+  "crystal.tag.divination": "divination",
+  "crystal.tag.vision": "vision",
+  "crystal.tag.grapple": "grapple",
+  "crystal.tag.competence": "competence",
+  "crystal.tag.necromancy": "necromancy",
+  "crystal.tag.death-effects": "death effects",
+  "crystal.tag.saves": "saves",
+  "crystal.tag.mind-affecting": "mind-affecting",
+  "crystal.tag.mental": "mental",
+  "crystal.tag.incorporeal": "incorporeal",
+  "crystal.tag.force": "force",
+  "crystal.tag.touch-attack-defense": "touch attack defense",
+  "crystal.tag.stamina": "stamina",
+  "crystal.tag.fortitude": "fortitude",
+  "crystal.tag.disease": "disease",
+  "crystal.tag.poison": "poison",
+  "crystal.tag.diamond": "diamond",
+  "crystal.tag.dr": "damage reduction",
+  "crystal.tag.armor": "armor",
+  "crystal.tag.ruby": "ruby",
+  "crystal.tag.frenzy": "frenzy",
+  "crystal.tag.blood": "blood",
+  "crystal.tag.morale": "morale",
+  "crystal.tag.enchantment": "enchantment",
+  "crystal.tag.fear": "fear",
+  "crystal.tag.adamant": "adamant",
+  "crystal.tag.hardness": "hardness",
+  "crystal.tag.energy": "energy",
+  "crystal.tag.protection": "protection",
+  "crystal.tag.fire": "fire",
+  "crystal.tag.cold": "cold",
+  "crystal.tag.acid": "acid",
+  "crystal.tag.electricity": "electricity",
+  "crystal.tag.sonic": "sonic",
+  "crystal.tag.shield": "shield",
+  "crystal.tag.anti-undead": "anti-undead",
+  "crystal.tag.abjuration": "abjuration",
+  "crystal.tag.conjuration": "conjuration",
+  "crystal.tag.transmutation": "transmutation",
+  "crystal.tag.evocation": "evocation",
+  "crystal.tag.perception": "perception",
   "feat.craft-magic-arms-and-armor": "Craft Magic Arms and Armor",
-  "feat.shield":                    "Shield Proficiency",
-  "feat.deflect-arrows":            "Deflect Arrows",
-
-  "spell.endure-elements":            "endure elements",
-  "spell.freedom-of-movement":         "freedom of movement",
-  "spell.water-breathing":            "water breathing",
-  "spell.death-ward":                 "death ward",
-  "spell.protection-from-chaos":      "protection from chaos",
-  "spell.protection-from-good":       "protection from good",
-  "spell.protection-from-evil":       "protection from evil",
-  "spell.protection-from-law":        "protection from law",
-  "spell.mage-armor":                 "mage armor",
-  "spell.resistance":                 "resistance",
-  "spell.remove-disease":             "remove disease",
-  "spell.neutralize-poison":          "neutralize poison",
-  "spell.stoneskin":                  "stoneskin",
-  "spell.heroism":                    "heroism",
-  "spell.clarity-or-clair":           "clairaudience/clairvoyance",
-  "spell.resist-energy":              "resist energy",
-
-  "ui.crystalButtonLabel":      "Equip Crystal",
-  "ui.crystalEquipPrompt":      "Drag an augment crystal from the compendium into the socket.",
-  "ui.crystalIdentifyCommand":  "/mic identify",
-
-  "chat.crystalEquipped":       "You slot the [[name]] into your [[hostType]].",
-  "chat.crystalUnequipped":     "You remove the [[name]] from your [[hostType]].",
-  "chat.crystalRejection":     "Cannot equip [[name]]: [[reason]].",
-  "chat.crystalSaveReroll.prompt":  "Reroll save?",
+  "feat.shield": "Shield Proficiency",
+  "feat.deflect-arrows": "Deflect Arrows",
+  "spell.endure-elements": "endure elements",
+  "spell.freedom-of-movement": "freedom of movement",
+  "spell.water-breathing": "water breathing",
+  "spell.death-ward": "death ward",
+  "spell.protection-from-chaos": "protection from chaos",
+  "spell.protection-from-good": "protection from good",
+  "spell.protection-from-evil": "protection from evil",
+  "spell.protection-from-law": "protection from law",
+  "spell.mage-armor": "mage armor",
+  "spell.resistance": "resistance",
+  "spell.remove-disease": "remove disease",
+  "spell.neutralize-poison": "neutralize poison",
+  "spell.stoneskin": "stoneskin",
+  "spell.heroism": "heroism",
+  "spell.clarity-or-clair": "clairaudience/clairvoyance",
+  "spell.resist-energy": "resist energy",
+  "ui.crystalButtonLabel": "Equip Crystal",
+  "ui.crystalEquipPrompt": "Drag an augment crystal from the compendium into the socket.",
+  "ui.crystalIdentifyCommand": "/mic identify",
+  "chat.crystalEquipped": "You slot the [[name]] into your [[hostType]].",
+  "chat.crystalUnequipped": "You remove the [[name]] from your [[hostType]].",
+  "chat.crystalRejection": "Cannot equip [[name]]: [[reason]].",
+  "chat.crystalSaveReroll.prompt": "Reroll save?",
   "chat.crystalSaveReroll.granted": "[[name]] lets you reroll a save against [[effect]] (1×/day).",
-  "chat.crystalActivation.greaterUsed":"The greater crystal glows; its daily power activates.",
-
-  "ocr.placeholder.dunAndEcru":  "a dun and ecru diamond",
-  "ocr.placeholder.blueSapphire":"a blue sapphire",
-  "ocr.placeholder.seaGreen":    "a sea-green crystal",
-  "ocr.placeholder.cloudedNight":"a clouded night-sky crystal",
+  "chat.crystalActivation.greaterUsed": "The greater crystal glows; its daily power activates.",
+  "ocr.placeholder.dunAndEcru": "a dun and ecru diamond",
+  "ocr.placeholder.blueSapphire": "a blue sapphire",
+  "ocr.placeholder.seaGreen": "a sea-green crystal",
+  "ocr.placeholder.cloudedNight": "a clouded night-sky crystal",
   "ocr.placeholder.brightGreen": "a bright green circular crystal",
-  "ocr.placeholder.sparkling":   "a bright crystal that sparkles in the light",
-  "ocr.placeholder.rainbow":     "a multifaceted crystal whose surface shimmers with rainbow hues",
-  "ocr.placeholder.pulsingRed":  "a dull red crystal that pulses in time with your heartbeat",
-  "ocr.placeholder.rubyTorus":   "a ruby cut into a beveled torus",
-  "ocr.placeholder.moist":       "a moist sea-green crystal",
-  "ocr.placeholder.silverPlate": "a small crystal affixed to a polished silver plate"
+  "ocr.placeholder.sparkling": "a bright crystal that sparkles in the light",
+  "ocr.placeholder.rainbow": "a multifaceted crystal whose surface shimmers with rainbow hues",
+  "ocr.placeholder.pulsingRed": "a dull red crystal that pulses in time with your heartbeat",
+  "ocr.placeholder.rubyTorus": "a ruby cut into a beveled torus",
+  "ocr.placeholder.moist": "a moist sea-green crystal",
+  "ocr.placeholder.silverPlate": "a small crystal affixed to a polished silver plate",
+  "crystals": {
+    "_schema": "1.0",
+    "_doc": "Per-catalog-id display strings (name, description, unidentified) keyed by crystal catalogId.",
+    "items": {
+      "adamant-armor-least-armor": {
+        "name": "Crystal of Adamant Armor (Least)",
+        "description": "This clasp holds a small diamond orb with a sphere of steel at its center. A crystal of adamant armor strengthens your armor or shield against damage.",
+        "unidentified": "A steel-clad diamond orb; the metal is finer than the clasp around it."
+      },
+      "adamant-armor-least-shield": {
+        "name": "Crystal of Adamant Armor (Least)",
+        "description": "This clasp holds a small diamond orb with a sphere of steel at its center. A crystal of adamant armor strengthens your armor or shield against damage.",
+        "unidentified": "A steel-clad diamond orb; the metal is finer than the clasp around it."
+      },
+      "adamant-armor-lesser-armor": {
+        "name": "Crystal of Adamant Armor (Lesser)",
+        "description": "This clasp holds a small diamond orb with a sphere of steel at its center. A crystal of adamant armor strengthens your armor or shield against damage.",
+        "unidentified": "A steel-clad diamond orb; the metal is finer than the clasp around it."
+      },
+      "adamant-armor-lesser-shield": {
+        "name": "Crystal of Adamant Armor (Lesser)",
+        "description": "This clasp holds a small diamond orb with a sphere of steel at its center. A crystal of adamant armor strengthens your armor or shield against damage.",
+        "unidentified": "A steel-clad diamond orb; the metal is finer than the clasp around it."
+      },
+      "adamant-armor-greater-armor": {
+        "name": "Crystal of Adamant Armor (Greater)",
+        "description": "This clasp holds a small diamond orb with a sphere of steel at its center. A crystal of adamant armor strengthens your armor or shield against damage.",
+        "unidentified": "A steel-clad diamond orb; the metal is finer than the clasp around it."
+      },
+      "adamant-armor-greater-shield": {
+        "name": "Crystal of Adamant Armor (Greater)",
+        "description": "This clasp holds a small diamond orb with a sphere of steel at its center. A crystal of adamant armor strengthens your armor or shield against damage.",
+        "unidentified": "A steel-clad diamond orb; the metal is finer than the clasp around it."
+      },
+      "clasp-energy-acid-greater": {
+        "name": "Clasp of Acid Protection",
+        "description": "This hazy green crystal hisses faintly when exposed to the open air. As a greater crystal of energy protection, it grants resistance 15 against acid. Once the crystal has prevented a total of 75 points of acid damage, it becomes inert until the following day.",
+        "unidentified": "A hazy shard of dark green stone."
+      },
+      "clasp-energy-acid-least": {
+        "name": "Clasp of Acid Protection",
+        "description": "This hazy green crystal hisses faintly when exposed to the open air. As a least crystal of energy protection, it grants resistance 5 against acid. Once the crystal has prevented a total of 25 points of acid damage, it becomes inert until the following day.",
+        "unidentified": "A hazy shard of dark green stone."
+      },
+      "clasp-energy-acid-lesser": {
+        "name": "Clasp of Acid Protection",
+        "description": "This hazy green crystal hisses faintly when exposed to the open air. As a lesser crystal of energy protection, it grants resistance 10 against acid. Once the crystal has prevented a total of 50 points of acid damage, it becomes inert until the following day.",
+        "unidentified": "A hazy shard of dark green stone."
+      },
+      "clasp-energy-cold-greater": {
+        "name": "Clasp of Cold Protection",
+        "description": "This icy clear crystal is covered in a thin layer of frost. As a greater crystal of energy protection, it grants resistance 15 against cold. Once the crystal has prevented a total of 75 points of cold damage, it becomes inert until the following day.",
+        "unidentified": "A frost-rimmed crystal of clear hue."
+      },
+      "clasp-energy-cold-least": {
+        "name": "Clasp of Cold Protection",
+        "description": "This icy clear crystal is covered in a thin layer of frost. As a least crystal of energy protection, it grants resistance 5 against cold. Once the crystal has prevented a total of 25 points of cold damage, it becomes inert until the following day.",
+        "unidentified": "A frost-rimmed crystals of clear hue."
+      },
+      "clasp-energy-cold-lesser": {
+        "name": "Clasp of Cold Protection",
+        "description": "This icy clear crystal is covered in a thin layer of frost. As a lesser crystal of energy protection, it grants resistance 10 against cold. Once the crystal has prevented a total of 50 points of cold damage, it becomes inert until the following day.",
+        "unidentified": "A frost-rimmed crystal of clear hue."
+      },
+      "clasp-energy-electricity-greater": {
+        "name": "Clasp of Electricity Protection",
+        "description": "This brilliant blue-white crystal crackles with static discharge when touched. As a greater crystal of energy protection, it grants resistance 15 against electricity. Once the crystal has prevented a total of 75 points of electricity damage, it becomes inert until the following day.",
+        "unidentified": "A flashing, brilliant blue-white gem that flickers with pale light."
+      },
+      "clasp-energy-electricity-least": {
+        "name": "Clasp of Electricity Protection",
+        "description": "This brilliant blue-white crystal crackles with static discharge when touched. As a least crystal of energy protection, it grants resistance 5 against electricity. Once the crystal has prevented a total of 25 points of electricity damage, it becomes inert until the following day.",
+        "unidentified": "A flashing, brilliant blue-white gem that flickers with pale light."
+      },
+      "clasp-energy-electricity-lesser": {
+        "name": "Clasp of Electricity Protection",
+        "description": "This brilliant blue-white crystal crackles with static discharge when touched. As a lesser crystal of energy protection, it grants resistance 10 against electricity. Once the crystal has prevented a total of 50 points of electricity damage, it becomes inert until the following day.",
+        "unidentified": "A flashing, brilliant blue-white gem that flickers with pale light."
+      },
+      "clasp-energy-fire-greater": {
+        "name": "Clasp of Fire Protection",
+        "description": "This fiery red crystal is slightly warm to the touch. As a greater crystal of energy protection, it grants resistance 15 against fire. Once the crystal has prevented a total of 75 points of fire damage, it becomes inert until the following day.",
+        "unidentified": "A faintly warm red gemstone of unusual color."
+      },
+      "clasp-energy-fire-least": {
+        "name": "Clasp of Fire Protection",
+        "description": "This fiery red crystal is slightly warm to the touch. As a least crystal of energy protection, it grants resistance 5 against fire. Once the crystal has prevented a total of 25 points of fire damage, it becomes inert until the following day.",
+        "unidentified": "A faintly warm red gemstone of unusual color."
+      },
+      "clasp-energy-fire-lesser": {
+        "name": "Clasp of Fire Protection",
+        "description": "This fiery red crystal is slightly warm to the touch. As a lesser crystal of energy protection, it grants resistance 10 against fire. Once the crystal has prevented a total of 50 points of fire damage, it becomes inert until the following day.",
+        "unidentified": "A faintly warm red gemstone of unusual color."
+      },
+      "clasp-energy-sonic-greater": {
+        "name": "Clasp of Sonic Protection",
+        "description": "This deep purple crystal gives off a faint hum, and rings with a sonorous chime when tapped. As a greater crystal of energy protection, it grants resistance 15 against sonic. Once the crystal has prevented a total of 75 points of sonic damage, it becomes inert until the following day.",
+        "unidentified": "A faintly humming purple stone that occasionally chimes softly."
+      },
+      "clasp-energy-sonic-least": {
+        "name": "Clasp of Sonic Protection",
+        "description": "This deep purple crystal gives off a faint hum, and rings with a sonorous chime when tapped. As a least crystal of energy protection, it grants resistance 5 against sonic. Once the crystal has prevented a total of 25 points of sonic damage, it becomes inert until the following day.",
+        "unidentified": "A faintly humming purple stone that occasionally chimes softly."
+      },
+      "clasp-energy-sonic-lesser": {
+        "name": "Clasp of Sonic Protection",
+        "description": "This deep purple crystal gives off a faint hum, and rings with a sonorous chime when tapped. As a lesser crystal of energy protection, it grants resistance 10 against sonic. Once the crystal has prevented a total of 50 points of sonic damage, it becomes inert until the following day.",
+        "unidentified": "A faintly humming purple stone that occasionally chimes softly."
+      },
+      "crystal-of-adaptation-least-armor": {
+        "name": "Crystal of Adaptation (Least)",
+        "description": "This bright green, circular crystal is pleasantly warm to the touch. A crystal of adaptation protects you from hostile environments, both terrestrial and extraplanar. As an augment crystal slotted into armor, it layers spell-like protection whose power grows with the crystal's rank.",
+        "unidentified": "A small bright green circular crystal, faintly warm to the touch."
+      },
+      "crystal-of-adaptation-lesser-armor": {
+        "name": "Crystal of Adaptation (Lesser)",
+        "description": "This bright green, circular crystal is pleasantly warm to the touch. A crystal of adaptation protects you from hostile environments, both terrestrial and extraplanar. As an augment crystal slotted into armor, it layers spell-like protection whose power grows with the crystal's rank.",
+        "unidentified": "A small bright green circular crystal, faintly warm to the touch."
+      },
+      "crystal-of-adaptation-greater-armor": {
+        "name": "Crystal of Adaptation (Greater)",
+        "description": "This bright green, circular crystal is pleasantly warm to the touch. A crystal of adaptation protects you from hostile environments, both terrestrial and extraplanar. As an augment crystal slotted into armor, it layers spell-like protection whose power grows with the crystal's rank.",
+        "unidentified": "A small bright green circular crystal, faintly warm to the touch."
+      },
+      "crystal-of-aquatic-action-least-armor": {
+        "name": "Crystal of Aquatic Action (Least)",
+        "description": "This sea-green crystal always feels moist to the touch. A crystal of aquatic action aids the wearer while underwater. The least crystal negates armor check penalties on Swim checks; the lesser grants a swim speed of half the land speed (rounded down to the next 5 ft.); the greater grants freedom of movement underwater and lets the wearer breathe water as easily as air.",
+        "unidentified": "A small sea-green gemstone, always slightly damp to the touch."
+      },
+      "crystal-of-aquatic-action-lesser-armor": {
+        "name": "Crystal of Aquatic Action (Lesser)",
+        "description": "This sea-green crystal always feels moist to the touch. A crystal of aquatic action aids the wearer while underwater. The least crystal negates armor check penalties on Swim checks; the lesser grants a swim speed of half the land speed (rounded down to the next 5 ft.); the greater grants freedom of movement underwater and lets the wearer breathe water as easily as air.",
+        "unidentified": "A small sea-green gemstone, always slightly damp to the touch."
+      },
+      "crystal-of-aquatic-action-greater-armor": {
+        "name": "Crystal of Aquatic Action (Greater)",
+        "description": "This sea-green crystal always feels moist to the touch. A crystal of aquatic action aids the wearer while underwater. The least crystal negates armor check penalties on Swim checks; the lesser grants a swim speed of half the land speed (rounded down to the next 5 ft.); the greater grants freedom of movement underwater and lets the wearer breathe water as easily as air.",
+        "unidentified": "A small sea-green gemstone, always slightly damp to the touch."
+      },
+      "crystal-of-arrow-deflection-least-shield": {
+        "name": "Crystal of Arrow Deflection (Least)",
+        "description": "This blue sapphire is cut into a large cabochon. It contains a small flint arrowhead in its center. A crystal of arrow deflection protects you from ranged weapon attacks.",
+        "unidentified": "A blue sapphire cabochon with what appears to be a small dark inclusion at its center."
+      },
+      "crystal-of-arrow-deflection-lesser-shield": {
+        "name": "Crystal of Arrow Deflection (Lesser)",
+        "description": "This blue sapphire is cut into a large cabochon. It contains a small flint arrowhead in its center. A crystal of arrow deflection protects you from ranged weapon attacks.",
+        "unidentified": "A blue sapphire cabochon with what appears to be a small dark inclusion at its center."
+      },
+      "crystal-of-arrow-deflection-greater-shield": {
+        "name": "Crystal of Arrow Deflection (Greater)",
+        "description": "This blue sapphire is cut into a large cabochon. It contains a small flint arrowhead in its center. A crystal of arrow deflection protects you from ranged weapon attacks.",
+        "unidentified": "A blue sapphire cabochon with what appears to be a small dark inclusion at its center."
+      },
+      "crystal-of-bent-sight": {
+        "name": "Crystal of Bent Sight",
+        "description": "This small crystal is affixed to a plate of polished silver. A crystal of bent sight offers a great boon to any who face creatures that have gaze attacks. When this augment crystal is attached to your shield, you can avert your eyes from a creature that has a gaze attack without suffering a miss chance on your attack rolls against that creature.",
+        "unidentified": "A small crystal set in a polished silver plate worn on the shield."
+      },
+      "crystal-of-glancing-blows-least-armor": {
+        "name": "Crystal of Glancing Blows (Least)",
+        "description": "All the hues of the rainbow—and many more—shimmer and dance across the surface of this multifaceted crystal. A crystal of glancing blows causes your armor to turn aside grasping attacks. The least grants a +2 competence bonus on grapple checks to prevent a grapple from being initiated; lesser grants +5; greater grants +10. These bonuses apply only when defending against grapple initiation, not when initiating or escaping a grapple.",
+        "unidentified": "A small multifaceted crystal whose surface shimmers with rainbow hues."
+      },
+      "crystal-of-glancing-blows-lesser-armor": {
+        "name": "Crystal of Glancing Blows (Lesser)",
+        "description": "All the hues of the rainbow—and many more—shimmer and dance across the surface of this multifaceted crystal. A crystal of glancing blows causes your armor to turn aside grasping attacks. The least grants a +2 competence bonus on grapple checks to prevent a grapple from being initiated; lesser grants +5; greater grants +10. These bonuses apply only when defending against grapple initiation, not when initiating or escaping a grapple.",
+        "unidentified": "A small multifaceted crystal whose surface shimmers with rainbow hues."
+      },
+      "crystal-of-glancing-blows-greater-armor": {
+        "name": "Crystal of Glancing Blows (Greater)",
+        "description": "All the hues of the rainbow—and many more—shimmer and dance across the surface of this multifaceted crystal. A crystal of glancing blows causes your armor to turn aside grasping attacks. The least grants a +2 competence bonus on grapple checks to prevent a grapple from being initiated; lesser grants +5; greater grants +10. These bonuses apply only when defending against grapple initiation, not when initiating or escaping a grapple.",
+        "unidentified": "A small multifaceted crystal whose surface shimmers with rainbow hues."
+      },
+      "crystal-of-lifekeeping-least-armor": {
+        "name": "Crystal of Lifekeeping (Least)",
+        "description": "This bright crystal gleams and sparkles in the light. A crystal of lifekeeping wards you against necromantic and death effects. The least grants a +1 competence bonus on saving throws against energy drain attacks, inflict spells, death spells, and death effects; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against those effects, once per day.",
+        "unidentified": "A bright sparkling crystal that seems to hold its own light."
+      },
+      "crystal-of-lifekeeping-lesser-armor": {
+        "name": "Crystal of Lifekeeping (Lesser)",
+        "description": "This bright crystal gleams and sparkles in the light. A crystal of lifekeeping wards you against necromantic and death effects. The least grants a +1 competence bonus on saving throws against energy drain attacks, inflict spells, death spells, and death effects; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against those effects, once per day.",
+        "unidentified": "A bright sparkling crystal that seems to hold its own light."
+      },
+      "crystal-of-lifekeeping-greater-armor": {
+        "name": "Crystal of Lifekeeping (Greater)",
+        "description": "This bright crystal gleams and sparkles in the light. A crystal of lifekeeping wards you against necromantic and death effects. The least grants a +1 competence bonus on saving throws against energy drain attacks, inflict spells, death spells, and death effects; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against those effects, once per day.",
+        "unidentified": "A bright sparkling crystal that seems to hold its own light."
+      },
+      "crystal-of-mind-cloaking-least-armor": {
+        "name": "Crystal of Mind Cloaking (Least)",
+        "description": "This crystal is black as a clouded night sky. A crystal of mind cloaking protects you against mental infiltration. The least grants a +1 competence bonus on saving throws against mind-affecting spells and abilities; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against a mind-affecting effect, once per day.",
+        "unidentified": "A pure-black crystal, like a fragment of a starless night sky."
+      },
+      "crystal-of-mind-cloaking-lesser-armor": {
+        "name": "Crystal of Mind Cloaking (Lesser)",
+        "description": "This crystal is black as a clouded night sky. A crystal of mind cloaking protects you against mental infiltration. The least grants a +1 competence bonus on saving throws against mind-affecting spells and abilities; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against a mind-affecting effect, once per day.",
+        "unidentified": "A pure-black crystal, like a fragment of a starless night sky."
+      },
+      "crystal-of-mind-cloaking-greater-armor": {
+        "name": "Crystal of Mind Cloaking (Greater)",
+        "description": "This crystal is black as a clouded night sky. A crystal of mind cloaking protects you against mental infiltration. The least grants a +1 competence bonus on saving throws against mind-affecting spells and abilities; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against a mind-affecting effect, once per day.",
+        "unidentified": "A pure-black crystal, like a fragment of a starless night sky."
+      },
+      "crystal-of-screening-least-armor": {
+        "name": "Crystal of Screening (Least)",
+        "description": "This smooth, deep blue crystal is warm to the touch. A crystal of screening enhances a suit of armor with force, enabling it to protect you against the attacks of incorporeal foes. The least imposes a -2 penalty on touch attacks made against you by incorporeal creatures; lesser imposes -5; greater -10.",
+        "unidentified": "A smooth, deep blue crystal, faintly warm to the touch."
+      },
+      "crystal-of-screening-lesser-armor": {
+        "name": "Crystal of Screening (Lesser)",
+        "description": "This smooth, deep blue crystal is warm to the touch. A crystal of screening enhances a suit of armor with force, enabling it to protect you against the attacks of incorporeal foes. The least imposes a -2 penalty on touch attacks made against you by incorporeal creatures; lesser imposes -5; greater -10.",
+        "unidentified": "A smooth, deep blue crystal, faintly warm to the touch."
+      },
+      "crystal-of-screening-greater-armor": {
+        "name": "Crystal of Screening (Greater)",
+        "description": "This smooth, deep blue crystal is warm to the touch. A crystal of screening enhances a suit of armor with force, enabling it to protect you against the attacks of incorporeal foes. The least imposes a -2 penalty on touch attacks made against you by incorporeal creatures; lesser imposes -5; greater -10.",
+        "unidentified": "A smooth, deep blue crystal, faintly warm to the touch."
+      },
+      "crystal-of-stamina-least-armor": {
+        "name": "Crystal of Stamina (Least)",
+        "description": "This dull red crystal pulses in time with your heartbeat. A crystal of stamina protects you from assaults against your physical health. The least grants a +1 competence bonus on saving throws against disease and poison; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against disease or poison, once per day.",
+        "unidentified": "A dull crimson crystal that pulses faintly, as if counting the wearer's heartbeats."
+      },
+      "crystal-of-stamina-lesser-armor": {
+        "name": "Crystal of Stamina (Lesser)",
+        "description": "This dull red crystal pulses in time with your heartbeat. A crystal of stamina protects you from assaults against your physical health. The least grants a +1 competence bonus on saving throws against disease and poison; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against disease or poison, once per day.",
+        "unidentified": "A dull crimson crystal that pulses faintly, as if counting the wearer's heartbeats."
+      },
+      "crystal-of-stamina-greater-armor": {
+        "name": "Crystal of Stamina (Greater)",
+        "description": "This dull red crystal pulses in time with your heartbeat. A crystal of stamina protects you from assaults against your physical health. The least grants a +1 competence bonus on saving throws against disease and poison; lesser grants +3; greater grants +5 and additionally lets you reroll (as an immediate mental action) one failed save against disease or poison, once per day.",
+        "unidentified": "A dull crimson crystal that pulses faintly, as if counting the wearer's heartbeats."
+      },
+      "iron-ward-diamond-least-armor": {
+        "name": "Iron Ward Diamond (Least)",
+        "description": "This dun and ecru diamond is incredibly durable. An iron ward diamond lends its toughness to armor, helping it absorb blows in combat. The least grants damage reduction 1/- (stacks with any other DR) until it has prevented 10 total points of damage, then goes inert until the following day; lesser grants DR 3/- (cap 30) and functions only on medium or heavy armor; greater grants DR 5/- (cap 50) and functions only on heavy armor.",
+        "unidentified": "A bright diamond mottled with dun and ecru tones, almost too durable to be cut."
+      },
+      "iron-ward-diamond-lesser-armor": {
+        "name": "Iron Ward Diamond (Lesser)",
+        "description": "This dun and ecru diamond is incredibly durable. An iron ward diamond lends its toughness to armor, helping it absorb blows in combat. The least grants damage reduction 1/- (stacks with any other DR) until it has prevented 10 total points of damage, then goes inert until the following day; lesser grants DR 3/- (cap 30) and functions only on medium or heavy armor; greater grants DR 5/- (cap 50) and functions only on heavy armor.",
+        "unidentified": "A bright diamond mottled with dun and ecru tones, almost too durable to be cut."
+      },
+      "iron-ward-diamond-greater-armor": {
+        "name": "Iron Ward Diamond (Greater)",
+        "description": "This dun and ecru diamond is incredibly durable. An iron ward diamond lends its toughness to armor, helping it absorb blows in combat. The least grants damage reduction 1/- (stacks with any other DR) until it has prevented 10 total points of damage, then goes inert until the following day; lesser grants DR 3/- (cap 30) and functions only on medium or heavy armor; greater grants DR 5/- (cap 50) and functions only on heavy armor.",
+        "unidentified": "A bright diamond mottled with dun and ecru tones, almost too durable to be cut."
+      },
+      "restful-least": {
+        "name": "Restful Crystal",
+        "description": "This silver clasp is decorated with sparkling crystals shaped like stars. A restful crystal is a great boon to any warrior who must stay always at the ready. Sleeping in armor that has this augment crystal attached does not make you fatigued.",
+        "unidentified": "A sparkling silver clasp etched with crystalline motifs. Its actual purpose remains mysterious."
+      },
+      "rubicund-frenzy-least-armor": {
+        "name": "Rubicund Frenzy (Least)",
+        "description": "This ruby is cut into a torus—beveled on top, flat below. It is meant to be attached to a suit of armor. A rubicund frenzy drinks your blood when you are wounded, whipping you into a savage frenzy. This item functions only for living creatures. The least crystal grants a +1 morale bonus on weapon damage rolls and saves against fear while the wearer's current HP is no greater than half full; lesser grants +3; greater grants +5.",
+        "unidentified": "A ruby torus (beveled on top, flat below) that feels faintly warm against the skin."
+      },
+      "rubicund-frenzy-lesser-armor": {
+        "name": "Rubicund Frenzy (Lesser)",
+        "description": "This ruby is cut into a torus—beveled on top, flat below. It is meant to be attached to a suit of armor. A rubicund frenzy drinks your blood when you are wounded, whipping you into a savage frenzy. This item functions only for living creatures. The least crystal grants a +1 morale bonus on weapon damage rolls and saves against fear while the wearer's current HP is no greater than half full; lesser grants +3; greater grants +5.",
+        "unidentified": "A ruby torus (beveled on top, flat below) that feels faintly warm against the skin."
+      },
+      "rubicund-frenzy-greater-armor": {
+        "name": "Rubicund Frenzy (Greater)",
+        "description": "This ruby is cut into a torus—beveled on top, flat below. It is meant to be attached to a suit of armor. A rubicund frenzy drinks your blood when you are wounded, whipping you into a savage frenzy. This item functions only for living creatures. The least crystal grants a +1 morale bonus on weapon damage rolls and saves against fear while the wearer's current HP is no greater than half full; lesser grants +3; greater grants +5.",
+        "unidentified": "A ruby torus (beveled on top, flat below) that feels faintly warm against the skin."
+      }
+    }
+  }
 }

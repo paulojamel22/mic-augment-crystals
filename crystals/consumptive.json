@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "consumptive",
+  "name": "Consumptive Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 7,
+  "casterLevel": 7,
+  "aura": { "school": "necromancy", "dc": 18 },
+  "activation": "Standard (command)",
+  "weight": 0,
+  "tags": ["negative-energy", "damage"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "enervation",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon is dark in color, and its blade or head is covered with menacing runes. When activated, a consumptive weapon is shrouded in negative energy that seems to draw light into it. The negative energy does not harm you as long as you have the weapon in hand. The effect persists until you speak a second command word. A weapon that has this property deals an extra 1d8 points of damage to any living creature on a successful hit. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A dark, rune-covered weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

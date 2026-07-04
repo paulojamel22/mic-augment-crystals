@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "mindfeeder",
+  "name": "Mindfeeder Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 15,
+  "casterLevel": 15,
+  "aura": { "school": "necromancy", "dc": 22 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["psionic", "power-points", "critical"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "vampiric touch or psychic vampire"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "Composed of a flat, rough, slate-gray crystal, this weapon seems to absorb your thoughts. When you score a critical hit with a mindfeeder weapon, you gain 1 temporary power point for every 5 points of damage dealt by the critical hit. These temporary power points last for up to 1 minute. You gain power points even if the target has none. As with temporary hit points, temporary power points do not stack with each other; they overlap. Creatures immune to extra damage from critical hits do not trigger mindfeeder weapons. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A slate-gray crystal weapon augmentation.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

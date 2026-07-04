@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "energy-aura",
+  "name": "Energy Aura Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 15,
+  "casterLevel": 15,
+  "aura": { "school": "evocation", "dc": 22 },
+  "activation": "Standard (command)",
+  "weight": 0,
+  "tags": ["energy", "damage", "choice"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "chill metal, flame blade, Melf's acid arrow, or shocking grasp"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "The surface of this weapon seems to gleam with ever-shifting colors. From time to time, it glows with heat, crackles with electricity, emits acrid-smelling fumes, or develops a rim of frost. Once activated, each hit by this weapon deals an extra 1d6 points of damage of an energy type of your choice (acid, cold, electricity, or fire, chosen when activated). This energy does not harm you, regardless of the type selected. The energy damage remains the same until you activate the weapon again. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A color-shifting weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

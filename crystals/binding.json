@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "binding",
+  "name": "Binding Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 10,
+  "casterLevel": 10,
+  "aura": { "school": "abjuration", "dc": 20 },
+  "activation": "Swift (command)",
+  "weight": 0,
+  "tags": ["binding", "dimensional"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "dimensional anchor",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon has a length of chain looped decoratively around its grip or head. When you activate a binding weapon, the next successful attack you make with it before the end of your turn prevents the target from using any form of extradimensional travel, as the dimensional anchor spell. The binding property functions two times per day, and the effect lasts for 10 minutes. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A chain-wound weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

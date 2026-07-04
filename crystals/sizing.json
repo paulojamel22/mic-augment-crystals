@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "sizing",
+  "name": "Sizing Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 5000,
+  "basePriceUnit": "gp",
+  "itemLevel": 9,
+  "casterLevel": 9,
+  "aura": { "school": "transmutation", "dc": 19 },
+  "activation": "Swift (command)",
+  "weight": 0,
+  "tags": ["resize", "size-category"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 0,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "shrink item",
+    "other": null
+  },
+  "costToCreate": { "gp": 2500, "xp": 200, "days": 5 },
+  "description": "This weapon features a series of decorative nubs on the hilt or haft. Activating a sizing weapon changes its size category to any other that you desire.",
+  "unidentifiedDesc": "A nub-decorated weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "paralyzing",
+  "name": "Paralyzing Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 10,
+  "casterLevel": 10,
+  "aura": { "school": "enchantment", "dc": 20 },
+  "activation": "Swift (command)",
+  "weight": 0,
+  "tags": ["paralysis", "hold"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "hold monster",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon bears a number of hard-to-see parallel striations near its handle. When a paralyzing weapon is activated, the next creature struck by the weapon must succeed on a DC 17 Will save or be paralyzed. Each round on its turn, the target can attempt a new saving throw to end the effect; otherwise, the paralysis lasts for 10 rounds. A paralyzing weapon functions once per day.",
+  "unidentifiedDesc": "A striation-marked weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "collision",
+  "name": "Collision Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 6,
+  "casterLevel": 6,
+  "aura": { "school": "transmutation", "dc": 18 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["mass", "damage"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "weapon of impact"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This delicately balanced weapon settles into your grip as if you had wielded it for years. Its blue-gray hue shimmers as you heft the weapon. A collision weapon temporarily increases its own mass at the end point of each swing or shot. When you wield such a weapon, you deal an extra 5 points of damage with each hit. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A blue-gray shimmering weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

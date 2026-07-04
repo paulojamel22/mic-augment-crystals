@@ -217,3 +217,9 @@ mic-augment-crystals/
 â”œâ”€â”€ styles/mic-socket.css
 â””â”€â”€ module.json
 ```
+## ?? Cobertura de Tradução
+
+O módulo possui textos traduzidos para português (Brasil) em todos os 53 cristais do compêndio (nome, descrição e propriedades não identificadas).
+Os nomes próprios dos cristais são mantidos em inglês, conforme convenção de itens mágicos.
+As descrições foram adaptadas para o estilo RPG em português, mantendo as mecânicas oficiais do MIC 3.5.
+Para usar o português, acesse as Configurações do módulo e selecione “pt-BR” (ou deixe em “auto” para seguir o idioma do navegador).

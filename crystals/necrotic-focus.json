@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "necrotic-focus",
+  "name": "Necrotic Focus Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 6000,
+  "basePriceUnit": "gp",
+  "itemLevel": 7,
+  "casterLevel": 7,
+  "aura": { "school": "necromancy", "dc": 18 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["ability-drain", "negative-level", "channel"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 3,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "enervation, spectral hand"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon has a golden sheen and a series of black runes inlaid in jet along its length. Its pommel or grip is set with a black star sapphire. A necrotic focus weapon serves as a channel for your ability drain or energy drain supernatural ability. While wielding it, you deal ability drain or bestow negative levels through it as if attacking with your natural weapons. If a saving throw against the effect is allowed, add the weapon's enhancement bonus to the save DC.",
+  "unidentifiedDesc": "A golden and jet-inlaid weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

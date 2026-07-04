@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "soulbound-greater",
+  "name": "Greater Soulbound Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 18,
+  "casterLevel": 18,
+  "aura": { "school": "abjuration", "dc": 24 },
+  "activation": "Swift (mental)",
+  "weight": 0,
+  "tags": ["incarnum", "essentia", "greater"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "magic weapon, essentia pool 4"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This entire weapon seems composed of some blue material, and it moves through the air effortlessly. This property functions as the soulbound property, except a greater soulbound weapon has a maximum essentia capacity of 4 (instead of 2), for a maximum enhancement bonus of +5 (instead of +3).",
+  "unidentifiedDesc": "A blue material weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

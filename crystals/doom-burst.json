@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "doom-burst",
+  "name": "Doom Burst Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 11,
+  "casterLevel": 11,
+  "aura": { "school": "necromancy", "dc": 20 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["fear", "darkness", "critical"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "fear",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon is enveloped in a shroud of darkness. Whenever you score a critical hit with this weapon, a wave of blackness washes over the target, causing it to become shaken (no saving throw) for 5 rounds. This effect activates even if the creature struck is not normally subject to extra damage from critical hits. This effect doesn't stack with itself or with any other fear effects.",
+  "unidentifiedDesc": "A darkness-shrouded weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

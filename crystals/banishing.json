@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "banishing",
+  "name": "Banishing Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 13,
+  "casterLevel": 13,
+  "aura": { "school": "abjuration", "dc": 21 },
+  "activation": "Free (command)",
+  "weight": 0,
+  "tags": ["banishment", "extraplanar"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "banishment",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "A barely visible bead of light slowly traces the outline of this weapon. When you strike an extraplanar creature of 26 Hit Dice or fewer while wielding a weapon that has this property, you can activate the weapon to banish that creature back to its home plane (Will DC 20 negates). A creature so banished cannot return for at least 24 hours. A creature that succeeds on its save cannot be banished by the same weapon for 24 hours. If the creature struck has damage reduction that requires a particular weapon alignment or special material to overcome, increase the save DC by 2 for each such property shared by the weapon. The banishing property can be activated three times per day. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A glowing weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

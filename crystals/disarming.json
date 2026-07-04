@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "disarming",
+  "name": "Disarming Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 5,
+  "casterLevel": 5,
+  "aura": { "school": "transmutation", "dc": 17 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["disarm", "combat"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "bull's strength",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "Several jutting prongs and ridges extend from this weapon. A disarming weapon grants you a +2 bonus on disarm attempts. In addition, opponents cannot disarm you of this weapon.",
+  "unidentifiedDesc": "A pronged weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

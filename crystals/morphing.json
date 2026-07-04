@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "morphing",
+  "name": "Morphing Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 9,
+  "casterLevel": 9,
+  "aura": { "school": "transmutation", "dc": 19 },
+  "activation": "Standard",
+  "weight": 0,
+  "tags": ["polymorph", "shape"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "fabricate",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon's shape constantly flows and reforms in slightly different compositions. You can reshape a morphing weapon into any other melee or thrown weapon of the same size and type (light, one-handed, or two-handed). If a single weapon created with the morphing property becomes a double weapon, only one end of the double weapon retains the weapon's magical bonus. If a double weapon created with the morphing property becomes a single weapon, it can have the properties of either end of the original double weapon.",
+  "unidentifiedDesc": "A shape-shifting weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

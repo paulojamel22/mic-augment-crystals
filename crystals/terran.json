@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "terran",
+  "name": "Terran Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 7,
+  "casterLevel": 7,
+  "aura": { "school": "evocation", "dc": 18 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["elemental", "air-subtype", "damage"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "earth subtype"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon appears to have been hewn from crystal. Its grip is inlaid with gems in a circular design. A terran weapon automatically overcomes the damage reduction of any creature that has the air subtype. In addition, the weapon deals an extra 2d6 points of damage against such targets. A terran weapon also bestows one negative level on any creature that has the air subtype and attempts to wield it. The negative level remains as long as the weapon is in hand and disappears when the weapon is no longer held. This negative level never results in actual level loss, but it cannot be overcome in any way while the weapon is wielded. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A crystal-hewn weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

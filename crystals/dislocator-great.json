@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "dislocator-great",
+  "name": "Great Dislocator Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 12,
+  "casterLevel": 12,
+  "aura": { "school": "conjuration", "dc": 21 },
+  "activation": "Swift (mental)",
+  "weight": 0,
+  "tags": ["teleport", "displacement", "greater"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "greater teleport",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "Brilliant discolorations in the surface of this weapon appear, then fade in a random pattern. An elaborate handle contains a thumb-sized indent coated in gold filigree. This property functions as a dislocator weapon, except the target can be teleported up to 30 feet in any direction (Will DC 20 negates).",
+  "unidentifiedDesc": "A brilliant discolored weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

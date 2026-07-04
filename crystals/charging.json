@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "charging",
+  "name": "Charging Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 8,
+  "casterLevel": 8,
+  "aura": { "school": "transmutation", "dc": 19 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["charge", "mounted", "damage"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor", "Spirited Charge"],
+    "skill": null,
+    "spell": "keen edge",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "The image of a heavily armored, mounted knight, leveling a ribbon-covered lance for a charge, adorns this weapon. When you are mounted and wielding a weapon that has this property, you deal an extra 2d6 points of damage on a successful charge attack.",
+  "unidentifiedDesc": "A knight-adorned weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "auran",
+  "name": "Auran Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 7,
+  "casterLevel": 7,
+  "aura": { "school": "evocation", "dc": 18 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["elemental", "earth-subtype"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "air subtype"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "Wind constantly whistles along the length of this white-enameled weapon. Its grip is inlaid with whorls of silver that resemble clouds. An auran weapon automatically overcomes the damage reduction of any creature that has the earth subtype. In addition, the weapon deals an extra 2d6 points of damage against such creatures. An auran weapon also bestows one negative level on any creature that has the earth subtype and attempts to wield it. The negative level remains as long as the weapon is in hand and disappears when the weapon is no longer held. This negative level never results in actual level loss, but it cannot be overcome in any way (including restoration spells) while the weapon is wielded. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A white-enameled crystal that hums with wind.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

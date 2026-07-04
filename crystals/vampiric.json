@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "vampiric",
+  "name": "Vampiric Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 9,
+  "casterLevel": 9,
+  "aura": { "school": "necromancy", "dc": 19 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["vampiric", "healing", "damage"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "vampiric touch",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "A gaping maw with elongated incisors adorns this weapon. The fangs shimmer wetly. A vampiric weapon deals an extra 1d6 points of damage to any living creature it hits, and you heal damage equal to this amount.",
+  "unidentifiedDesc": "An incisor-adorned vampiric weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

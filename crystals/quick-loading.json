@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "quick-loading",
+  "name": "Quick Loading Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 9,
+  "casterLevel": 9,
+  "aura": { "school": "conjuration", "dc": 19 },
+  "activation": "Free (manipulation) or move (manipulation); see text",
+  "weight": 0,
+  "tags": ["crossbow", "ammo", "extradimensional"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "Leomund's secret chest, shrink item"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "Volleys of soaring bolts are engraved upon this loaded crossbow. A quick loading crossbow accesses an extradimensional space that can hold up to 100 bolts, allowing you to reload the crossbow more rapidly than normal. Reloading a quick loading hand or light crossbow is a free action (allowing a character with multiple attacks to use his full attack rate), and reloading a quick loading heavy crossbow is a move action. Different types of bolts can be held in the extradimensional space, and you can select freely from these when reloading the crossbow. Adding or removing a bolt by hand from an extradimensional space requires a move (manipulation) action.",
+  "unidentifiedDesc": "A bolt-engraved quick loading augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

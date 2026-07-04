@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "arcane-might",
+  "name": "Arcane Might Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 15,
+  "casterLevel": 15,
+  "aura": { "school": "transmutation", "dc": 22 },
+  "activation": "Swift (mental)",
+  "weight": 0,
+  "tags": ["arcane", "spell", "damage"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "greater magic weapon",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This elegant, supple bow has intricate runes carved along its length. You can channel the energy of your arcane spells through this bow to make the arrows fired from it more damaging. As a swift action, you can sacrifice a prepared arcane spell from memory (or an unused spell slot if you are a spontaneous arcane caster). Doing so grants a bonus equal to the sacrificed spell's level on the next damage roll you make with the bow that turn.",
+  "unidentifiedDesc": "A crystal-adorned elegant bow augmentation.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

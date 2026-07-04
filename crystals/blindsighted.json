@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "blindsighted",
+  "name": "Blindsighted Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 6,
+  "casterLevel": 6,
+  "aura": { "school": "divination", "dc": 18 },
+  "activation": "Standard (command)",
+  "weight": 0,
+  "tags": ["blindsight", "sight"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "see invisibility",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "The form of a screeching bat's head adorns the end of this weapon, and images of wings and fluttering nocturnal forms run along its length. When activated, a blindsighted weapon emits a susurrus of whispered notes (Listen DC 10). While wielding the activated weapon, you gain blindsight out to 30 feet. This effect is negated by silence spells and effects. The blindsighted property functions three times per day, and the effect lasts for 1 minute.",
+  "unidentifiedDesc": "A bat-adorned weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

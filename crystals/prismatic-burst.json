@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "prismatic-burst",
+  "name": "Prismatic Burst Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 30000,
+  "basePriceUnit": "gp",
+  "itemLevel": 13,
+  "casterLevel": 13,
+  "aura": { "school": "evocation", "dc": 21 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["prismatic", "critical", "spell-effect"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 0,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "prismatic spray",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This smoothly polished weapon is set with a ruby, a fire opal, a yellow topaz, an emerald, a blue topaz, a sapphire, and an amethyst. Whenever you score a successful critical hit with this weapon, multicolored light springs from the gems and cascades along its blade or head, subjecting the target to a prismatic spray effect (save DC 20). This effect activates even if the target is not normally subject to extra damage from critical hits.",
+  "unidentifiedDesc": "A gem-set prismatic weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "shadowstrike",
+  "name": "Shadowstrike Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 5000,
+  "basePriceUnit": "gp",
+  "itemLevel": 15,
+  "casterLevel": 15,
+  "aura": { "school": "illusion", "dc": 22 },
+  "activation": "Swift (mental)",
+  "weight": 0,
+  "tags": ["shadow", "reach", "denied-dex"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 0,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "shadow conjuration",
+    "other": null
+  },
+  "costToCreate": { "gp": 2500, "xp": 200, "days": 5 },
+  "description": "This weapon is made of a dull black material, and its edges seem indistinct. A shadowstrike weapon can reach through your own shadow to catch foes off guard. Once per day, you can activate the property to add 5 feet to the weapon's reach for a single attack. The target is denied its Dexterity bonus to AC for this attack.",
+  "unidentifiedDesc": "A dull black indistinct weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

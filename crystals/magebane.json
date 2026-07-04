@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "magebane",
+  "name": "Magebane Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 8,
+  "casterLevel": 8,
+  "aura": { "school": "evocation", "dc": 19 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["arcane-caster", "damage", "bonus"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "dispel magic",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "The surface of this black iron weapon is inscribed with runes representing the grounding of energy, and its pommel or grip is set with three diamonds. Weapons that have this property are feared by arcane spellcasters. Against any creature that can cast arcane spells or use invocations, a magebane weapon's enhancement bonus is 2 higher than normal. Furthermore, a magebane weapon deals an extra 2d6 points of damage against targets capable of casting arcane spells or using invocations. The magebane property can be added to a cold iron weapon without paying the extra 2,000 gp. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A black iron rune-inscribed weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

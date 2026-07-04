@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "transmuting",
+  "name": "Transmuting Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 13,
+  "casterLevel": 13,
+  "aura": { "school": "transmutation", "dc": 21 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["damage-reduction", "transform", "adaptive"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "fabricate",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This odd-looking weapon has both sharp and blunt sections. Its pommel or grip is set with a diamond, a piece of jet, a sapphire, and a ruby. In addition, it is inlaid with both adamantine and silver. When you score a successful hit with a transmuting weapon against a creature that has damage reduction, that attack is resolved normally. At the start of your next turn, however, the weapon transforms, taking on the properties required to overcome that creature's damage reduction. Once so changed, the weapon overcomes the designated type of damage reduction for 10 rounds, or until you strike a creature that has a different type of damage reduction. If the target has multiple types of damage reduction, the weapon overcomes all of them. A transmuting weapon does not gain any other benefit of the properties it takes on, and it always deals normal damage.",
+  "unidentifiedDesc": "A multi-gem inlaid weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

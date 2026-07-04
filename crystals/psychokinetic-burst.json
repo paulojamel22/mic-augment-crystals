@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "psychokinetic-burst",
+  "name": "Psychokinetic Burst Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 12,
+  "casterLevel": 12,
+  "aura": { "school": "evocation", "dc": 21 },
+  "activation": "Standard (command) and —",
+  "weight": 0,
+  "tags": ["psionic", "burst", "critical", "force"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "blast of force or concussive blast"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "Silvery-black and potent, this weapon is very smooth and difficult to grip tightly. This weapon functions as a psychokinetic weapon. In addition, the weapon releases a blast of destructive psionic energy on a successful critical hit, dealing extra force damage. Critical ×2: 1d6. ×3: 2d6. ×4: 3d6. This extra damage is not affected by damage reduction, and it affects incorporeal creatures even if the attack would normally miss due to the incorporeal miss chance. This is a continuous effect and requires no activation. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A silvery-black potent weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

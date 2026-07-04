@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "maiming",
+  "name": "Maiming Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 5,
+  "casterLevel": 5,
+  "aura": { "school": "transmutation", "dc": 17 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["critical", "extra-damage"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "keen edge",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon has a twisted haft or grip and spikes along its blade, head, or point. A maiming weapon twists and digs into the flesh of its target, rending, tearing, smashing, and bruising it. Whenever you score a critical hit with this weapon, it deals an amount of extra damage depending on its critical multiplier. Critical ×2: 1d6. ×3: 2d6. ×4: 3d6.",
+  "unidentifiedDesc": "A twisted, spiked weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

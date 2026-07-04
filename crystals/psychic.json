@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "psychic",
+  "name": "Psychic Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 17,
+  "casterLevel": 17,
+  "aura": { "school": "no school", "dc": 23 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["psionic", "enhancement", "power-points"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "wish or reality revision"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon has an inner glow of varying brightness. It glows more brightly when brought near those with psionic ability. A psychic weapon's power depends on its wielder. It gains an enhancement bonus based on the wielder's current power point reserve: 0 power points: +1; 1–29: +2; 30–79: +3; 80–129: +4; 130 or higher: +5. This benefit doesn't stack with the weapon's normal enhancement bonus. The weapon's enhancement bonus decreases as the wielder spends power points, and it increases whenever the wielder gains enough power points to put his power point reserve into the next higher category.",
+  "unidentifiedDesc": "A varying-brightness weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

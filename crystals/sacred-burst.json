@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "sacred-burst",
+  "name": "Sacred Burst Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 12,
+  "casterLevel": 12,
+  "aura": { "school": "conjuration", "dc": 21 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["good", "burst", "critical", "positive-energy"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "cure critical wounds",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This silver-white weapon is decorated with dozens of golden sun motifs. Runic phrases describing various heroic deeds run along its blade or haft and glow when it is wielded. A sacred burst weapon functions as a sacred weapon. In addition, the weapon explodes with positive energy on a successful critical hit, dealing extra positive energy damage to creatures. Critical ×2: 1d10 (+2d10 evil outsider). ×3: 2d10 (+4d10). ×4: 3d10 (+6d10). This burst does not harm you or any creature other than the target unless you are undead. This is a continuous effect and requires no activation. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A dozens-sun adorned weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

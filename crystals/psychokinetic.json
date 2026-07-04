@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "psychokinetic",
+  "name": "Psychokinetic Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 10,
+  "casterLevel": 10,
+  "aura": { "school": "evocation", "dc": 20 },
+  "activation": "Standard (command)",
+  "weight": 0,
+  "tags": ["psionic", "force", "damage"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "blast of force or concussive blast"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This silvery-white weapon has a smooth sheen and is difficult to grip tightly. Upon command, a psychokinetic weapon glows from the inside with lethal psionic energy. Such a weapon deals an extra 1d4 points of force damage on a successful hit. This extra damage is not affected by damage reduction, and it affects incorporeal creatures even if the attack would normally miss due to the incorporeal miss chance. The energy does not harm you while wielding the weapon. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A silvery-white weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

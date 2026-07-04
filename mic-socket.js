@@ -262,30 +262,36 @@ class MICSocketManager {
     const isFromCompendium = item.flags?.core?.sourceId?.includes(expectedPack)
                             || item.pack === expectedPack;
 
-    // A crystal is any item that:
-    //   - has our data-model flag under system, OR
-    //   - has our global flag, OR
-    //   - lives in our compendium (legacy path).
     const socket = item.system?.["mic-socket-system.crystal"] ?? null;
     const fromSystem = socket?.isCrystal === true;
     const fromFlag   = item.getFlag?.("mic-augment-crystals", "isCrystal") === true;
     const fromName   = name.includes("crystal");
     if (!(fromSystem || fromFlag || isFromCompendium || fromName)) return null;
 
-    // Prefer the data-model truth over the legacy from-name guess.
-    let rank, family;
-    if (socket?.crystalRank && socket?.crystalFamily) {
-      rank   = socket.crystalRank;
-      family = socket.crystalFamily;
-    } else {
+    // Try flags first (most reliable)
+    let rank   = item.getFlag("mic-augment-crystals", "rank")   || null;
+    let family = item.getFlag("mic-augment-crystals", "family") || null;
+
+    // Fallback to data-model fields if flags missing
+    if (!rank && socket?.crystalRank)     rank   = socket.crystalRank;
+    if (!family && socket?.crystalFamily) family = socket.crystalFamily;
+
+    // Heuristic fallback by name
+    if (!rank) {
       rank = "least";
       if (name.includes("lesser"))   rank = "lesser";
       if (name.includes("greater"))  rank = "greater";
       if (name.includes("major"))    rank = "major";
       if (name.includes("superior")) rank = "superior";
-
+    }
+    if (!family) {
       family = "weapon";
-      const armorKeywords = ["restful", "stamina", "shielding", "warding", "armor", "shield"];
+      const armorKeywords = [
+        "restful","stamina","shielding","warding","armor","shield",
+        "adamant","iron ward","arrow deflection","bent sight",
+        "aquatic action","adaptation","glancing blows","lifekeeping",
+        "mind cloaking","screening","rubicund frenzy"
+      ];
       if (armorKeywords.some(k => name.includes(k))) family = "armor";
     }
 
@@ -298,19 +304,17 @@ class MICSocketManager {
 
     const system = item.system ?? {};
     // D35E v3.1 stores the **enhancement bonus** under different keys
-    // depending on the item family. We probe them in order.
+    // depending on the item family and type.
     //
-    //  - legacy:       system.enhancement
-    //  - armor piece:  system.armor.enh  (numeric, e.g. 2 for +2 plate)
-    //  - shield piece: system.shield.enh
-    //  - weapon piece: system.weapon.enh
-    //  - loot:         system.equipment.enhancement
+    //  - weapon:       system.enh  (e.g. +1 longsword → system.enh = 1)
+    //  - equipment:    system.enhancement  (e.g. +1 chainmail)
+    //  - armor piece:  system.armor.enh
+    //  - shield piece:  system.shield.enh
     const enhancement = Number(
-      system.enhancement
+      system.enh
       ?? system.armor?.enh
       ?? system.shield?.enh
-      ?? system.weapon?.enh
-      ?? system.equipment?.enhancement
+      ?? system.enhancement
       ?? 0
     );
 
@@ -319,7 +323,8 @@ class MICSocketManager {
       || !!system.armor?.masterwork
       || !!system.shield?.masterwork
       || !!system.weapon?.masterwork
-      || system.quality === "masterwork";
+      || system.quality === "masterwork"
+      || system.enh > 0;  // magic weapons are implicitly masterwork
 
     return { enhancement, isMasterwork };
   }
@@ -384,15 +389,19 @@ class MICSocketManager {
 
     // Recupera usando o ID 'mic-augment-crystals'
     const crystalUuid = item.getFlag("mic-augment-crystals", "crystalUuid");
-    let crystalDisplay = { name: "Vazio", img: "" };
+    let crystalDisplay = { name: "Vazio", img: "", description: "", unidentified: "" };
 
     if (crystalUuid) {
       try {
         const crystal = await fromUuid(crystalUuid);
         if (crystal) {
-          crystalDisplay = { 
-            name: crystal.name, 
-            img: `<img src="${crystal.img}" class="mic-socket-img" />` 
+          const rawDesc = crystal.system?.description?.value ?? "";
+          const plain   = this._htmlToPlainText(rawDesc);
+          crystalDisplay = {
+            name: crystal.name,
+            img: `<img src="${crystal.img}" class="mic-socket-img" />`,
+            description: plain,
+            unidentified: crystal.system?.description?.unidentified ?? ""
           };
         }
       } catch (error) {
@@ -423,14 +432,19 @@ class MICSocketManager {
         const oe = e?.originalEvent ?? e;
         if (oe?.preventDefault) oe.preventDefault();
       });
-      $zone.on("drop", (e) => this._onCrystalDrop(e, item));
-      html.find(".mic-socket-remove").on("click", (e) => {
-        e.stopPropagation();
-        this._removeCrystal(item);
-      });
-    } catch (error) {
-      console.error("Erro ao adicionar eventos:", error);
-    }
+        $zone.on("drop", (e) => this._onCrystalDrop(e, item));
+        html.find(".mic-socket-remove").on("click", (e) => {
+          e.stopPropagation();
+          this._removeCrystal(item);
+        });
+        // Adiciona tooltip (descri??o) ao slot e ao nome do cristal
+        if (crystalDisplay.description) {
+          html.find(".mic-socket-slot").attr("title", crystalDisplay.description);
+          html.find(".mic-socket-name").attr("title", crystalDisplay.description);
+        }
+      } catch (error) {
+        console.error("Erro ao adicionar eventos:", error);
+      }
   }
 
   static async _onCrystalDrop(event, targetItem) {
@@ -494,6 +508,26 @@ class MICSocketManager {
     } catch (error) {
       console.error("Erro ao remover cristal:", error);
       ui.notifications.error("Erro ao remover cristal.");
+    }
+  }
+
+  /**
+   * Converte HTML do Foundry em texto puro (sem tags), preservando quebras de linha.
+   * Implementa\u00e7\u00e3o defensiva: cria um DOMParser seguro.
+   */
+  static _htmlToPlainText(html) {
+    if (!html) return "";
+    if (typeof html !== "string") return String(html ?? "");
+    try {
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      // textContent preserva quebras inerentes de block-level (\n n\u00e3o s\u00e3o inseridos,
+      // mas o navegador trata separa\u00e7\u00e3o ao renderizar tooltips). Decodifica entidades.
+      let text = doc.body?.textContent ?? "";
+      text = text.replace(/\u00a0/g, " ").trim();
+      return text;
+    } catch (e) {
+      // Fallback: regex simples se DOMParser n\u00e3o estiver dispon\u00edvel
+      return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
     }
   }
 

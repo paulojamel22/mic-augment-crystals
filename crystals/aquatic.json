@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "aquatic",
+  "name": "Aquatic Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 7,
+  "casterLevel": 7,
+  "aura": { "school": "abjuration", "dc": 18 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["freedom", "underwater"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 0,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "freedom of movement"
+  },
+  "costToCreate": { "gp": 1000, "xp": 80, "days": 2 },
+  "description": "This weapon has a silvery-blue tinge, like the sheen of white scales in sunlight. While wielding an aquatic weapon, you do not incur any penalties that would otherwise apply to using the weapon underwater (DMG 92), as though you were affected by a freedom of movement spell.",
+  "unidentifiedDesc": "A silvery-blue crystal with a faint aquatic sheen.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

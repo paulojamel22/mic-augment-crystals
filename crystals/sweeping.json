@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "sweeping",
+  "name": "Sweeping Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 5,
+  "casterLevel": 5,
+  "aura": { "school": "transmutation", "dc": 17 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["trip", "bullrush", "bonus"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "bull's strength",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "Images of clouds and gusting wind cover this strangely flexible weapon. This property grants you a +2 competence bonus on any Strength check made to trip an opponent with the weapon.",
+  "unidentifiedDesc": "A cloud-adorned flexible weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

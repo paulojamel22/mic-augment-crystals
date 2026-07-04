@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "desiccating",
+  "name": "Desiccating Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 8,
+  "casterLevel": 8,
+  "aura": { "school": "necromancy", "dc": 19 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["desiccation", "water", "damage"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "desiccating bubble"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon looks cracked and parched, as if it's spent decades baking in the desert sun. A desiccating weapon destroys the water in a living creature that it strikes, dealing an extra 1d4 points of damage (or an extra 1d8 points against plants and against elementals that have the water subtype). Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A cracked, parched weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

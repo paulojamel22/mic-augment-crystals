@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "brutal-surge",
+  "name": "Brutal Surge Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 11,
+  "casterLevel": 11,
+  "aura": { "school": "evocation", "dc": 20 },
+  "activation": "Swift (command)",
+  "weight": 0,
+  "tags": ["bull-rush", "surge"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "Bigby's forceful hand",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon is broader, thicker, and darker in color than a normal weapon of its type. After a successful melee attack with a brutal surge weapon, you can command the weapon to initiate a bull rush attempt against the target of the attack in addition to dealing its normal damage. This attempt does not provoke attacks of opportunity and is resolved using your size, Strength, and other relevant characteristics. If you wield a brutal surge weapon in two hands, you gain a +2 bonus on the opposed Strength check. If successful, the bull rush pushes the affected creature back the greatest possible distance allowed by the result of the opposed check, but you do not move along with the target. The brutal surge property is usable a number of times per day equal to 1 + your Con bonus (if any). Once you activate this property, it can't be activated by any other creature until the following day.",
+  "unidentifiedDesc": "A broad, dark weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

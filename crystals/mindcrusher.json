@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "mindcrusher",
+  "name": "Mindcrusher Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 12,
+  "casterLevel": 12,
+  "aura": { "school": "necromancy", "dc": 21 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["psionic", "power-points", "wisdom-damage"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "vampiric touch or psychic vampire"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This red-tinted weapon seems to draw light and feeling from around it. You sense its hunger. Any psionic creature struck in combat by a mindcrusher weapon loses a number of power points equal to half the amount of hit point damage the weapon deals on that strike. Only the base damage of the weapon contributes to the power point loss. A creature with no power points, including any nonpsionic creature, must succeed on a DC 17 Will save or take 1 point of Wisdom damage. A projectile weapon bestows this property upon its ammunition.",
+  "unidentifiedDesc": "A red-tinted mind-draining weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

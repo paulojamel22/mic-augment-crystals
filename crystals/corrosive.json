@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "corrosive",
+  "name": "Corrosive Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 10,
+  "casterLevel": 10,
+  "aura": { "school": "conjuration", "dc": 20 },
+  "activation": "Standard (command)",
+  "weight": 0,
+  "tags": ["acid", "corrosion"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "acid fog, acid storm, Melf's acid arrow, or storm of vengeance"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "The surface of this weapon looks dark and pitted, and the blade, point, or head appears fragile, as if the first blow might break it. When activated, a corrosive weapon is sheathed in acid. The acid does not harm you as long as you have the weapon in hand. The effect persists until you speak a second command word. A weapon that has this property deals an extra 1d6 points of acid damage on a successful hit. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A dark, pitted weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

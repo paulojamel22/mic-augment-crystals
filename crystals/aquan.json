@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "aquan",
+  "name": "Aquan Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 7,
+  "casterLevel": 7,
+  "aura": { "school": "evocation", "dc": 18 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["elemental", "fire-subtype"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "water subtype"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "Water constantly drips from the tip of this blue-green weapon. Its grip is inlaid with mother-of-pearl in a wavelike design. An aquan weapon automatically overcomes the damage reduction of any creature that has the fire subtype. In addition, the weapon deals an extra 2d6 points of damage against such creatures. An aquan weapon also bestows one negative level on any creature that has the fire subtype and attempts to wield it. The negative level remains as long as the weapon is in hand and disappears when the weapon is no longer held. This negative level never results in actual level loss, but it cannot be overcome in any way (including restoration spells) while the weapon is wielded. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A blue-green crystal that drips with moisture.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

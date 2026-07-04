@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "cursespewing",
+  "name": "Cursespewing Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 6000,
+  "basePriceUnit": "gp",
+  "itemLevel": 11,
+  "casterLevel": 11,
+  "aura": { "school": "necromancy", "dc": 20 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["curse", "critical"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 3,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "bestow curse",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "A barely perceptible dark glow surrounds this weapon. Whenever this weapon scores a critical hit against a target, it bestows a curse that imposes a –4 penalty on attack rolls, saving throws, skill checks, and ability checks for 1 minute. Multiple strikes aren't cumulative with one another.",
+  "unidentifiedDesc": "A darkly glowing weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

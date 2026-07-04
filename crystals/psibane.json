@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "psibane",
+  "name": "Psibane Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 15,
+  "casterLevel": 15,
+  "aura": { "school": "divination", "dc": 22 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["psionic", "damage", "negative-level"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "dispel magic or bend reality"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This extraordinary weapon is shot through with translucent purple crystal shards. You detect a vague air of menace about it. A psibane weapon is crafted to oppose psionic beings. When used against any creature that has the psionic subtype, its effective enhancement bonus is 2 higher than its actual enhancement bonus. It deals an extra 2d6 points of damage against psionic opponents. A psibane weapon bestows one negative level on any psionic creature attempting to wield it. This negative level remains as long as the weapon is in hand and disappears when the weapon is no longer wielded. This negative level never results in actual level loss, but it cannot be overcome in any way while the weapon is wielded. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A purple crystal shard weapon augmentation.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

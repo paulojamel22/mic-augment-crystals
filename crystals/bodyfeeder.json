@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "bodyfeeder",
+  "name": "Bodyfeeder Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 6000,
+  "basePriceUnit": "gp",
+  "itemLevel": 9,
+  "casterLevel": 9,
+  "aura": { "school": "necromancy", "dc": 19 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["temp-hp", "critical"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 3,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "vampiric touch or claws of the vampire"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "Composed of a dark, dull metal, this weapon is cold to the touch. Indeed, it seems to absorb your body heat. Whenever a bodyfeeder weapon you wield scores a successful critical hit against a living creature, you gain temporary hit points equal to half the damage dealt by the critical hit. These temporary hit points last for up to 1 minute and don't stack with those from any other source, including additional critical hits with this weapon.",
+  "unidentifiedDesc": "A cold, dark weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

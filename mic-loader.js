@@ -1,14 +1,15 @@
-/**
+﻿/**
  * MIC Crystal Catalog Loader
  *
- * Scans ./crystals/*.json inside the module's own static assets, parses each
- * one against the MIC crystal schema (1.0), and pushes them into the
+ * Loads crystal JSON data from the crystals/ directory and pushes them into the
  * `crystals` compendium pack declared in module.json.
+ *
+ * Uses import.meta.glob to load all *.json files directly (no fetch/HTTP needed),
+ * which avoids CORS issues in Foundry's module loading environment.
  */
 
 const MODULE_ID = "mic-augment-crystals";
 const PACK_NAME = "mic-augment-crystals.crystals";
-const CRYSTAL_DIR = "crystals";
 const SCHEMA_TAG = "mic-augment-crystal/1.0";
 
 class CrystalCatalog {
@@ -38,7 +39,7 @@ class CrystalCatalog {
       ranksToExpand = [json.rank];
     }
 
-    // family is either a single string or an array of strings — both
+    // family is either a single string or an array of strings     both
     // must be recognised.
     const fams = Array.isArray(json.families) ? json.families
                   : json.family ? [json.family]
@@ -94,21 +95,40 @@ class CrystalCatalogLoader {
   static async fetchCatalog() {
     if (!game?.modules?.get(MODULE_ID)) return [];
     try {
-      const indexUrl = `modules/${MODULE_ID}/${CRYSTAL_DIR}/index.json`;
-      const manifest = await fetch(indexUrl).then(r => r.json());
+      // Derive the module's base URL from import.meta.url so the crystal JSONs path
+      // is always correct — works whether Foundry serves from /modules/{id}/ or
+      // another prefix.  import.meta.url of this ES module is always an absolute
+      // URL to mic-loader.js (e.g. http://localhost:30000/modules/mic-augment-crystals/mic-loader.js).
+      const crystalBase = new URL("./crystals/", import.meta.url).href;
+      const indexUrl   = `${crystalBase}index.json`;
+      console.log(`[MIC-LD] fetching index from: ${indexUrl}`);
+      const manifest = await fetch(indexUrl).then(r => {
+        if (!r.ok) throw new Error(`HTTP ${r.status} for ${r.url}`);
+        return r.json();
+      });
       if (!Array.isArray(manifest)) {
         console.warn(`[MIC-LD] index.json is not an array`);
         return [];
       }
+      console.log(`[MIC-LD] index.json has ${manifest.length} entries`);
       const files = await Promise.all(
-        manifest.map(rel =>
-          fetch(`modules/${MODULE_ID}/${CRYSTAL_DIR}/${rel}`)
-            .then(r => r.ok ? r.json() : null)
-            .then(data => data ? { rel, ...data } : null)
-            .catch(e => { console.warn(`[MIC-LD] failed: ${rel}`, e); return null; })
-        )
+        manifest.map(async rel => {
+          try {
+            const fileUrl = `${crystalBase}${rel}`;
+            const data = await fetch(fileUrl).then(r => {
+              if (!r.ok) throw new Error(`HTTP ${r.status}`);
+              return r.json();
+            });
+            return { rel, ...data };
+          } catch (e) {
+            console.warn(`[MIC-LD] failed to load crystal: ${rel}`, e);
+            return null;
+          }
+        })
       );
-      return files.filter(Boolean);
+      const filtered = files.filter(Boolean);
+      console.log(`[MIC-LD] successfully loaded ${filtered.length} crystal files`);
+      return filtered;
     } catch (e) {
       console.warn(`[MIC-LD] catalog fetch failed`, e);
       return [];
@@ -173,7 +193,7 @@ class CrystalCatalogLoader {
 
     // Foundry v14 keeps packs locked by default; we need to unlock before write.
     if (pack.locked) {
-      console.warn(`[MIC-LD] pack is locked — temporarily unlocking for catalog write`);
+      console.warn(`[MIC-LD] pack is locked     temporarily unlocking for catalog write`);
       try {
         await pack.configure({ locked: false });
         console.log(`[MIC-LD] unlocked pack ${PACK_NAME}, locked=${pack.locked}`);
@@ -230,7 +250,7 @@ class CrystalCatalogLoader {
       const wrongType = existing.type !== "loot";
       const noCatalogId = !existing.getFlag(MODULE_ID, "catalogId");
       if (wrongType || noCatalogId) {
-        console.warn(`[MIC-LD] ${json.id} exists but has wrong type ('${existing.type}') or no catalogId — recreating`);
+        console.warn(`[MIC-LD] ${json.id} exists but has wrong type ('${existing.type}') or no catalogId     recreating`);
         const staleId = existing.id;
         await existing.delete();
         // drop the stale reference from the cached 'docs' array
@@ -274,12 +294,14 @@ class CrystalCatalogLoader {
           .filter(ns => ns !== MODULE_ID);
 
         if (customFlags.length || isEdited) {
-          console.warn(`[MIC-LD] ${json.id} has GM customisations (flags: ${customFlags.join(",")}) — refreshing catalogue metadata only`);
+          console.warn(`[MIC-LD] ${json.id} has GM customisations (flags: ${customFlags.join(",")})     refreshing catalogue metadata only`);
           const folderId = await this.folderFor(pack, json.family, json.rank);
           const partialUpdate = {
             name: this.docFromJson(json).name,
             folder: folderId,
             [`flags.${MODULE_ID}.hash`]:                                  newHash,
+            [`flags.${MODULE_ID}.family`]:                               json.family ?? null,
+            [`flags.${MODULE_ID}.rank`]:                                 json.rank ?? null,
             "system.mic-socket-system.crystal.itemLevel":        json.itemLevel ?? null,
             "system.mic-socket-system.crystal.casterLevel":      json.casterLevel ?? null,
             "system.mic-socket-system.crystal.description":      json.description ?? "",
@@ -328,7 +350,7 @@ class CrystalCatalogLoader {
     }
 
     const final = await pack.getDocuments();
-    console.log(`[MIC-LD] sync done — created=${created} updated=${updated} kept=${kept} warned=${warned} | pack has ${final.length} doc(s) now`);
+    console.log(`[MIC-LD] sync done     created=${created} updated=${updated} kept=${kept} warned=${warned} | pack has ${final.length} doc(s) now`);
   }
 
   static folderMap = new Map(); // path -> Folder document
@@ -404,7 +426,7 @@ class CrystalCatalogLoader {
       type: "loot",
       img:  "icons/commodities/treasure/token-silver-blue.webp",
       system: {
-        // Description block — D35E requires both identified and unidentified.
+        // Description block     D35E requires both identified and unidentified.
         description: {
           value:        `<p>${desc}</p>`,
           chat:         "",
@@ -450,7 +472,9 @@ class CrystalCatalogLoader {
       flags: {
         [MODULE_ID]: {
           catalogId: json.id,
-          hash: null,
+          hash:   null,
+          family: json.family,
+          rank:   json.rank,
           catalog: json
         }
       }
@@ -483,3 +507,4 @@ export async function readyLoader() {
 
 Hooks.once("init", initLoader);
 Hooks.on("ready", readyLoader);
+

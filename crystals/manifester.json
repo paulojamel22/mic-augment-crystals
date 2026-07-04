@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "manifester",
+  "name": "Manifesting Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 12000,
+  "basePriceUnit": "gp",
+  "itemLevel": 8,
+  "casterLevel": 8,
+  "aura": { "school": "divination", "dc": 19 },
+  "activation": "Free (mental)",
+  "weight": 0,
+  "tags": ["psionic", "power-points"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 0,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "any 3rd-level psionic power"
+  },
+  "costToCreate": { "gp": 6000, "xp": 480, "days": 12 },
+  "description": "Radiating inner power, this princely weapon settles and clarities your thoughts. When manifesting a power, the bearer of this weapon can draw 5 power points from it. These points must all be used on the same power, and that power cannot be imbued with power points from any other source. A manifester weapon functions once per day.",
+  "unidentifiedDesc": "A princely psionic weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

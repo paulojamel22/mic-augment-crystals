@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "profane",
+  "name": "Profane Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 7,
+  "casterLevel": 7,
+  "aura": { "school": "necromancy", "dc": 17 },
+  "activation": "Standard (command)",
+  "weight": 0,
+  "tags": ["evil", "negative-energy", "alignment"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "inflict light wounds",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This black iron weapon is decorated with a single silver skull. A runic phrase describing a vile act runs along its blade or haft. By speaking the appropriate command word, you can sheathe a profane weapon in crackling black negative energy. If you have no Constitution score, this energy does not harm you; otherwise you take 1 point of Constitution damage for each round that you hold the weapon while the effect is activated. While activated, a profane weapon deals an extra 1d6 points of damage to any living target (or 2d6 points against a good outsider) on a successful hit. Also, it is treated as evil-aligned for the purpose of overcoming damage reduction. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A black iron skull-adorned weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "domineering",
+  "name": "Domineering Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 11,
+  "casterLevel": 11,
+  "aura": { "school": "necromancy", "dc": 20 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["fear", "shaken"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "fear",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "A single, screaming skull adorns this weapon, its eyes set with raw black onyx inlays that give it a soulless look. A creature hit by a domineering weapon becomes shaken for 1 minute (Will DC 16 negates). This effect doesn't stack with itself or with any other fear effects (it can't render an already shaken creature frightened, for example).",
+  "unidentifiedDesc": "A skull-adorned weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

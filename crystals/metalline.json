@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "metalline",
+  "name": "Metalline Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 9,
+  "casterLevel": 9,
+  "aura": { "school": "transmutation", "dc": 19 },
+  "activation": "Standard (command)",
+  "weight": 0,
+  "tags": ["material", "transform"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "fabricate",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "The color and texture of this weapon seem to shift with each passing moment. When you activate a metalline weapon, you can change its composition to adamantine, alchemical silver, cold iron, or ordinary steel.",
+  "unidentifiedDesc": "A color-shifting weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

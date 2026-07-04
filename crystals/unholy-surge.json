@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "unholy-surge",
+  "name": "Unholy Surge Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 11,
+  "casterLevel": 11,
+  "aura": { "school": "evocation", "dc": 20 },
+  "activation": "— and swift (command)",
+  "weight": 0,
+  "tags": ["evil", "surge", "good", "burst"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "unholy blight or unholy word"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This vile weapon is decorated with jagged spikes, skulls, and other macabre designs. Characters who serve gods of murder, strife, and other base deeds craft these weapons of pure evil for themselves and for others who share their foul desires. This weapon functions as an unholy weapon. This is a continuous effect and requires no activation. In addition, on a successful melee attack with an unholy surge weapon, you can command it to emit a burst of unholy energy, which deals an extra 3d6 points of damage to a good-aligned target. If used against a non-good creature, it deals no additional damage, and that use of the ability is wasted. This ability is usable a number of times per day equal to 1 + your Cha bonus (if any).",
+  "unidentifiedDesc": "A skull-decorated vile weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

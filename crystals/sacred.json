@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "sacred",
+  "name": "Sacred Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 7,
+  "casterLevel": 7,
+  "aura": { "school": "conjuration", "dc": 18 },
+  "activation": "Standard (command)",
+  "weight": 0,
+  "tags": ["good", "undead", "positive-energy"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "cure light wounds",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This silver-white weapon is decorated with a single golden sun. A runic phrase describing a heroic deed runs along its blade or haft. By speaking the appropriate command word, you can sheathe a sacred weapon in luminous positive energy. If you are not undead, this energy does not harm you; otherwise, you take 1 point of Charisma damage for each round that you hold the weapon. While activated, a sacred weapon deals an extra 1d6 points of damage to any undead target (or 2d6 points against an evil outsider) on a successful hit. Also, it is treated as good-aligned for the purpose of overcoming damage reduction. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A silver-white sun-adorned weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

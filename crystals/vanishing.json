@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "vanishing",
+  "name": "Vanishing Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 8000,
+  "basePriceUnit": "gp",
+  "itemLevel": 10,
+  "casterLevel": 10,
+  "aura": { "school": "conjuration", "dc": 20 },
+  "activation": "Swift (command)",
+  "weight": 0,
+  "tags": ["teleport", "dimension-door"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 0,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "dimension door",
+    "other": null
+  },
+  "costToCreate": { "gp": 4000, "xp": 320, "days": 8 },
+  "description": "The grip of this weapon is transparent, and its pommel or guard is set with white diamonds. A vanishing weapon allows you to travel short distances instantaneously. Once per day, after a successful melee attack, you can transport yourself and any equipment you are carrying to any spot within 60 feet by activating the weapon. This movement otherwise conforms to the limitations given for the dimension door spell.",
+  "unidentifiedDesc": "A transparent-grip weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

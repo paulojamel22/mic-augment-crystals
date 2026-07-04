@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "dragondoom",
+  "name": "Dragondoom Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 7,
+  "casterLevel": 7,
+  "aura": { "school": "transmutation", "dc": 18 },
+  "activation": "Swift (command)",
+  "weight": 0,
+  "tags": ["dragon", "smite", "dragon-type"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "fell the greatest foe"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon is engraved with a severed dragon's head. When wielding a dragondoom weapon, you can choose to deliver a smite attack against a Large or larger creature of the dragon type up to three times each day. For every size category of the dragon larger than Medium, the smite attack deals an extra 1d6 points of damage (+1d6 against a Large dragon, +2d6 against Huge, +3d6 against Gargantuan, and +4d6 against Colossal). You must declare the smite attack before you make your attack roll. If the attack misses (or the creature you strike is not of the dragon type), the smite is wasted.",
+  "unidentifiedDesc": "A dragon-head engraved weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

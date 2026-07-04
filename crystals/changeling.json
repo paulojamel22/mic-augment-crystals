@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "changeling",
+  "name": "Changeling Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 5,
+  "casterLevel": 5,
+  "aura": { "school": "transmutation", "dc": 17 },
+  "activation": "Swift (command)",
+  "weight": 0,
+  "tags": ["polymorph", "shape"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 0,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "shrink item",
+    "other": null
+  },
+  "costToCreate": { "gp": 1000, "xp": 80, "days": 2 },
+  "description": "This spear appears to be made entirely of a metal with a bright silver sheen, and the head is joined seamlessly to the haft. A changeling weapon allows you to choose its length and appearance each time you attack with it. Once per round, by speaking the appropriate command word, you can change the weapon into a spear, a shortspear, or a longspear sized appropriately for you. As part of the same action, you can make its haft and head appear to be composed of any wood, stone, metal, or combination thereof that you want, and add any decorative flourishes desired, though the spear's actual composition does not change.",
+  "unidentifiedDesc": "A silver-sheen spear augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "slow-burst",
+  "name": "Slow Burst Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 5000,
+  "basePriceUnit": "gp",
+  "itemLevel": 5,
+  "casterLevel": 5,
+  "aura": { "school": "transmutation", "dc": 17 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["slow", "critical", "condition"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 0,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "slow",
+    "other": null
+  },
+  "costToCreate": { "gp": 2500, "xp": 200, "days": 5 },
+  "description": "This weapon has an image of a snail worked into its hilt or grip, and it feels cold to the touch. A chill aura numbs this weapon's victim when you strike true. Whenever you score a critical hit with this weapon, the target is slowed (as the slow spell) for 3 rounds (Will DC 14 negates). This effect activates even if the creature struck is not normally subject to extra damage from critical hits.",
+  "unidentifiedDesc": "A snail-adorned cold weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

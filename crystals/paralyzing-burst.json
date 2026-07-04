@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "paralyzing-burst",
+  "name": "Paralyzing Burst Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 4000,
+  "basePriceUnit": "gp",
+  "itemLevel": 9,
+  "casterLevel": 9,
+  "aura": { "school": "enchantment", "dc": 19 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["paralysis", "burst", "critical"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 2,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": "hold monster",
+    "other": null
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon appears unusually straight and stiff. Set into the base of its blade or head is a smoothly polished piece of aventurine that seems to glow with an energy all its own. Whenever you score a critical hit with this weapon, a wave of green energy washes over the target, paralyzing it for 1 round (Will DC 17 negates). This effect activates even if the target is not normally subject to extra damage from critical hits.",
+  "unidentifiedDesc": "A green-energetic weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}

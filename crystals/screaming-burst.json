@@ -1,0 +1,27 @@
+{
+  "schema": "mic-augment-crystal/1.0",
+  "id": "screaming-burst",
+  "name": "Screaming Burst Crystal",
+  "rank": "least",
+  "family": "weapon",
+  "basePrice": 2000,
+  "basePriceUnit": "gp",
+  "itemLevel": 12,
+  "casterLevel": 12,
+  "aura": { "school": "evocation", "dc": 21 },
+  "activation": null,
+  "weight": 0,
+  "tags": ["sonic", "burst", "critical"],
+  "sources": ["MIC 3.5"],
+  "enhancement": 1,
+  "prerequisites": {
+    "feat": ["Craft Magic Arms and Armor"],
+    "skill": null,
+    "spell": null,
+    "other": "shout or sound burst"
+  },
+  "costToCreate": { "gp": null, "xp": null, "days": null },
+  "description": "This weapon is decorated with engravings of bells, cymbals, drums, and other images associated with loud noises. A screaming burst weapon functions as a screaming weapon. In addition, the weapon explodes with sonic energy on a successful critical hit, dealing extra sonic damage. Critical ×2: 1d8. ×3: 2d8. ×4: 3d8. This is a continuous effect and requires no activation. Projectile weapons bestow this property upon their ammunition.",
+  "unidentifiedDesc": "A bell-adorned weapon augmentation crystal.",
+  "icon": "icons/commodities/treasure/token-silver-blue.webp"
+}
